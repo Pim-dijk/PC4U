@@ -44,6 +44,10 @@ body
 	font-weight:normal;
 	font-size:20px;
 	color:white;
+}
+
+.container
+{
 	max-width: 1000px;
 }
 
@@ -70,4 +74,26 @@ p
 {
 	font-size:15px;
 	font-family:gotham book;
+}
+
+.myForm
+{
+	width:50%;
+	margin:0 auto;
+	padding-bottom: 25px;
+}
+
+.form-group.required .control-label:after { 
+	content:"*";
+	color:red;
+}
+
+#login
+{
+	margin-top:25px;
+}
+
+#Contact
+{
+	margin-top:25px;
 }
