@@ -1,0 +1,73 @@
+@font-face
+{
+	font-family:montserrat-bold;
+	src:url(../fonts/Montserrat-Bold.otf);
+}
+@font-face
+{
+	font-family:header;
+	src:url(../fonts/Myriad%20Pro%20Regular.ttf);
+}
+@font-face
+{
+	font-family:gotham book;
+	src:url(../fonts/Gotham%20Book%20Regular.otf);
+}
+@font-face
+{
+	font-family:gotham book;
+	src:url(../fonts/Gotham%20Book%20Regular.otf);
+	font-weight:bold;
+}
+@font-face
+{
+	font-family:myriad pro;
+	src:url(../fonts/Myriad%20Pro%20Regular.woff);
+	font-weight:bold;
+}
+
+@keyframes shake
+	{
+		from {transform:rotate(-1deg);}
+		to {transform:rotate(1deg);}
+	}
+
+		.vibrate:hover
+		{
+			animation: shake 10ms infinite;
+		}
+
+body
+{
+	background-color:#222222 !important;
+	font-family:gotham book;
+	font-weight:normal;
+	font-size:20px;
+	color:white;
+	max-width: 1000px;
+}
+
+h3
+{
+	font-size:37px !important;
+	font-family:gotham book;
+	text-align:center;
+}
+
+h4
+{
+	text-align:center;
+	font-family:gotham book;
+}
+
+h5
+{
+	text-align:center;
+	font-family:gotham book;
+}
+
+p
+{
+	font-size:15px;
+	font-family:gotham book;
+}
