@@ -64,7 +64,7 @@
 				  <a href="#">
 					<li>Contact</li>
 				  </a>
-				  <a href="#">
+				  <a href="Login.php">
 					<li class="loginButton pull-right">Login</li>
 				  </a>
 				</ul>
@@ -72,3 +72,9 @@
 			</nav>
 		<!--/headerContainer-->
 		</div>
+		
+		<ol class="breadcrumb">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Klant</a></li>
+			<li class="active">Bestellingen</li>
+		</ol>

@@ -76,6 +76,13 @@
 		text-align: center;
 	}
 
+.breadcrumb
+{
+	background-color: #444444;
+	margin-bottom:0;
+	border-radius: 0;	
+}
+
 
 /*Responsive*/
 @media screen and (max-width:600px)

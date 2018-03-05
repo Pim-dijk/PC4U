@@ -21,6 +21,7 @@
 {
 	font-size: 14px;
 	list-style-type: none;
+	color:#ff6600;
 }
 
 #subMenu a:hover
@@ -33,10 +34,6 @@
 	color:white;
 	padding-left: 25px;
 }
-	#subMenu li
-	{
-		color:#ff6600;
-	}
 
 #footerSocial
 {
@@ -51,8 +48,5 @@
 
 @media screen and (max-width:566px)
 {
-	#footerSocial img
-	{
-		
-	}
+	
 }

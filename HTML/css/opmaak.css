@@ -44,6 +44,9 @@ body
 	font-weight:normal;
 	font-size:20px;
 	color:white;
+	height:auto;
+	background-image: url(../images/Background.jpg);
+	background-repeat: repeat-y;
 }
 
 .container
@@ -51,29 +54,55 @@ body
 	max-width: 1000px;
 }
 
+h1
+{
+	padding:20px;
+	color:#ff6600;
+	margin:0;
+	text-align: center;
+}
+
+h2
+{
+	padding:10px;
+	color:#ff9900;
+	text-align: center;
+}
+
 h3
 {
-	font-size:37px !important;
+	text-align: center;
+	color:#ff9900;
 	font-family:gotham book;
-	text-align:center;
-}
-
-h4
-{
-	text-align:center;
-	font-family:gotham book;
-}
-
-h5
-{
-	text-align:center;
-	font-family:gotham book;
+	padding:10px;
+	margin:0;
 }
 
 p
 {
 	font-size:15px;
 	font-family:gotham book;
+}
+
+hr
+{
+	margin: 0 15px;
+	border-color: #ff9900;
+}
+
+a:link
+{
+	color:#ff6600;
+}
+
+a:visited
+{
+	color:#ff6600;
+}
+
+a:hover
+{
+	color:#ff9900;
 }
 
 .myForm
@@ -84,16 +113,106 @@ p
 }
 
 .form-group.required .control-label:after { 
-	content:"*";
+	content:" *";
 	color:red;
 }
 
-#login
+.Link
 {
-	margin-top:25px;
+/*	color:#ff6600 !important;*/
+}
+
+#Login
+{
+	background-color: #4F4F4F;
 }
 
 #Contact
 {
-	margin-top:25px;
+	background-color: #4F4F4F;
+}
+
+#Register
+{
+	background-color: #4F4F4F;
+}
+
+#Customer
+{
+	background-color: #4F4F4F;
+}
+
+#Customer form
+{
+	margin:25px;
+}
+
+#Customer table
+{
+	margin:15px auto;
+	max-width:90%;
+}
+
+#Services
+{
+	padding:0 25px 25px 25px;
+}
+
+#OrderHistory
+{
+	background-color: #4F4F4F;
+	padding:0 0 25px 0;
+	margin:0;
+}
+
+#OrderHistory table
+{
+	margin:0 auto;
+	max-width:90%;
+}
+
+@media screen and (max-width:768px)
+{
+	table
+	{
+		font-size: 0.7em;
+	}
+
+	#card table{
+		border:0;
+	}
+	
+	#card table thead{
+		display:none;
+	}
+	
+	#card table tr{
+		margin-bottom:20px;
+		display:block;
+		border-bottom: 2px solid #ddd;
+		box-shadow:2px 2px 1px #dadada;
+	}
+	
+	#card table td{
+		display:block;
+		text-align: right;
+		font-size: 13px;
+		padding: 0 5px 0 5px;
+		border-left:1px solid #ddd;
+	}
+	
+	#card table td:last-child{
+		border-bottom: 0;
+	}
+	
+	#card table td::before{
+		content:attr(data-label);
+		float:left;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	
+	#card tbody{
+/*		line-height: 0!important;*/
+	}
 }

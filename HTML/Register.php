@@ -51,15 +51,15 @@
 			</div>
 			<div class="form-group required">
 				<label for="Zipcode" class="control-label">Postcode</label>
-				<input type="email" class="form-control" id="Zipcode" placeholder="Postcode" required>
+				<input type="text" class="form-control" id="Zipcode" placeholder="Postcode" required>
 			</div>
 			<div class="form-group required">
 				<label for="Country" class="control-label">Land</label>
-				<input type="password" class="form-control" id="Country" placeholder="Land" required>
+				<input type="text" class="form-control" id="Country" placeholder="Land" required>
 			</div>
 			<div class="form-group required">
 				<label for="Phone" class="control-label">Telefoonnummer</label>
-				<input type="password" class="form-control" id="Phone" placeholder="Telefoonnummer" required>
+				<input type="number" class="form-control" id="Phone" placeholder="Telefoonnummer" required>
 			</div>
 			<button type="submit" class="btn btn-default">Registreer</button>
 		</form>
