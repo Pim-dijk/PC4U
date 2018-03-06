@@ -2,9 +2,9 @@
 <?php include 'Header.php'; ?>
 
 <!--Page content goes here!!!-->
-<div id="Register" class="row">
+<div id="Register" class="content">
 
-	<div class="col-xs-12">
+	<div class="row">
 		<h3>Registreer</h3>
 
 		<!--Login Form-->

@@ -52,6 +52,8 @@ body
 .container
 {
 	max-width: 1000px;
+	background-color: #4F4F4F;
+	padding:0;
 }
 
 h1
@@ -86,7 +88,7 @@ p
 
 hr
 {
-	margin: 0 15px;
+	width: 100%;
 	border-color: #ff9900;
 }
 
@@ -107,9 +109,21 @@ a:hover
 
 .myForm
 {
-	width:50%;
+	max-width:75% !important;
+	width: 75% !important;
 	margin:0 auto;
 	padding-bottom: 25px;
+	display:block;
+}
+
+.loginForm
+{
+	width:50% !important;
+}
+
+.textAreaInput
+{
+	max-width:735px;
 }
 
 .form-group.required .control-label:after { 
@@ -122,24 +136,9 @@ a:hover
 /*	color:#ff6600 !important;*/
 }
 
-#Login
+.content
 {
-	background-color: #4F4F4F;
-}
-
-#Contact
-{
-	background-color: #4F4F4F;
-}
-
-#Register
-{
-	background-color: #4F4F4F;
-}
-
-#Customer
-{
-	background-color: #4F4F4F;
+	padding:0 25px 25px 25px;
 }
 
 #Customer form
@@ -150,25 +149,30 @@ a:hover
 #Customer table
 {
 	margin:15px auto;
-	max-width:90%;
-}
-
-#Services
-{
-	padding:0 25px 25px 25px;
-}
-
-#OrderHistory
-{
-	background-color: #4F4F4F;
-	padding:0 0 25px 0;
-	margin:0;
 }
 
 #OrderHistory table
 {
 	margin:0 auto;
-	max-width:90%;
+	margin-bottom: 25px;
+}
+
+.Services
+{
+	text-align: left;
+	float:left;
+	padding:25px;
+}
+
+.form-group
+{
+	padding-right:15px;
+	padding-bottom:5px;
+}
+
+.breadcrumb li
+{
+	font-size: 14px;
 }
 
 @media screen and (max-width:768px)
@@ -176,6 +180,11 @@ a:hover
 	table
 	{
 		font-size: 0.7em;
+		
+	}
+	
+	.table-responsive {
+		border: 0;
 	}
 
 	#card table{
@@ -189,20 +198,20 @@ a:hover
 	#card table tr{
 		margin-bottom:20px;
 		display:block;
-		border-bottom: 2px solid #ddd;
-		box-shadow:2px 2px 1px #dadada;
+		border-bottom: 1px solid #ddd;
 	}
 	
 	#card table td{
 		display:block;
 		text-align: right;
 		font-size: 13px;
-		padding: 0 5px 0 5px;
+		padding: 5px;
 		border-left:1px solid #ddd;
 	}
 	
 	#card table td:last-child{
-		border-bottom: 0;
+		border-bottom: 0px;
+		border-right: 1px solid #ddd;
 	}
 	
 	#card table td::before{
@@ -210,9 +219,5 @@ a:hover
 		float:left;
 		text-transform: uppercase;
 		font-weight: bold;
-	}
-	
-	#card tbody{
-/*		line-height: 0!important;*/
 	}
 }

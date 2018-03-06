@@ -1,7 +1,7 @@
 <?php include 'Header.php'?>
 
 <!--Content goes here-->
-<div id="Customer">
+<div id="Customer" class="content">
 	
 	<!--Customer Data-->
 	<div id="Data" class="row">
@@ -96,19 +96,19 @@
 				<td data-label="Bestel datum">01-01-2018</td>
 				<td data-label="Artikel(en)"><a href="#">Artikel omschrijving</a></td>
 				<td data-label="Totaalprijs">123.-</td>
-				<td data-label="Status"><a href="#">In behandeling</a></td>
+				<td data-label="Status"><a href="OrderHistory.php">In behandeling</a></td>
 			</tr>
 			<tr>
 				<td data-label="Bestel datum">01-01-2018</td>
 				<td data-label="Artikel(en)"><a href="#">Artikel omschrijving</a></td>
-				<td data-label="Totaalprijs">123.-</td>
-				<td data-label="Status"><a href="#">In behandeling</a></td>
+				<td data-label="Totaalprijs">234.-</td>
+				<td data-label="Status"><a href="OrderHistory.php">Wacht op betaling</a></td>
 			</tr>
 			<tr>
 				<td data-label="Bestel datum">01-01-2018</td>
 				<td data-label="Artikel(en)"><a href="#">Artikel omschrijving</a></td>
-				<td data-label="Totaalprijs">123.-</td>
-				<td data-label="Status"><a href="#">In behandeling</a></td>
+				<td data-label="Totaalprijs">345.-</td>
+				<td data-label="Status"><a href="OrderHistory.php">Geleverd</a></td>
 			</tr>
 		</tbody>
 	</table>

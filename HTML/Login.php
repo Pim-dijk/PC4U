@@ -2,13 +2,13 @@
 <?php include 'Header.php'; ?>
 
 <!--Page content goes here!!!-->
-<div id="Login" class="row">
+<div id="Login" class="row content">
 
 	<div class="col-xs-12">
 		<h3>Login</h3>
 
 		<!--Login Form-->
-		<form class="center-block myForm needs-validation">
+		<form class="center-block loginForm needs-validation">
 			<div class="form-group">
 				<label for="Email">Email address</label>
 				<input type="email" class="form-control" id="Email" placeholder="Email" required>
