@@ -1,7 +1,5 @@
-
-
 #content {
-    width: 50%;
+    width: 60%;
     margin: auto;
 }
 #content p {
@@ -11,17 +9,14 @@
     float: left;
 }
 
-.font-weight {
-    font-weight: bold;
-}
 .text-align {
     text-align: center;
 }
 .h1-margin {
     margin-bottom: 50px;
 }
-.float-right {
-    float: right;
+.font-weight {
+    font-weight: bold;
 }
 .button-color 
 {
@@ -31,7 +26,7 @@
     margin-top: 0px;
 }
 
-@media (max-width: 494px) {
+@media (max-width: 402px) {
     .margin-top {
         margin-top: 15px;
     }

@@ -24,7 +24,7 @@
                 <hr style="border-color: black; width: 100%">
                 <form>
                     <input type="submit" value="In behandeling" class="btn button-color" style="float:right; margin-left: 15px;"/>
-                    <input type="submit" value="Voltooid" class="btn button-color" style="float:right; margin-left: 15px;"/>
+                    <input type="submit" value="Voltooid" class="btn button-color margin-top" style="float:right; margin-left: 15px;"/>
                 </form>
             </div>
         </div>
