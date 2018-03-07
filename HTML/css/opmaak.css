@@ -1,0 +1,218 @@
+@font-face
+{
+	font-family:montserrat-bold;
+	src:url(../fonts/Montserrat-Bold.otf);
+}
+@font-face
+{
+	font-family:header;
+	src:url(../fonts/Myriad%20Pro%20Regular.ttf);
+}
+@font-face
+{
+	font-family:gotham book;
+	src:url(../fonts/Gotham%20Book%20Regular.otf);
+}
+@font-face
+{
+	font-family:gotham book;
+	src:url(../fonts/Gotham%20Book%20Regular.otf);
+	font-weight:bold;
+}
+@font-face
+{
+	font-family:myriad pro;
+	src:url(../fonts/Myriad%20Pro%20Regular.woff);
+	font-weight:bold;
+}
+
+@keyframes shake
+	{
+		from {transform:rotate(-1deg);}
+		to {transform:rotate(1deg);}
+	}
+
+		.vibrate:hover
+		{
+			animation: shake 10ms infinite;
+		}
+
+body
+{
+	background-color:#222222 !important;
+	font-family:gotham book;
+	font-weight:normal;
+	font-size:20px;
+	color:white;
+	height:auto;
+	background-image: url(../images/Background.jpg);
+	background-repeat: repeat-y;
+}
+
+.container
+{
+	max-width: 1000px;
+	background-color: #4F4F4F;
+	padding:0;
+}
+
+h1
+{
+	padding:20px;
+	color:#ff6600;
+	margin:0;
+	text-align: center;
+}
+
+h2
+{
+	padding:10px;
+	color:#ff9900;
+	text-align: center;
+}
+
+h3
+{
+	text-align: center;
+	color:#ff9900;
+	font-family:gotham book;
+	padding:10px;
+	margin:0;
+}
+
+p
+{
+	font-size:15px;
+	font-family:gotham book;
+}
+
+hr
+{
+	width: 100%;
+	border-color: #ff9900;
+}
+
+a:link
+{
+	color:#ff6600;
+}
+
+a:visited
+{
+	color:#ff6600;
+}
+
+a:hover
+{
+	color:#ff9900;
+}
+
+.myForm
+{
+	max-width:75% !important;
+	width: 75% !important;
+	margin:0 auto;
+	padding-bottom: 25px;
+	display:block;
+}
+
+.loginForm
+{
+	width:50% !important;
+}
+
+.textAreaInput
+{
+	max-width:735px;
+}
+
+.form-group.required .control-label:after { 
+	content:" *";
+	color:red;
+}
+
+.content
+{
+	padding:0 25px 25px 25px;
+}
+
+#Customer form
+{
+	margin:25px;
+}
+
+#Customer table
+{
+	margin:15px auto;
+}
+
+#OrderHistory table
+{
+	margin:0 auto;
+	margin-bottom: 25px;
+}
+
+.Services
+{
+	text-align: left;
+	float:left;
+	padding:25px;
+}
+
+.form-group
+{
+	padding-right:15px;
+	padding-bottom:5px;
+}
+
+.breadcrumb li
+{
+	font-size: 14px;
+}
+
+@media screen and (max-width:768px)
+{
+	table
+	{
+		font-size: 0.7em;
+		
+	}
+	
+	.table-responsive {
+		border: 0;
+	}
+
+	#card table{
+		border:0;
+	}
+	
+	#card table thead{
+		display:none;
+	}
+	
+	#card table tr{
+		margin-bottom:20px;
+		display:block;
+		border-bottom: 1px solid #ddd;
+	}
+	
+	#card table td{
+		display:block;
+		text-align: right;
+		font-size: 13px;
+		padding: 5px;
+		border-left:1px solid #ddd;
+	}
+	
+	#card table td:last-child{
+		border-bottom: 0px;
+		border-right: 1px solid #ddd;
+	}
+	
+	#card table td::before{
+		content:attr(data-label);
+		float:left;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+}
