@@ -10,10 +10,10 @@ img {
     height: 125px;
 }
 
-#content 
+#content
 {
-    width: 80%;
-    margin-left: 10%;
+    width: 60%;
+    margin-left: 20%;
     overflow: auto;
 }
 #image {
@@ -58,7 +58,62 @@ img {
     border: solid black 1px;
     overflow: auto;
 }
+#artikelnummerAfrekenen {
+    width: 150px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+#artikelnaamAfrekenen {
+    width: 150px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+#aantalAfrekenen {
+    width: 50px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+#prijsAfrekenen {
+    width: 100px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+#totaalprijsAfrekenen {
+    width: 100px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+#btwprijsAfrekenen {
+    width: 100px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+#totaalAfrekenen {
+    width: 40%;
+    float: right;
+    border: solid 1px black;
+}
+#item {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
 
+.p {
+    width: 50% !important;
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    float: left;
+}
+.font-weight {
+    font-weight: bold;
+}
 .align-center {
     text-align: center;
 }
@@ -97,6 +152,33 @@ img {
 }
 .txt-aantal {
     margin-top: 50px;
+}
+.btn-betalen {
+    background-color: #FF9900;
+    float: right;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.text-align {
+    text-align: center;
+}
+.h1-margin {
+    margin-bottom: 50px;
+}
+.margin-top {
+    margin-top: 0px;
+}
+.p-20 {
+    width: 20% !important;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+
+@media (max-width: 494px) {
+    .margin-top {
+        margin-top: 15px;
+    }
 }
 
 @media (max-width: 887px) {
@@ -195,5 +277,29 @@ img {
     .button-verwijderen 
     {
         margin-top: 10px;
+    }
+}
+
+@media (max-width: 922px) {
+    #totaalAfrekenen {
+        width: 60%;
+    }
+}
+
+@media (max-width: 624px) {
+    #totaalAfrekenen {
+        width: 70%;
+    }
+}
+
+@media (max-width: 539px) {
+    #totaalAfrekenen {
+        width: 80%;
+    }
+}
+
+@media (max-width: 476px) {
+    #totaalAfrekenen {
+        width: 90%;
     }
 }

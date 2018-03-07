@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8"></meta>
         <title>Winkelwagen</title>
-        <link type="text/css" rel="stylesheet" href="Winkelwagen.css"/>
+        <link type="text/css" rel="stylesheet" href="css/Opmaak.css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
     <body>
@@ -11,7 +11,7 @@
             <div class="row">
                 <div id="content">
                     <form>
-                        <div id="image"><img src="chair.jpg" /></div>
+                        <div id="image"><img src="images/chair.jpg" /></div>
                         <div id="productName"><p>DXRacer Chair</p></div>
                         <div id="aantal"><input type="number" value="2" class="txt-aantal" style="width: 50px;" /></div>
                         <div id="verwijderen"><input type="submit" value="Verwijderen" class="btn button-color button-verwijderen" /></div>
@@ -19,7 +19,7 @@
                         <div id="totaalPrijs"><p class="align-center">€ 759,98</p></div>
                         <hr style="border-color: black; width: 100%;">
 
-                        <div id="image"><img src="laptop.jpg" /></div>
+                        <div id="image"><img src="images/laptop.jpg" /></div>
                         <div id="productName"><p>DXRacer Chair</p></div>
                         <div id="aantal"><input type="number" value="1" class="txt-aantal" style="width: 50px;" /></div>
                         <div id="verwijderen"><input type="submit" value="Verwijderen" class="btn button-color button-verwijderen" /></div>
