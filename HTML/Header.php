@@ -8,6 +8,7 @@
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<script src="js/respond.js"></script>
+	<script src="js/bootstrap-formhelpers-countries.js"></script>
 	
 	<!--Stylesheet-->
 	<link type="text/css" rel="stylesheet" href="css/opmaak.css">

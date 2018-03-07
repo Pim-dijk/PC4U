@@ -18,20 +18,12 @@
 					<input type="email" class="form-control" id="Email" placeholder="Email" required>
 				</div>
 				<div class="form-group required">
-					<label class="sr-only" for="Password" class="control-label">Wachtwoord</label>
-					<input type="password" class="form-control" id="Password" placeholder="Wachtwoord" required>
-				</div>
-				<div class="form-group required">
-					<label class="sr-only" for="ConfirmPassword" class="control-label">Herhaal wachtwoord</label>
-					<input type="password" class="form-control" id="ConfirmPassword" placeholder="Herhaal wachtwoord" required>
-				</div>
-				<div class="form-group required">
 					<label class="sr-only" for="FirstLetter" class="control-label">Voorletter</label>
 					<input type="text" class="form-control" id="FirstLetter" placeholder="Voorletter" required>
 				</div>
 				<div class="form-group">
 					<label class="sr-only" for="Prefix">Tussenvoegsel</label>
-					<input type="text" class="form-control" id="Prefix" placeholder="Prefix">
+					<input type="text" class="form-control" id="Prefix" placeholder="Tussenvoegsel">
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="LastName" class="control-label">Achternaam</label>
