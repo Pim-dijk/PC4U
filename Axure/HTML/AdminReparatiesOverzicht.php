@@ -16,6 +16,18 @@
                 <p class="p-20">In behandeling</p>
                 <p class="p-20"><a href="#" class="btn button-color"><span class="glyphicon glyphicon-trash"></span> Verwijderen</a></p>
                 <hr style="border-color: black; border-width: 2px; width: 100%;">
+
+                <p class="p-20"><a href="AdminReparaties.php">3489786</a></p>
+                <p class="p-20">Piet Jansen</p>
+                <p class="p-20">In behandeling</p>
+                <p class="p-20"><a href="#" class="btn button-color"><span class="glyphicon glyphicon-trash"></span> Verwijderen</a></p>
+                <hr style="border-color: black; border-width: 2px; width: 100%;">
+
+                <p class="p-20"><a href="AdminReparaties.php">3480012</a></p>
+                <p class="p-20">Jantje Jansen</p>
+                <p class="p-20">In behandeling</p>
+                <p class="p-20"><a href="#" class="btn button-color"><span class="glyphicon glyphicon-trash"></span> Verwijderen</a></p>
+                <hr style="border-color: black; border-width: 2px; width: 100%;">
             </div>
         </div>
     </body>

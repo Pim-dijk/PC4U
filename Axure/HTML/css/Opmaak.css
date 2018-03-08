@@ -58,48 +58,68 @@ img {
     border: solid black 1px;
     overflow: auto;
 }
-#artikelnummerAfrekenen {
+#artikelnummerOverzicht {
     width: 150px;
     height: 50px;
     float: left;
     line-height: 50px;
 }
-#artikelnaamAfrekenen {
+#artikelnaamOverzicht {
     width: 150px;
     height: 50px;
     float: left;
     line-height: 50px;
 }
-#aantalAfrekenen {
+#aantalOverzicht {
     width: 50px;
     height: 50px;
     float: left;
     line-height: 50px;
 }
-#prijsAfrekenen {
+#prijsOverzicht {
     width: 100px;
     height: 50px;
     float: left;
     line-height: 50px;
 }
-#totaalprijsAfrekenen {
+#totaalprijsOverzicht {
     width: 100px;
     height: 50px;
     float: left;
     line-height: 50px;
 }
-#btwprijsAfrekenen {
+#btwprijsOverzicht {
     width: 100px;
     height: 50px;
     float: left;
     line-height: 50px;
 }
-#totaalAfrekenen {
+#totaalOverzicht {
     width: 40%;
     float: right;
     border: solid 1px black;
 }
 #item {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+#klantgegevens {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+#betaalMethode {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+#banken {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+}
+#betalen {
     width: 100%;
     height: auto;
     overflow: auto;
@@ -173,6 +193,9 @@ img {
     padding: 0px;
     margin: 0px;
     float: left;
+}
+.div-margin {
+    margin-bottom: 50px;
 }
 
 @media (max-width: 494px) {
