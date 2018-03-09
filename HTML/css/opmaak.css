@@ -1,0 +1,381 @@
+@font-face
+{
+	font-family:montserrat-bold;
+	src:url(../fonts/Montserrat-Bold.otf);
+}
+@font-face
+{
+	font-family:header;
+	src:url(../fonts/Myriad%20Pro%20Regular.ttf);
+}
+@font-face
+{
+	font-family:gotham book;
+	src:url(../fonts/Gotham%20Book%20Regular.otf);
+}
+@font-face
+{
+	font-family:gotham book;
+	src:url(../fonts/Gotham%20Book%20Regular.otf);
+	font-weight:bold;
+}
+@font-face
+{
+	font-family:myriad pro;
+	src:url(../fonts/Myriad%20Pro%20Regular.woff);
+	font-weight:bold;
+}
+
+
+body
+{
+	background-color:#222222 !important;
+	font-family:gotham book;
+	font-weight:normal;
+	font-size:20px;
+	color:white;
+	height:auto;
+	background-image: url(../images/Background.jpg);
+	background-repeat: repeat-y;
+}
+
+.container
+{
+	max-width: 1000px;
+	background-color: #4F4F4F;
+	padding:0;
+}
+
+h1
+{
+	padding:20px;
+	color:#ff6600;
+	margin:0;
+	text-align: center;
+}
+
+h2
+{
+	padding:10px;
+	color:#ff9900;
+	text-align: center;
+}
+
+h3
+{
+	text-align: center;
+	color:#ff9900;
+	font-family:gotham book;
+	padding:10px;
+	margin:0;
+}
+
+p
+{
+	font-size:15px;
+	font-family:gotham book;
+}
+
+hr
+{
+	width: 100%;
+	border-color: #ff9900;
+}
+
+a:link
+{
+	color:#ff6600;
+	text-decoration: none;
+}
+
+a:visited
+{
+	color:#ff6600;
+}
+
+a:hover
+{
+	color:#ff9900;
+	text-decoration: none;
+}
+
+.myForm
+{
+	max-width:75% !important;
+	width: 75% !important;
+	margin:0 auto;
+	padding-bottom: 25px;
+	display:block;
+}
+
+.loginForm
+{
+	width:50% !important;
+}
+
+.textAreaInput
+{
+	max-width:735px;
+}
+
+.form-group.required .control-label:after { 
+	content:" *";
+	color:red;
+}
+
+.Link
+{
+/*	color:#ff6600 !important;*/
+}
+
+.content
+{
+	padding:0 25px 25px 25px;
+}
+
+#Customer form
+{
+	margin:25px;
+}
+
+#Customer table
+{
+	margin:15px auto;
+}
+
+#OrderHistory table
+{
+	margin:0 auto;
+	margin-bottom: 25px;
+}
+
+.Services
+{
+	text-align: left;
+	float:left;
+	padding:25px;
+}
+
+.form-group
+{
+	padding-right:15px;
+	padding-bottom:5px;
+}
+
+.breadcrumb li
+{
+	font-size: 14px;
+}
+
+@media screen and (max-width:768px)
+{
+	table
+	{
+		font-size: 0.7em;
+		
+	}
+	
+	.table-responsive {
+		border: 0;
+	}
+
+	#card table{
+		border:0;
+	}
+	
+	#card table thead{
+		display:none;
+	}
+	
+	#card table tr{
+		margin-bottom:20px;
+		display:block;
+		border-bottom: 1px solid #ddd;
+	}
+	
+	#card table td{
+		display:block;
+		text-align: right;
+		font-size: 13px;
+		padding: 5px;
+		border-left:1px solid #ddd;
+	}
+	
+	#card table td:last-child{
+		border-bottom: 0px;
+		border-right: 1px solid #ddd;
+	}
+	
+	#card table td::before{
+		content:attr(data-label);
+		float:left;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+}
+
+
+
+
+
+
+/*dit is dus een andere slider*/
+
+
+.box {
+  	width: 200px;
+    padding: 20px;
+	margin: 10px;
+    border: 1px solid darkorange;
+    border-radius: 8px;
+
+}
+
+
+.slides {
+    padding: 0;
+    max-width: 970px;
+	width: 100%;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    max-width: 970px;
+	width:100%;
+    height: 420px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    max-width: 200px;
+	width: 20%;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+	  opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+	padding-top: 441px;
+	width: 100%;
+	bottom: 9px;
+	height: 11px;
+	display: block;
+	text-align: center;
+	
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 5;
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: orange;
+	border-bottom: none;
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+	background-color:orange;
+}
+
+#Aanbiedingen
+{
+	display:block;
+}
+
+.aanbiedingImg {
+	padding:15px;
+	text-align: center;
+	width: 200px;
+	height: 150px;
+}
+
+
+/*dit is voor de Laatstbekeken*/
+
+
+
+#laatstBekeken img{
+	width: 200px;
+	height: 150px;
+	padding:10px;
+}
+
+
+@media screen and (max-width: 500px) {
+	#slider
+	{
+		visibility:hidden;
+	}
+}
