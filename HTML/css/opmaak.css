@@ -39,20 +39,20 @@
 
 body
 {
-	background-color:#222222 !important;
+	background-color:#FFFFFF;
 	font-family:gotham book;
 	font-weight:normal;
 	font-size:20px;
-	color:white;
+	color:black;
 	height:auto;
-	background-image: url(../images/Background.jpg);
+	background-image: url(../images/../images/../images/pexels-photo-326240.jpeg);
 	background-repeat: repeat-y;
 }
 
 .container
 {
 	max-width: 1000px;
-	background-color: #4F4F4F;
+	background-color: #FFFFFF;
 	padding:0;
 }
 
@@ -127,7 +127,7 @@ a:hover
 }
 
 .form-group.required .control-label:after { 
-	content:" *";
+	content:"*";
 	color:red;
 }
 
@@ -172,6 +172,7 @@ a:hover
 
 @media screen and (max-width:768px)
 {
+/*	Turn table into cards*/
 	table
 	{
 		font-size: 0.7em;

@@ -7,9 +7,9 @@
 	<div id="Data" class="row">
 		
 		<div class="col-sm-12 center-block">
-			<h1 class="text-center">Klant pagina</h1>
+			<h1>Klant pagina</h1>
 			<hr>
-			<h2 class="text-center">Gegevens</h2>
+			<h2>Gegevens</h2>
 			<hr>
 			
 			<form class="form-inline needs-validation">

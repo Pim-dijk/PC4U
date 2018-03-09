@@ -5,7 +5,8 @@
 	height:auto;
 	float:left;
 	padding:5px;
-	background-color: #333333;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid black;
 }
 
 #logo
@@ -50,7 +51,6 @@
 
 	#header a
 	{
-		color:	white;
 		text-decoration:none;
 	}
 	
@@ -78,9 +78,10 @@
 
 .breadcrumb
 {
-	background-color: #444444;
+	background-color: #FFFFFF;
 	margin-bottom:0;
-	border-radius: 0;	
+	border-radius: 0;
+	border-bottom: 1px solid black;
 }
 
 

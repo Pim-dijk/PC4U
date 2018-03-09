@@ -4,8 +4,9 @@
 	width:100%;
 	height:auto;
 	float:left;
-	background-color: #333333;
+	background-color: #FFFFFF;
 	padding: 25px 0;
+	border-top:1px solid black;
 }
 
 #copyright
@@ -13,7 +14,7 @@
 	padding-top: 70px;
 	padding-left:50px;
 	font-size:12px;
-	color:white;
+	color:black;
 	text-align:center;
 }
 
@@ -31,7 +32,7 @@
 
 #Adress
 {
-	color:white;
+	color:black;
 	padding-left: 25px;
 }
 
@@ -43,10 +44,6 @@
 
 	#footerSocial img
 	{
-		padding:15px
+		height: 32px;
+		width: 32px;
 	}
-
-@media screen and (max-width:566px)
-{
-	
-}

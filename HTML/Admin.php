@@ -68,7 +68,7 @@
 	
 	<div id="AdminServices" class="row">
 		
-		<h2 class="text-center">Services</h2>
+		<h2>Services</h2>
 		<hr>
 		
 		<div>
