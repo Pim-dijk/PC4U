@@ -1,40 +1,74 @@
-<html>
-    <head>
-        <meta charset="UTF-8"></meta>
-        <title>Winkelwagen</title>
-        <link type="text/css" rel="stylesheet" href="css/Opmaak.css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    </head>
-    <body>
-        <div id="container" class="container-fluid">
-            <h1 class="align-center margin-bottom">Winkelwagen</h1>
-            <div class="row">
-                <div id="content">
-                    <form>
-                        <div id="image"><img src="images/chair.jpg" /></div>
-                        <div id="productName"><p>DXRacer Chair</p></div>
-                        <div id="aantal"><input type="number" value="2" class="txt-aantal" style="width: 50px;" /></div>
-                        <div id="verwijderen"><input type="submit" value="Verwijderen" class="btn button-color button-verwijderen" /></div>
-                        <div id="prijs"><p class="align-center">€ 379,99</p></div>
-                        <div id="totaalPrijs"><p class="align-center">€ 759,98</p></div>
-                        <hr style="border-color: black; width: 100%;">
-
-                        <div id="image"><img src="images/laptop.jpg" /></div>
-                        <div id="productName"><p>DXRacer Chair</p></div>
-                        <div id="aantal"><input type="number" value="1" class="txt-aantal" style="width: 50px;" /></div>
-                        <div id="verwijderen"><input type="submit" value="Verwijderen" class="btn button-color button-verwijderen" /></div>
-                        <div id="prijs"><p class="align-center">€ 1200,00</p></div>
-                        <div id="totaalPrijs"><p class="align-center">€ 1200,00</p></div>
-                        <hr style="border-color: black; width: 100%;">
-
-                        <div id="shoppingCart-total">
-                            <p class="bold font-size p-left">Totaal artikelen:</p><p class="font-size p-right">€ 1958,98</p>
-                            <p class="bold font-size p-left">Verzendkosten:</p><p class="font-size p-right">€ 3,50</p>
-                            <input type="submit" value="Bestellen" class="btn button-color" style="float: right; margin: 10px 10px 15px 0px;" />
-                        </div>
-                    </form>
-                </div>
+<?php include 'Header.php'; ?>
+<div id="content">
+    <h1 class="text-center margin-bottom">Winkelwagen</h1>
+    <form action="Overzicht.php">
+        <!-- Artikel 1 -->
+        <div id="winkelwagenDivContainer">
+            <div id="winkelwagenDiv">
+                <img src="images/chair.jpg">
+            </div>
+            <div id="winkelwagenDiv" style="margin-left: 10px;">
+                <p class="bold">Artikelnaam</p>
+                <p class="line-height-75-winkelwagen">DXRacer chair</p>
             </div>
         </div>
-    </body>
-</html>
+        <div id="winkelwagenDivContainer" style="width: 175px;">
+            <div id="winkelwagenDiv" style="width: 75px;">
+                <p class="bold">Aantal</p>
+                <input type="number" name="aantal" value="2">
+            </div>
+            <div id="winkelwagenDiv" style="width: 100px;">
+                <a href="#" class="line-height-125-winkelwagen"><span class="glyphicon glyphicon-trash"> Verwijderen</a>
+            </div>
+        </div>
+        <div id="winkelwagenDivContainer" style="margin-left: 20px;">
+            <div id="winkelwagenDiv">
+                <p class="bold">Prijs</p>
+                <p class="line-height-75-winkelwagen">€ 380,00</p>
+            </div>
+            <div id="winkelwagenDiv">
+                <p class="bold">Totaal prijs</p>
+                <p class="line-height-75-winkelwagen">€ 760,00</p>
+            </div>
+        </div>
+        <hr style="width: 100%; border-color: black;">
+        <!-- Artikel 2 -->
+        <div id="winkelwagenDivContainer">
+            <div id="winkelwagenDiv">
+                <img src="images/laptop.jpg">
+            </div>
+            <div id="winkelwagenDiv" style="margin-left: 10px;">
+                <p class="bold">Artikelnaam</p>
+                <p class="line-height-75-winkelwagen">MSI game laptop</p>
+            </div>
+        </div>
+        <div id="winkelwagenDivContainer" style="width: 175px;">
+            <div id="winkelwagenDiv" style="width: 75px;">
+                <p class="bold">Aantal</p>
+                <input type="number" name="aantal" value="1">
+            </div>
+            <div id="winkelwagenDiv" style="width: 100px;">
+                <a href="#" class="line-height-125-winkelwagen"><span class="glyphicon glyphicon-trash"> Verwijderen</a>
+            </div>
+        </div>
+        <div id="winkelwagenDivContainer" style="margin-left: 20px;">
+            <div id="winkelwagenDiv">
+                <p class="bold">Prijs</p>
+                <p class="line-height-75-winkelwagen">€ 1200,00</p>
+            </div>
+            <div id="winkelwagenDiv">
+                <p class="bold">Totaal prijs</p>
+                <p class="line-height-75-winkelwagen">€ 1200,00</p>
+            </div>
+        </div>
+        <hr style="width: 100%; border-color: black;">
+
+        <!-- Winkelwagen totaal -->
+        <div id="winkelwagenTotaal">
+            <p class="bold winkelwagen-p-left">Totaalprijs:</p><p class="winkelwagen-p-right">€ 1960,00</p>
+            <p class="bold winkelwagen-p-left">Verzendkosten:</p><p class="winkelwagen-p-right">€ 3,50</p>
+            <input type="submit" value="Bestellen" class="btn button-color">
+        </div>
+    </form>
+</div>
+<?php include 'Footer.php'; ?>

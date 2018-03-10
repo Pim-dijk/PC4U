@@ -1,328 +1,162 @@
-form {
+/* Algemeen */
+#content {
+    max-width: 1000px;
     width: 100%;
+    min-height: 600px;
     height: auto;
     overflow: auto;
-    margin: 0;
-    padding: 0;
-}
-img {
-    width: 150px;
-    height: 125px;
+    margin: auto;
 }
 
-#content
-{
-    width: 60%;
-    margin-left: 20%;
-    overflow: auto;
+/* Winkelwagen */
+#winkelwagenDivContainer {
+    width: 310px;
+    height: 125px;
+    float: left;
 }
-#image {
+#winkelwagenDiv {
     width: 150px;
     height: 125px;
     float: left;
 }
-#productName {
+#winkelwagenDiv img {
     width: 150px;
     height: 125px;
-    float: left;
-    line-height: 125px;
-    text-align: center;    
 }
-#aantal {
-    width: 100px;
-    height: 125px;
-    float: left;
-}
-#verwijderen {
-    width: 110px;
-    height: 125px;
-    float: left;
-}
-#prijs {
-    width: 100px;
-    height: 125px;
-    float: left;
-    line-height: 125px;
-}
-#totaalPrijs {
-    width: 100px;
-    height: 125px;
-    float: left;
-    line-height: 125px;
-    margin-bottom: 30px;
-}
-#shoppingCart-total
-{  
-    width: 50%;
-    margin-left: 50%;
-    border: solid black 1px;
-    overflow: auto;
-}
-#artikelnummerOverzicht {
-    width: 150px;
-    height: 50px;
-    float: left;
-    line-height: 50px;
-}
-#artikelnaamOverzicht {
-    width: 150px;
-    height: 50px;
-    float: left;
-    line-height: 50px;
-}
-#aantalOverzicht {
+#winkelwagenDiv input[type="number"] {
     width: 50px;
-    height: 50px;
-    float: left;
-    line-height: 50px;
+    margin-top: 20px;
 }
-#prijsOverzicht {
-    width: 100px;
-    height: 50px;
-    float: left;
-    line-height: 50px;
+#winkelwagenTotaal {
+    width: 40%;
+    height: auto;
+    float: right;
+    overflow: auto;
+    border: solid 1px black;
 }
-#totaalprijsOverzicht {
-    width: 100px;
-    height: 50px;
-    float: left;
-    line-height: 50px;
+#winkelwagenTotaal p {
+    margin: 15px 0px 0px 15px;
+    display: inline-block;
 }
-#btwprijsOverzicht {
-    width: 100px;
-    height: 50px;
+#winkelwagenTotaal input[type="submit"] {
+    float: right;
+    margin: 10px 20px 20px 0px;
+}
+
+/* Winkelwagen overzicht */
+#winkelwagenOverzichtDivContainer {
+    width: 320px;
+    height: auto;
+    overflow: auto;
     float: left;
-    line-height: 50px;
+}
+#winkelwagenOverzichtDiv {
+    width: 150px;
+    height: auto;
+    overflow: auto;
+    float: left;
+    margin-right: 10px;
 }
 #totaalOverzicht {
-    width: 40%;
+    width: 50%;
+    height: auto;
+    overflow: auto;
     float: right;
     border: solid 1px black;
 }
-#item {
-    width: 100%;
-    height: auto;
-    overflow: auto;
+#totaalOverzicht p {
+    margin: 15px 0px 0px 15px;
+    display: inline-block;
 }
-#klantgegevens {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-}
-#betaalMethode {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-}
-#banken {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-}
-#betalen {
-    width: 100%;
-    height: auto;
-    overflow: auto;
+#totaalOverzicht input[type="submit"] {
+    float: right;
+    margin: 10px 20px 20px 0px;
 }
 
-.p {
-    width: 50% !important;
-    margin: 0px 0px 10px 0px;
-    padding: 0px;
+/* Betalen */
+#betalenUitlijningDiv {
+    width: 60%;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+}
+#betalenDiv {
+    width: 100%;
+    height: auto;
+    overflow: auto;
     float: left;
 }
-.font-weight {
+#betalenDiv p {
+    display: inline-block;
+}
+#betalenDiv input[type="submit"] {
+    float: right;
+    margin: 10px 20px 20px 0px;
+}
+
+/* Algemene klassen */
+.h1-margin {
+    margin: 30px 0px 50px 0px;
+}
+.bold {
     font-weight: bold;
-}
-.align-center {
-    text-align: center;
-}
-.margin-bottom {
-    margin-bottom: 20px;    
 }
 .button-color 
 {
     background-color: #FF9900;
 }
-.bold
-{
-    font-weight: bold;
+
+/* Winkelwagen klassen */
+.line-height-75-winkelwagen {
+    line-height: 75px;
 }
-.font-size
-{
-    font-size: 16px;
+.line-height-125-winkelwagen {
+    line-height: 125px;
 }
-.p-left
-{
+.div-width-75-winkelwagen {
+    width: 75px;
+}
+.winkelwagen-p-left {
+    width: 30%;
+}
+.winkelwagen-p-right {
     width: 60%;
-    margin-left: 5%;
-    height: 25px;
-    line-height: 25px;
-    float: left;
-}
-.p-right
-{
-    width: 35%;
-    height: 25px;
-    line-height: 25px;
-    float: right;
-}
-.button-verwijderen {
-    margin-top: 50px;
-}
-.txt-aantal {
-    margin-top: 50px;
-}
-.btn-betalen {
-    background-color: #FF9900;
-    float: right;
-    margin-right: 15px;
-    margin-bottom: 15px;
-}
-.text-align {
-    text-align: center;
-}
-.h1-margin {
-    margin-bottom: 50px;
-}
-.margin-top {
-    margin-top: 0px;
-}
-.p-20 {
-    width: 20% !important;
-    padding: 0px;
-    margin: 0px;
-    float: left;
-}
-.div-margin {
-    margin-bottom: 50px;
 }
 
-@media (max-width: 494px) {
-    .margin-top {
-        margin-top: 15px;
-    }
+/* Winkelwagen overzicht klassen */
+.winkelwagenOverzicht-p-left {
+    width: 60%;
+}
+.winkelwagenOverzicht-p-right {
+    width: 30%;
 }
 
-@media (max-width: 887px) {
-    #totaalPrijs {
-        height: 50px;
-        line-height: 50px;
-    }
+/* Betalen klassen */
+.betalen-p-left {
+    width: 30%;
 }
-@media (max-width: 772px) {
-    #prijs {
-        height: 50px;
-        line-height: 50px;
-    }
-    #totaalPrijs {
-        height: 50px;
-        line-height: 50px;
-    }
+.betalen-p-right {
+    width: 60%;
 }
-@media (max-width: 637px) {
-    #verwijderen {
-        height: 50px;
-        margin: 0;
-    }
-    #prijs {
-        height: 50px;
-        line-height: 50px;
-    }
-    #totaalPrijs {
-        height: 50px;
-        line-height: 50px;
-    }
 
-    .button-verwijderen 
-    {
-        margin-top: 10px;
-    }
-}
-@media (max-width: 600px) {
-    #shoppingCart-total {
+/* Media Betalen */
+@media (max-width: 680px) {
+    #betalenUitlijningDiv {
         width: 100%;
-        margin: 0;
-    }
-}
-
-@media (max-width: 499px) {
-    #aantal {
-        height: 50px;
-        margin: 0;
-    }
-    #verwijderen {
-        height: 50px;
-        margin: 0;
-    }
-    #prijs {
-        height: 50px;
-        line-height: 50px;
-    }
-    #totaalPrijs {
-        height: 50px;
-        line-height: 50px;
     }
 
-    .txt-aantal {
-        margin-top: 15px;
+    .betalen-p-left {
+        width: 20%;
     }
-    .button-verwijderen 
-    {
-        margin-top: 10px;
-    }
-}
-@media (max-width: 374px) {
-    #productName {
-        height: 50px;
-        line-height: 50px;
-    }
-    #aantal {
-        height: 50px;
-        margin: 0;
-    }
-    #verwijderen {
-        height: 50px;
-        margin: 0;
-    }
-    #prijs {
-        height: 50px;
-        line-height: 50px;
-    }
-    #totaalPrijs {
-        height: 50px;
-        line-height: 50px;
-    }
-
-    .txt-aantal {
-        margin-top: 15px;
-    }
-    .button-verwijderen 
-    {
-        margin-top: 10px;
-    }
-}
-
-@media (max-width: 922px) {
-    #totaalAfrekenen {
-        width: 60%;
-    }
-}
-
-@media (max-width: 624px) {
-    #totaalAfrekenen {
-        width: 70%;
-    }
-}
-
-@media (max-width: 539px) {
-    #totaalAfrekenen {
+    .betalen-p-right {
         width: 80%;
     }
 }
-
-@media (max-width: 476px) {
-    #totaalAfrekenen {
-        width: 90%;
+@media (max-width: 600px) {
+    .betalen-p-left {
+        width: 30%;
+    }
+    .betalen-p-right {
+        width: 60%;
     }
 }
