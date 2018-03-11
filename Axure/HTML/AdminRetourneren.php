@@ -1,17 +1,20 @@
 <?php include 'Header.php'; ?>
-<div id="container" class="container-fluid">
-    <div id="content">
-        <h1 class="text-align h1-margin">Admin beheer retourneren</h1>
-        <p class="font-weight P">Retournummer:</p><p class="p">3489234</p>
-        <p class="font-weight P">Voornaam:</p><p class="p">Jan</p>
-        <p class="font-weight P">Tussenvoegsel:</p><p class="p">ter</p>
-        <p class="font-weight P">Achternaam:</p><p class="p">Aardt</p>
-        <p class="font-weight P">Status:</p><p class="p">Testweg</p>
+<div id="content">
+    <div id="retournerenUitlijningDiv">
+        <h1 class="text-center h1-margin">Admin beheer retourneren</h1>
+        <p class="bold retourneren-p-left">Retournummer:</p><p class="retourneren-p-right">3489234</p>
+        <p class="bold retourneren-p-left">Voornaam:</p><p class="retourneren-p-right">Jan</p>
+        <p class="bold retourneren-p-left">Tussenvoegsel:</p><p class="retourneren-p-right">ter</p>
+        <p class="bold retourneren-p-left">Achternaam:</p><p class="retourneren-p-right">Aardt</p>
+        <p class="bold retourneren-p-left">Artikelnummer:</p><p class="retourneren-p-right">09928374</p>
+        <p class="bold retourneren-p-left">Artikelnaam:</p><p class="retourneren-p-right">DXRacer chair</p>
+        <p class="bold retourneren-p-left">Status:</p><p class="retourneren-p-right">Ontvangen</p>
+        
         <hr style="border-color: black; width: 100%">
-        <form>
-            <input type="submit" value="In behandeling" class="btn button-color" style="float:right; margin-left: 15px;"/>
-            <input type="submit" value="Voltooid" class="btn button-color margin-top" style="float:right; margin-left: 15px;"/>
-        </form>
+        
+        <a href="#" class="btn button-color">Aangemeld</a>
+        <a href="#" class="btn button-color">Ontvangen</a>
+        <a href="#" class="btn button-color">Voltooid</a>
     </div>
 </div>
 <?php include 'Footer.php'; ?>

@@ -1,14 +1,14 @@
 <?php include 'Header.php'; ?>
 <div id="content">
-    <h1 class="text-center h1-margin">Admin beheer reparaties overzicht</h1>
+    <h1 class="text-center h1-margin">Admin beheer retourneren overzicht</h1>
 
-    <div id="reparatiesOverzichtUitlijningDiv">
+    <div id="retournerenOverzichtUitlijningDiv">
         <!-- Filter -->
         <form>
             <span class="bold">Filter op status: </span>
-            <select name="reparatiesFilter">
-                <option value="inBehandeling">In behandeling</option>
-                <option value="defect">Defect</option>
+            <select name="retournerenFilter">
+                <option value="inBehandeling">Aangemeld</option>
+                <option value="defect">Ontvangen</option>
                 <option value="voltooid">Voltooid</option>
             </select>
             <input type="submit" value="Filter" class="btn button-color">
@@ -16,16 +16,16 @@
         <hr style="border-color: black; width: 100%;">
 
         <!-- Item 1 -->
-        <div id="reparatiesOverzichtRow">
-            <div id="reparatiesOverzichtRowDiv">
-                <p class="bold">Reparatienummer</p>
-                <a href="AdminReparaties.php">03928375</a>
+        <div id="retournerenOverzichtRow">
+            <div id="retournerenOverzichtRowDiv">
+                <p class="bold">Retournummer</p>
+                <a href="AdminRetourneren.php">3489234</a>
             </div>
-            <div id="reparatiesOverzichtRowDiv">
+            <div id="retournerenOverzichtRowDiv">
                 <p class="bold">Klantnaam</p>
                 <p>Jan ter Aardt</p>
             </div>
-            <div id="reparatiesOverzichtRowDiv" style="width: 120px;">
+            <div id="retournerenOverzichtRowDiv" style="width: 120px;">
                 <a href="AdminReparaties.php" class="btn button-color" style="margin-top: 20px;"><span class="glyphicon glyphicon-trash"></span> Verwijderen</a>
             </div>
         </div>
