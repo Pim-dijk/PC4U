@@ -4,12 +4,16 @@
 	<title>PC4U</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- <script src="js/respond.js"></script>
-	<script src="js/bootstrap-formhelpers-countries.js"></script> -->
+	<!-- Slider -->
 	<link rel="stylesheet" type="text/css" href="slick-1.8.0/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="slick-1.8.0/slick/slick-theme.css"/>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="js/respond.js"></script>
+	<script src="js/bootstrap-formhelpers-countries.js"></script>
+	
 	<!--Stylesheet-->
 	<link type="text/css" rel="stylesheet" href="css/opmaak.css">
 	<link type="text/css" rel="stylesheet" href="css/Header.css">

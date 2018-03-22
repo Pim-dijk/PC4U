@@ -1,4 +1,4 @@
-<div id="FooterContainer" class="row">
+		<div id="FooterContainer" class="row">
 
 			<div id="Adress" class="col-xs-3">
 				<p>Straatnaam hier</p>

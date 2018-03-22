@@ -1,116 +1,168 @@
-@charset "utf-8";
-/* CSS Document */
-html, body {
-	height: auto;
- 	max-width: 1000px;
- 	overflow-x: hidden;
- 	margin: 0 auto;
- 	border:1px solid grey;
+/*Opmaak van de release branch*/
+@font-face
+{
+	font-family:montserrat-bold;
+	src:url(../fonts/Montserrat-Bold.otf);
 }
-div.container {
-    width: 100% !important;
-    margin:0 auto;
+@font-face
+{
+	font-family:header;
+	src:url(../fonts/Myriad%20Pro%20Regular.ttf);
+}
+@font-face
+{
+	font-family:gotham book;
+	src:url(../fonts/Gotham%20Book%20Regular.otf);
+}
+@font-face
+{
+	font-family:gotham book;
+	src:url(../fonts/Gotham%20Book%20Regular.otf);
+	font-weight:bold;
+}
+@font-face
+{
+	font-family:myriad pro;
+	src:url(../fonts/Myriad%20Pro%20Regular.woff);
+	font-weight:bold;
 }
 
-h1 {
-font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-font-size:32px;
-}
-h2 {
-font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-font-size:24px;
-}
-h3 {
-font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-font-size:18px;
-}
-/*Categorie.css*/
-.filtercategorie {
-	width:132px;
-	height:40px;
-	background-color:rgba(255, 153, 0, 1);
-	color: black;
-	border: 1px solid rgba(121, 121, 121, 1);	
-	border-radius: 5px;
-	margin-top:20px;
-	margin-bottom:20px;
-	transition: all 0.3s ease-out;
-}
-#prijzencategorie {
-	margin-top:15px;
-}
-@media screen and (min-width:250px) and (max-width: 550px) {
-	#content {
-		margin-bottom: 15px;
+@keyframes shake
+	{
+		from {transform:rotate(-1deg);}
+		to {transform:rotate(1deg);}
 	}
+
+		.vibrate:hover
+		{
+			animation: shake 10ms infinite;
+		}
+
+body
+{
+	background-color:#FFFFFF;
+	font-family:gotham book;
+	font-weight:normal;
+	font-size:20px;
+	color:black;
+	height:auto;
+	background-image: url(../images/../images/../images/pexels-photo-326240.jpeg);
+	background-repeat: repeat-y;
 }
-@media screen and (min-width:250px) and (max-width: 550px) {
-	#merk, #prijscategorie, #processor, #scherm {
-		display: none;
-	}
-	h3.bold {
-		display:none;
-	}
-	.filtercategorie {
-		margin-top:0px;
-		margin-left:12%;
-	}
+
+.container
+{
+	max-width: 1000px;
+	background-color: #FFFFFF;
+	padding:0;
 }
+
+h1
+{
+	padding:20px;
+	color:#ff6600;
+	margin:0;
+	text-align: center;
+}
+
+h2
+{
+	padding:10px;
+	color:#ff9900;
+	text-align: center;
+}
+
+h3
+{
+	text-align: center;
+	color:#ff9900;
+	font-family:gotham book;
+	padding:10px;
+	margin:0;
+}
+
+p
+{
+	font-size:15px;
+	font-family:gotham book;
+}
+
+hr
+{
+	width: 100%;
+	border-color: #ff9900;
+}
+
+a:link
+{
+	color:#ff6600;
+}
+
+a:visited
+{
+	color:#ff6600;
+}
+
+a:hover
+{
+	color:#ff9900;
+}
+#visibleform {
+	height: 1000px;
+}
+/*Text align center gewijzigd*/
+.overzichtpagina h2,h3 {
+	text-align: left;
+	padding-top:10px !important;
+	padding:0px;
+}
+.productenpagina h1 { 
+	text-align: left !important;
+}
+.productenpagina h2 {
+	text-align: left !important;
+	padding:0px;
+}
+.productenpagina h3 {
+	text-align: left;
+	padding-top: 20px !important;
+	padding:0px;
+}
+.categoriepagina h2,h3 {
+	text-align:left !important;
+	padding:0px;
+	padding-top:10px !important;
+}
+
 
 /*Overzicht.css*/
-.filteroverzicht {
-	width:132px;
-	height:40px;
-	background-color:rgba(255, 153, 0, 1);
-	color: black;
-	border: 1px solid rgba(121, 121, 121, 1);	
-	border-radius: 5px;
-	margin-top:20px;
-	margin-bottom:20px;
-	transition: all 0.3s ease-out;
-}
-#contentoverzicht {
-	float:left;
-}
-#prijzenoverzicht {
-	margin-top:15px;
-}
-@media screen and (min-width:250px) and (max-width: 550px) {
-	#contentoverzicht {
-		margin-bottom: 15px;
-	}
-}
-@media screen and (min-width:250px) and (max-width: 550px) {
+@media screen and (min-width:100px) and (max-width: 550px) {
 	#merk, #prijsoverzicht, #processor, #scherm {
 		display: none;
 	}
-	h3.bold {
+	.filter {
 		display:none;
-	}
-	.filteroverzicht {
 		margin-top:0px;
 		margin-left:12%;
 	}
+	#laptops {
+		margin-bottom: 15px;
+	}
+	.removemobile {
+		display:none !important;
+	}
 }
-
+@media screen and (min-width:551px) {
+	.filterpopup {
+		display:none;
+	}
+}
 /*Products.css*/
-.border {
+.bodyborder {
     border: 1px solid grey;
 }
-.margintop {
+.margintopafbeelding {
 	margin-top:30px;
-}
-.center {
-	text-align:center;
-}
-.bold {
-	font-weight: bold;
-}
-.slider-nav {
-	width: 100%;
-}
-#content {
-	float: left;
 }
 .filter {
 	width:132px;
@@ -127,7 +179,7 @@ font-size:18px;
 	font-size:14px;
 	font-weight: bold;
 }
-#text {
+#productomschrijving {
 	margin-top:15px;
 }
 #prijzen {
@@ -139,15 +191,8 @@ font-size:18px;
 	width: 53%;
 	margin:0 auto;
 }
-.images {
+.sliderafbeeldingen {
 	margin-left: 25px;
-}
-#alles {
-	float:left;
-}
-.marginleft {
-	margin-left:10px;
-	margin-right:10px;
 }
 @media screen and (min-width:250px) and (max-width: 800px) {
 	#prijzen {
@@ -160,23 +205,6 @@ font-size:18px;
 	margin:0 auto;
 	}
 }
-@media screen and (min-width:250px) and (max-width: 550px) {
-	#content {
-		margin-bottom: 15px;
-	}
-}
-@media screen and (min-width:250px) and (max-width: 550px) {
-	#merk, #prijs, #processor, #scherm {
-		display: none;
-	}
-	h3.bold {
-		display:none;
-	}
-	.filter {
-		margin-top:0px;
-		margin-left:12%;
-	}
-}
 .link {
 	color:#FF6600; 
 }
@@ -184,31 +212,19 @@ font-size:18px;
 	color:#FF6600;
 	text-decoration: none;
 }
-.meer {
-	color:#FF6600;
-	text-decoration: underline;
-}
-.meer:hover {
-	color: #FF6600;
-}
 .slick-prev:before, .slick-next:before {
 	color:black !important;
 }
 .slick-slide {
 	height:auto;
 }
-
-
 /*Retourneren.css*/
-.marginleft {
-margin-left:20px;
-}
 .orangeunderline {
 	color:#FF6600;
 	text-decoration:underline;	
 }
-.button {
-	width:132px;
+.voegtoebutton {
+	width:167px;
 	height:40px;
 	background-color:rgba(255, 153, 0, 1);
 	color: black;
@@ -217,30 +233,8 @@ margin-left:20px;
 	margin-top:20px;
 	margin-bottom:20px;
 }
-
-#content {
-	float: left;
-}
 .floatleft {
 	float:left;
 }
 
-textarea {
-	-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 38.5%;
-}
-/*@media screen and (min-width:250px) and (max-width: 992px) {
-	.floatleft {
-		float:none;
-	}
-	.marginleft {
-		margin-left: 0px;
-		margin-top:10px;
-	}
-	textarea {
-		width: 100%;
-	}
-}*/
 
