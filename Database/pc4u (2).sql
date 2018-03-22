@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2018 at 11:18 AM
+-- Generation Time: Mar 22, 2018 at 09:40 AM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.0.20
 
@@ -38,7 +38,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`CategoryID`, `Category`) VALUES
-(1, 'Processor');
+(1, 'Processor'),
+(2, 'Hardeschijf'),
+(3, 'Kast');
 
 -- --------------------------------------------------------
 
@@ -70,12 +72,12 @@ CREATE TABLE `customers` (
 --
 
 CREATE TABLE `products` (
-  `ID` int(8) NOT NULL,
+  `ProductID` int(8) NOT NULL,
   `CategoryID` int(8) DEFAULT NULL,
   `ArtNumber` int(8) NOT NULL,
   `ArtName` varchar(40) NOT NULL,
   `Description` text NOT NULL,
-  `Price` decimal(10,0) NOT NULL,
+  `Price` decimal(10,2) NOT NULL,
   `Availability` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -83,9 +85,8 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`ID`, `CategoryID`, `ArtNumber`, `ArtName`, `Description`, `Price`, `Availability`) VALUES
-(5, NULL, 546, 'bhsfja', '', '0', 0),
-(156, 0, 16516, 'hsagjhasjsa', '', '0', 0);
+INSERT INTO `products` (`ProductID`, `CategoryID`, `ArtNumber`, `ArtName`, `Description`, `Price`, `Availability`) VALUES
+(1, 1, 123456789, 'Cheddar', 'This is cheddar cheese', '70.00', 1);
 
 --
 -- Indexes for dumped tables
@@ -107,7 +108,7 @@ ALTER TABLE `customers`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`ID`),
+  ADD PRIMARY KEY (`ProductID`),
   ADD KEY `categoryID` (`CategoryID`);
 
 --
@@ -118,7 +119,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `customers`
 --
@@ -128,7 +129,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;COMMIT;
+  MODIFY `ProductID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

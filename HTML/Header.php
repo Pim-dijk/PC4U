@@ -1,3 +1,5 @@
+<?php include 'initialize.php'; ?>
+
 <!doctype html>
 <html>
 <meta charset="utf-8">
