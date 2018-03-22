@@ -1,10 +1,10 @@
 <?php
 class Image extends DatabaseObject {
     protected static $table_name = "images";
-    protected static $db_fields =array('ImageID', 'ProductID', 'Image');
+    protected static $db_fields =array('ImageID', 'ProductID', 'Location');
     public $ImageID;
     public $ProductID;
-    public $Image;
+    public $Location;
 
     //common database methods zitten in de database_object
 }

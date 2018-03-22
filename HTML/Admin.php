@@ -78,7 +78,26 @@
 		</div>
 	<!--/Admin Services-->
 	</div>
-	
+
+    <div id="AdminRegisterAdmin" class="row">
+        <h2 class="text-center">Register new admin</h2>
+        <hr>
+        <div>
+            <form class="center-block myForm needs-validation">
+                <div class="form-group col-sm-6 col-xs-12">
+                    <label for="Email">Email</label>
+                    <input type="email" class="form-control" id="Email" placeholder="Email" required>
+                </div>
+                <div class="form-group col-sm-6 col-xs-12">
+                    <label for="Password">Wachtwoord</label>
+                    <input type="password" class="form-control" id="Password" placeholder="Wachtwoord" required>
+                </div>
+
+                <button type="submit" name="RegisterAdmin" class="btn btn-default">Toevoegen</button>
+            </form>
+        </div>
+    </div>
+
 </div>
 
 <!--/End Content-->

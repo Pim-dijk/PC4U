@@ -26,17 +26,6 @@
 	font-weight:bold;
 }
 
-@keyframes shake
-	{
-		from {transform:rotate(-1deg);}
-		to {transform:rotate(1deg);}
-	}
-
-		.vibrate:hover
-		{
-			animation: shake 10ms infinite;
-		}
-
 body
 {
 	background-color:#222222 !important;
@@ -54,6 +43,11 @@ body
 	max-width: 1000px;
 	background-color: #4F4F4F;
 	padding:0;
+}
+
+.breadcrumb li
+{
+	font-size: 14px;
 }
 
 h1
@@ -107,6 +101,7 @@ a:hover
 	color:#ff9900;
 }
 
+/*My form styling*/
 .myForm
 {
 	max-width:75% !important;
@@ -127,7 +122,7 @@ a:hover
 }
 
 .form-group.required .control-label:after { 
-	content:" *";
+	content:"*";
 	color:red;
 }
 
@@ -136,6 +131,7 @@ a:hover
 	padding:0 25px 25px 25px;
 }
 
+/*Customer page*/
 #Customer form
 {
 	margin:25px;
@@ -146,6 +142,7 @@ a:hover
 	margin:15px auto;
 }
 
+/*Order History page*/
 #OrderHistory table
 {
 	margin:0 auto;
@@ -165,11 +162,29 @@ a:hover
 	padding-bottom:5px;
 }
 
-.breadcrumb li
+/*Admin Edit product*/
+#EditProduct select
 {
-	font-size: 14px;
+	color: black !important;
+	display:block;
 }
 
+#image_data
+{
+	max-width: 75%;
+	display: block;
+	margin: 0 auto;
+}
+
+#image_data img
+{
+	margin: 10px;
+	width: 200px;
+	height: 150px;
+	float: left;
+}
+
+/*Change table to cards at or below 768px*/
 @media screen and (max-width:768px)
 {
 	table

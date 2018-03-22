@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2018 at 09:40 AM
+-- Generation Time: Mar 22, 2018 at 03:34 PM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.0.20
 
@@ -30,17 +30,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categories` (
   `CategoryID` int(11) NOT NULL,
-  `Category` varchar(48) NOT NULL
+  `Category` varchar(48) NOT NULL,
+  `Properties` varchar(1024) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`CategoryID`, `Category`) VALUES
-(1, 'Processor'),
-(2, 'Hardeschijf'),
-(3, 'Kast');
+INSERT INTO `categories` (`CategoryID`, `Category`, `Properties`) VALUES
+(1, 'Processor', ''),
+(2, 'Hardeschijf', ''),
+(3, 'Kast', ''),
+(4, 'Laptop', '{\r\n  \"fields\":[\r\n    {\r\n      \"key\":\"description\",\r\n      \"value\":\"This is a textarea, deal with it.\",\r\n      \"is_text_area\":1\r\n    },\r\n    {\r\n      \"key\":\"CPU\",\r\n      \"value\":\"I5\",\r\n      \"is_text_area\":0\r\n    },\r\n    {\r\n      \"key\":\"Size\",\r\n      \"value\":\"15 inch\",\r\n      \"is_text_area\":0\r\n    }\r\n  ]\r\n}');
 
 -- --------------------------------------------------------
 
@@ -78,15 +80,16 @@ CREATE TABLE `products` (
   `ArtName` varchar(40) NOT NULL,
   `Description` text NOT NULL,
   `Price` decimal(10,2) NOT NULL,
-  `Availability` int(2) NOT NULL
+  `Availability` int(2) NOT NULL,
+  `Brand` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`ProductID`, `CategoryID`, `ArtNumber`, `ArtName`, `Description`, `Price`, `Availability`) VALUES
-(1, 1, 123456789, 'Cheddar', 'This is cheddar cheese', '70.00', 1);
+INSERT INTO `products` (`ProductID`, `CategoryID`, `ArtNumber`, `ArtName`, `Description`, `Price`, `Availability`, `Brand`) VALUES
+(1, 4, 987654321, 'Cheddar', 'This is cheddar cheese, or is it?!', '55.00', 0, '');
 
 --
 -- Indexes for dumped tables
@@ -119,7 +122,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `customers`
 --

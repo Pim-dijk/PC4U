@@ -12,6 +12,23 @@ class Product extends DatabaseObject {
 
     //common database methods zitten in de database_object
 
+    public
+    function update() {
+        global $database;
+
+        $attributes = $this->sanitized_attributes();
+        $attributes_pairs =  array();
+        foreach($attributes as $key => $value){
+            $attributes_pairs[] = "{$key}='{$value}'";
+        }
+
+        $sql = "UPDATE ".static::$table_name." SET ";
+        $sql .= join(", ", $attributes_pairs);
+        $sql .= " WHERE `ProductID`=". $database->escape_value($this->ProductID);
+        $database->query($sql);
+        return($database->affected_rows($sql) == 1) ? true : false;
+    }
+
 }
 
 $product = new Product();
