@@ -1,0 +1,49 @@
+#FooterContainer
+{
+	max-width:1000px;
+	width:100%;
+	height:auto;
+	float:left;
+	background-color: #FFFFFF;
+	padding: 25px 0;
+	border-top:1px solid black;
+}
+
+#copyright
+{
+	padding-top: 70px;
+	padding-left:50px;
+	font-size:12px;
+	color:black;
+	text-align:center;
+}
+
+#subMenu li
+{
+	font-size: 14px;
+	list-style-type: none;
+	color:#ff6600;
+}
+
+#subMenu a:hover
+{
+	text-decoration: none;
+}
+
+#Adress
+{
+	color:black;
+	padding-left: 25px;
+}
+
+#footerSocial
+{
+	padding-left:50px;
+	padding-top:50px;
+}
+
+	#footerSocial img
+	{
+		height: 32px;
+		width: 32px;
+	}
