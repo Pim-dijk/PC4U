@@ -48,8 +48,9 @@
 		</div>
 	<!--/container-->
 	</div>
-	
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!--Include jQuery and jQuery.Forms from cdn-->
+
 	<script src="js/hamburger.js"></script>
 </body>
 	
