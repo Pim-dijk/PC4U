@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2018 at 10:28 AM
+-- Generation Time: Mar 23, 2018 at 10:32 AM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.0.20
 
@@ -70,6 +70,27 @@ CREATE TABLE `customers` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `ImageID` int(10) NOT NULL,
+  `ProductID` int(10) NOT NULL,
+  `Location` varchar(256) NOT NULL,
+  `Featured` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`ImageID`, `ProductID`, `Location`, `Featured`) VALUES
+(6, 1, 'images/Products/Cover.jpg', 0),
+(17, 1, 'images/Products/Fire_Spirit-1-150x150.jpg', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
@@ -110,6 +131,13 @@ ALTER TABLE `customers`
   ADD PRIMARY KEY (`CustomerID`);
 
 --
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`ImageID`),
+  ADD KEY `ProductID` (`ProductID`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -131,10 +159,25 @@ ALTER TABLE `categories`
 ALTER TABLE `customers`
   MODIFY `CustomerID` int(10) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `ImageID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `ProductID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;COMMIT;
+  MODIFY `ProductID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `images`
+--
+ALTER TABLE `images`
+  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `products` (`ProductID`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
