@@ -162,7 +162,7 @@ $( document ).ready(function()
                     <p class="help-block">Selecteer hier de afbeeldingen voor bij het product</p>
                 </div>
 
-                <button type="submit" class="btn btn-default" name="EditProduct">Wijzigen</button>
+                <button type="submit" class="btn btn-default" name="EditProduct">Toepassen</button>
             </form>
 
             <div id="image_data">

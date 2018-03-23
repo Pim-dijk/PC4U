@@ -1,4 +1,11 @@
-<?php include 'initialize.php'; ?>
+<?php
+include('initialize.php');
+$query = "SELECT * FROM categories";
+$result = $database->query($query);
+$menu = array();
+
+
+?>
 
 <!doctype html>
 <html>
@@ -10,24 +17,20 @@
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<script src="js/respond.js"></script>
-	<script src="js/bootstrap-formhelpers-countries.js"></script>
 	
 	<!--Stylesheet-->
 	<link type="text/css" rel="stylesheet" href="css/opmaak.css">
 	<link type="text/css" rel="stylesheet" href="css/Header.css">
 	<link type="text/css" rel="stylesheet" href="css/Footer.css">
-
-    <!--Include jQuery from cdn-->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script> src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"</script>
-
+	
+<!--Body-->
 <body>
 	<div class="container">
 		<!--Header-->
 		<div id="headerContainer" class="row">
 			<!--Logo-->
 			<div class="col-xs-12">
-				<a href="#">
+				<a href="Index.php">
 					<img id="logo" src="images/Header/logo.png" class="">
 				</a>
 
@@ -45,34 +48,44 @@
 				<div class="line"></div>
 				<div class="line"></div>
 			</div>
+	
 			
 			<!--Nav section-->
 			<nav id="header" class="">
 				<ul>
-				  <a href="#">
-					<li>Aanbiedingen</li>
-				  </a> 
-				  <a href="#">
-					<li>Componenten</li>
-				  </a> 
-				  <a href="#">
-					<li>Software</li>
-				  </a> 
-				  <a href="#">
-					<li>Randapparatuur</li>
-				  </a> 
-				  <a href="#">
-					<li>Systemen</li>
-				  </a> 
-				  <a href="#">
-					<li>Service</li>
-				  </a> 
-				  <a href="#">
-					<li>Contact</li>
-				  </a>
-				  <a href="Login.php">
-					<li class="loginButton pull-right">Login</li>
-				  </a>
+                    <a href="#">
+                        <li>Aanbiedingen</li>
+                    </a>
+
+                    <div class="dropdown">
+                        <li class="dropbtn">Componenten</li>
+                        <div id="myDropdown" class="dropdown-content">
+                            <?php
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo '<a href="categorieen-page.php?id=' . $row['Category'] . '"><li>' . $row['Category'] . '</li></a>';
+                            }
+                            ?>
+                        </div>
+                    </div>
+
+                    <a href="#">
+                        <li>Software</li>
+                    </a>
+                    <a href="#">
+                        <li>Randapparatuur</li>
+                    </a>
+                    <a href="#">
+                        <li>Systemen</li>
+                    </a>
+                    <a href="#">
+                        <li>Service</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact</li>
+                    </a>
+                    <a href="Login.php">
+                        <li class="loginButton pull-right">Login</li>
+                    </a>
 				</ul>
 			<!--/nav - header--> 
 			</nav>

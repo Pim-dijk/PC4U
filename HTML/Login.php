@@ -1,5 +1,7 @@
 <!--Include Header-->
-<?php include 'Header.php'; ?>
+<?php include 'Header.php';
+	  require_once( "initialize.php" );	
+?>
 
 <!--Page content goes here!!!-->
 <div id="Login" class="row content">
@@ -8,14 +10,14 @@
 		<h3>Login</h3>
 
 		<!--Login Form-->
-		<form class="center-block loginForm needs-validation">
+		<form class="center-block loginForm needs-validation" action="PhpInlog.php" method="POST">
 			<div class="form-group">
 				<label for="Email">Email address</label>
-				<input type="email" class="form-control" id="Email" placeholder="Email" required>
+				<input type="email" class="form-control" name="email" id="Email" placeholder="Email" required>
 			</div>
 			<div class="form-group">
 				<label for="Password">Password</label>
-				<input type="password" class="form-control" id="Password" placeholder="Password" required>
+				<input type="password" class="form-control" name="password" id="Password" placeholder="Password" required>
 			</div>
 			
 			<div>
@@ -25,7 +27,7 @@
 				<p>Wachtwoord vergeten? klik <a href="ResetPassword.php" class="Link">hier</a></p>
 			</div>
 
-			<button type="submit" class="btn btn-default">Login</button>
+			<button type="submit" name="submit" class="btn btn-default">Login</button>
 		</form>
 	</div>
 
