@@ -50,8 +50,7 @@
 	</div>
 
     <!--Include jQuery and jQuery.Forms from cdn-->
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script> src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"</script>
+
 	<script src="js/hamburger.js"></script>
 </body>
 	

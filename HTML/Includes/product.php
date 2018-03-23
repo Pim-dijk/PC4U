@@ -1,7 +1,7 @@
 <?php
 class Product extends DatabaseObject {
     protected static $table_name = "products";
-    protected static $db_fields =array('ProductID', 'CategoryID', 'ArtNumber', 'ArtName', 'Description', 'Price' , 'Availability');
+    protected static $db_fields =array('ProductID', 'CategoryID', 'ArtNumber', 'ArtName', 'Description', 'Price' , 'Availability', 'Brand', 'Property1', 'Property2');
     public $ProductID;
     public $CategoryID;
     public $ArtNumber;
@@ -9,6 +9,9 @@ class Product extends DatabaseObject {
     public $Description;
     public $Price;
     public $Availability;
+    public $Brand;
+    public $Property1;
+    public $Property2;
 
     //common database methods zitten in de database_object
 

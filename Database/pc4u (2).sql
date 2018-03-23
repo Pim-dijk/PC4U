@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2018 at 03:34 PM
+-- Generation Time: Mar 23, 2018 at 10:28 AM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.0.20
 
@@ -39,10 +39,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`CategoryID`, `Category`, `Properties`) VALUES
-(1, 'Processor', ''),
-(2, 'Hardeschijf', ''),
-(3, 'Kast', ''),
-(4, 'Laptop', '{\r\n  \"fields\":[\r\n    {\r\n      \"key\":\"description\",\r\n      \"value\":\"This is a textarea, deal with it.\",\r\n      \"is_text_area\":1\r\n    },\r\n    {\r\n      \"key\":\"CPU\",\r\n      \"value\":\"I5\",\r\n      \"is_text_area\":0\r\n    },\r\n    {\r\n      \"key\":\"Size\",\r\n      \"value\":\"15 inch\",\r\n      \"is_text_area\":0\r\n    }\r\n  ]\r\n}');
+(1, 'Processor', '{\r\n	\"fields\": [{\r\n			\"key\": \"Snelheid\",\r\n			\"value\": \"\"\r\n		},\r\n		{\r\n			\"key\": \"Boxed\",\r\n			\"value\": \"\"\r\n		}\r\n	]\r\n}'),
+(2, 'Hardeschijf', '{\r\n	\"fields\": [{\r\n			\"key\": \"Capaciteit\",\r\n			\"value\": \"\"\r\n		},\r\n		{\r\n			\"key\": \"Snelheid\",\r\n			\"value\": \"\"\r\n		}\r\n	]\r\n}'),
+(3, 'Kast', '{\r\n	\"fields\": [{\r\n			\"key\": \"Formfactor\",\r\n			\"value\": \"\"\r\n		},\r\n		{\r\n			\"key\": \"Met voeding\",\r\n			\"value\": \"\"\r\n		}\r\n	]\r\n}'),
+(4, 'Laptop', '{\r\n	\"fields\": [{\r\n			\"key\": \"CPU\",\r\n			\"value\": \"\"\r\n		},\r\n		{\r\n			\"key\": \"Size\",\r\n			\"value\": \"\"\r\n		}\r\n	]\r\n}');
 
 -- --------------------------------------------------------
 
@@ -81,15 +81,17 @@ CREATE TABLE `products` (
   `Description` text NOT NULL,
   `Price` decimal(10,2) NOT NULL,
   `Availability` int(2) NOT NULL,
-  `Brand` varchar(100) NOT NULL
+  `Brand` varchar(100) NOT NULL,
+  `Property1` varchar(100) NOT NULL,
+  `Property2` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`ProductID`, `CategoryID`, `ArtNumber`, `ArtName`, `Description`, `Price`, `Availability`, `Brand`) VALUES
-(1, 4, 987654321, 'Cheddar', 'This is cheddar cheese, or is it?!', '55.00', 0, '');
+INSERT INTO `products` (`ProductID`, `CategoryID`, `ArtNumber`, `ArtName`, `Description`, `Price`, `Availability`, `Brand`, `Property1`, `Property2`) VALUES
+(1, 4, 987654321, 'Cheddar', 'This is cheddar cheese, or is it?!', '249.95', 0, 'Lenovo', '3.5Ghz', 'Nee');
 
 --
 -- Indexes for dumped tables

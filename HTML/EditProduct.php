@@ -2,18 +2,22 @@
 
     //If image preview is on, hide the other images
     $image_preview = 0;
+
+    if(isset($_GET['id']))
+    {
+        $CategoryID = $_GET['id'];
+        //fire query using this id and get the name of employee and echo it
+        //Get the category name associated from the category table
+        $query = "SELECT * FROM Categories WHERE CategoryID = $CategoryID";
+        $result = $category->find_by_sql($query);
+        $category = $result[0];
+        $json = $category->Properties;
+        $decoded_json = json_decode($json,true)["fields"];
+    }
 ?>
 
 <!--jQuery script for uploading and previewing multiple images-->
 <script>
-
-$(document).ready(function()
-    {
-    $('form').ajaxForm(function()
-    {
-        alert("Uploaded SuccessFully");
-    });
-});
 
 function preview_image()
 {
@@ -24,14 +28,18 @@ function preview_image()
     {
         $('#image_data').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'>");
     }
-    $image_preview = 1;
 }
 
-function retrieve_category()
+$( document ).ready(function()
 {
-    var categoryID = document.getElementById("Category");
-}
-
+    $("#Category").on("change", function()
+    {
+        console.log("Hello");
+        var selected_id = $("#Category").val();
+        var data = {id:selected_id};
+        window.location = "EditProduct.php?id=" + selected_id;
+    });
+});
 </script>
 
 
@@ -44,14 +52,17 @@ function retrieve_category()
     $result = $product->find_by_sql($query);
     //First product in array, returns objects in array
     $product = $result[0];
-    //Get the category name associated from the category table
-    $query = "SELECT * FROM Categories WHERE CategoryID = $product->CategoryID";
-    $result = $category->find_by_sql($query);
-    $category = $result[0];
-    $json = $category->Properties;
-    $decoded_json = json_decode($json,true)["fields"];
-//    print_r($decoded_json);
-//    exit;
+
+    if(!isset($CategoryID))
+    {
+        //Get the category name associated from the category table
+        $query = "SELECT * FROM Categories WHERE CategoryID = $product->CategoryID";
+        $result = $category->find_by_sql($query);
+        $category = $result[0];
+        $json = $category->Properties;
+        $decoded_json = json_decode($json,true)["fields"];
+    }
+
     //Get the images from the product
     $query = "SELECT * FROM Images WHERE ProductID = $product->ProductID";
     $images = $image->find_by_sql($query);
@@ -61,7 +72,6 @@ function retrieve_category()
 
 //    Get a list of categories
     $categories = $database->query("SELECT * FROM categories");
-
 
 ?>
 
@@ -84,22 +94,40 @@ function retrieve_category()
                     <input type="text" class="form-control" id="ArtName" name="ArtName" placeholder="Artikelnaam" value="<?php echo $product->ArtName ?>" required>
                 </div>
                 <div class="form-group col-sm-3 col-xs-12">
-                    <label for="Price">Prijs</label>
-                    <input type="number" class="form-control" id="Price" name="Price" placeholder="Prijs" value="<?php echo (int)$product->Price ?>" required>
+                    <label for="Brand">Merk</label>
+                    <input type="text" class="form-control" id="Brand" name="Brand" placeholder="Merk" value="<?php echo $product->Brand ?>" required>
                 </div>
-                <div class="form-group col-sm-9 col-xs-12">
+                <div class="form-group col-sm-3 col-xs-12">
+                    <label for="Price">Prijs</label>
+                    <input type="number" class="form-control" id="Price" step="any" min="0" name="Price" placeholder="Prijs" value="<?php echo $product->Price ?>" required>
+                </div>
+                <div class="form-group col-sm-6 col-xs-12">
                     <label for="Category">Categorie</label>
-                    <select class="form-control" id="Category" name="Category" onchange="retrieve_category();" required>
+                    <select class="form-control" id="Category" name="Category" required>
                         <?php
 
                         while ($row = $categories->fetch_assoc()) {
-                            if($row['CategoryID'] == $product->CategoryID)
+                            if(!isset($CategoryID))
                             {
-                                echo '<option value="'.$row['CategoryID'].'" selected>'.$row['Category'].'</option>';
+                                if($row['CategoryID'] == $product->CategoryID)
+                                {
+                                    echo '<option value="'.$row['CategoryID'].'" selected>'.$row['Category'].'</option>';
+                                }
+                                else
+                                {
+                                    echo '<option value="'.$row['CategoryID'].'">'.$row['Category'].'</option>';
+                                }
                             }
                             else
                             {
-                                echo '<option value="'.$row['CategoryID'].'">'.$row['Category'].'</option>';
+                                if($row['CategoryID'] == $CategoryID)
+                                {
+                                    echo '<option value="'.$row['CategoryID'].'" selected>'.$row['Category'].'</option>';
+                                }
+                                else
+                                {
+                                    echo '<option value="'.$row['CategoryID'].'">'.$row['Category'].'</option>';
+                                }
                             }
                         }
                         ?>
@@ -107,14 +135,20 @@ function retrieve_category()
                 </div>
 <!--Foreach Property of the category, create a inputfield-->
                 <?php
-                foreach($decoded_json as $value)
+                if(!empty($decoded_json))
                 {
-                ?>
-                    <div class="form-group">
-                        <label for="<?=$value["key"]?>"><?=$value["key"]?></label>
-                        <<?=$value["is_text_area"] == 1 ? "textarea": "input"?> type="text" value="<?=$value["value"]?>" id="<?=$value["key"]?>" class="form-control"><?=$value["is_text_area"] == 1 ? "</textarea>": ""?>
-                    </div>
-                <?php
+                    $PropertyLabel1 = $decoded_json['0']["key"];
+                    $PropertyLabel2 = $decoded_json['1']["key"];
+                    ?>
+                        <div class="form-group">
+                            <label for="<?=$PropertyLabel1?>"><?=$PropertyLabel1?></label>
+                            <input type="text" value="<?=$product->Property1?>" id="<?=$PropertyLabel1?>" name="Property1" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="<?=$PropertyLabel2?>"><?=$PropertyLabel2?></label>
+                            <input type="text" value="<?=$product->Property2?>" id="<?=$PropertyLabel2?>" name="Property2" class="form-control" />
+                        </div>
+                    <?php
                 }
                 ?>
 

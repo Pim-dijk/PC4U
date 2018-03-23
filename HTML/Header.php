@@ -16,8 +16,11 @@
 	<link type="text/css" rel="stylesheet" href="css/opmaak.css">
 	<link type="text/css" rel="stylesheet" href="css/Header.css">
 	<link type="text/css" rel="stylesheet" href="css/Footer.css">
-	
-<!--Body-->
+
+    <!--Include jQuery from cdn-->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script> src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"</script>
+
 <body>
 	<div class="container">
 		<!--Header-->
