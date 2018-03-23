@@ -26,7 +26,6 @@
 	font-weight:bold;
 }
 
-
 body
 {
 	background-color:#222222 !important;
@@ -119,7 +118,7 @@ a:hover
 }
 
 .form-group.required .control-label:after { 
-	content:" *";
+	content:"*";
 	color:red;
 }
 

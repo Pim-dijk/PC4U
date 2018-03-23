@@ -9,8 +9,11 @@ include("Includes/database.php");
       
       $myemail = mysql_real_escape_string($_POST['email']);
       $mypassword = mysql_real_escape_string($_POST['password']); 
-      
-      $sql = "SELECT * FROM accountgegevens WHERE email= '$myemail' AND wachtwoord= '$mypassword'";
+		  
+		$salted = "8723687hdwuyu2ygeou".$_POST['password']."78t127438crb78oet8";
+		$hashed = hash("sha512", $salted);
+		  
+      $sql = "SELECT * FROM customers WHERE email = '$myemail' AND password	 = '$hashed'";
       $result = $database->query($sql);
       $row = $result->num_rows;
       $active = $row['active'];

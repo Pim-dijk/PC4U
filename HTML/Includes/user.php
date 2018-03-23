@@ -2,13 +2,21 @@
 
 class User extends DatabaseObject {
 
-	protected static $table_name = "users";
-	protected static $db_fields =array('id', 'username', 'password', 'first_name', 'last_name');
-	public $id;
-	public $username;
-	public $password;
-	public $first_name;
-	public $last_name;
+	protected static $table_name = "customers";
+	protected static $db_fields =array('CustomerID', 'Email', 'Password', 'PhoneNumber', 'Street', 'Zipcode', 'HouseNumber', 'HNAddition', 'City', 'Country', 'Private', 'Initials',  'Lastname', 'DOB');
+	public $CustomerID = "";
+	public $Email = "";
+	public $Password = "";
+	public $PhoneNumber = "";
+	public $Street = "";
+	public $Zipcode = "";
+	public $HouseNumber = "";
+	public $HNAddition = "";
+	public $City = "";
+	public $CountryList = "";
+	public $Private = "";
+	public $Lastname = "";
+	public $DOB = "";
 
 	public
 	function full_name() {
@@ -38,8 +46,26 @@ class User extends DatabaseObject {
 
 	}
 	
-	
+	 public
+	function create() {
+		global $database;
+			$attributes = $this->sanitized_attributes();
+			$sql = "INSERT INTO ".static::$table_name." (";
+			$sql .= join(", ", array_keys($attributes));
+			$sql .= ") VALUES ('";
+			$sql .= join("', '", array_values($attributes));
+			$sql .= "')";
+			if($database->query($sql)){
+				$this->CustomerID = $database->insert_id();
+				return true;
+				
+			}else{
+				return false;
+			}
+	}
+
 	//common database methods zitten in de database_object
 	
 }
+$user = new User();
 ?>

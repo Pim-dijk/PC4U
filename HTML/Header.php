@@ -1,3 +1,12 @@
+<?php
+include('initialize.php');
+$query = "SELECT * FROM categories";
+$result = $database->query($query);
+$menu = array();
+
+
+?>
+
 <!doctype html>
 <html>
 <meta charset="utf-8">
@@ -39,6 +48,7 @@
 				<div class="line"></div>
 				<div class="line"></div>
 			</div>
+	
 			
 			<!--Nav section-->
 			<nav id="header" class="">
@@ -46,9 +56,22 @@
 				  <a href="#">
 					<li>Aanbiedingen</li>
 				  </a> 
-				  <a href="#">
-					<li>Componenten</li>
-				  </a> 
+<!--				  <a href="#">-->
+<!--					<li>Componenten</li>-->
+<!--				  </a>-->
+		  				
+			  					  <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Componenten</button>
+  <div id="myDropdown" class="dropdown-content">
+  <?php
+ while ($row = mysqli_fetch_assoc($result)) {
+	 
+	echo '<a href="categorieen-page.php?id='. $row['Category'] . '">' . $row['Category'] . '</a>';
+	
+} 
+ ?>
+  </div>
+</div>
 				  <a href="#">
 					<li>Software</li>
 				  </a> 
