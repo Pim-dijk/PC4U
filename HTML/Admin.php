@@ -40,7 +40,7 @@
 	<div id="AddProduct" class="row">
 		<h3>Product toevoegen</h3>
 		
-		<form class="center-block myForm needs-validation" name="AddProduct" action="AddProduct.php">
+		<form class="center-block myForm needs-validation" name="AddProduct" action="AddProduct.php" method="POST" enctype="multipart/form-data">
 			<div class="form-group col-sm-4 col-xs-12">
 				<label for="ArtNr">Artikelnummer</label>
 				<input type="text" class="form-control" id="ArtNr" name="Artnr" placeholder="ArtikelNummer" required>
@@ -70,40 +70,40 @@
 			</div>
 			<div class="form-group">
 				<label for="ImageInput">Afbeelding(en) toevoegen</label>
-				<input type="file" id="ImageInput" >
+				<input type="file" id="upload_file" name="upload_file[]" multiple>
 				<p class="help-block">Selecteer hier de afbeeldingen voor bij het product</p>
 		 	</div>
 
 			<div id="1">
-				<label for="Property1">Snelheid</label>
-				<input class="form-control" type="text" id="Property1" name="Property1" placeholder="Snelheid">
+				<label for="Property1Processor">Snelheid</label>
+				<input class="form-control" type="text" id="Property1Processor" name="Property1Processor" placeholder="Snelheid">
 
-				<label for="Property2">Boxed</label>
-				<input class="form-control" type="text" id="Property2" name="Property2" placeholder="Boxed">
+				<label for="Property2Processor">Boxed</label>
+				<input class="form-control" type="text" id="Property2Processor" name="Property2Processor" placeholder="Boxed">
 			 </div>
 			
 			 <div id="2">
-				<label for="Property1">Capaciteit</label>
-				<input class="form-control" type="text" id="Property1" name="Property1" placeholder="Capaciteit">
+				<label for="Property1Harddisk">Capaciteit</label>
+				<input class="form-control" type="text" id="Property1Harddisk" name="Property1Harddisk" placeholder="Capaciteit">
 				
-				<label for="Property2">Snelheid</label>
-				<input class="form-control" type="text" id="Property2" name="Property2" placeholder="Snelheid">
+				<label for="Property2Harddisk">Snelheid</label>
+				<input class="form-control" type="text" id="Property2Harddisk" name="Property2Harddisk" placeholder="Snelheid">
 			 </div>
 
 			 <div id="3">
-			 	<label for="Property1">Formfactor</label>
-				<input class="form-control" type="text" id="Property1" name="Property1" placeholder="Merk">
+			 	<label for="Property1Housing">Formfactor</label>
+				<input class="form-control" type="text" id="Property1Housing" name="Property1Housing" placeholder="Merk">
 
-				<label for="Property2">Met voeding</label>
-				<input class="form-control" type="text" id="Property2" name="Property2" placeholder="Type">
+				<label for="Property2Housing">Met voeding</label>
+				<input class="form-control" type="text" id="Property2Housing" name="Property2Housing" placeholder="Type">
 			 </div>
 
 			 <div id="4">
-			 	<label for="Property1">CPU</label>
-				<input class="form-control" type="text" id="Property1" name="Property1" placeholder="Merk">
+			 	<label for="Property1Laptop">CPU</label>
+				<input class="form-control" type="text" id="Property1Laptop" name="Property1Laptop" placeholder="Merk">
 
-				<label for="Property2">Size</label>
-				<input class="form-control" type="text" id="Property2" name="Property2" placeholder="Processor serie">
+				<label for="Property2Laptop">Size</label>
+				<input class="form-control" type="text" id="Property2Laptop" name="Property2Laptop" placeholder="Processor serie">
 			 </div>
 			
 			<button type="submit" class="btn btn-default">Toevoegen</button>
@@ -144,9 +144,7 @@
 	function val() {
 		hideAll();
 
-    	d = document.getElementById("category").value;
-
-		console.log(d);
+    	d = document.getElementById("Category").value;
 
     	document.getElementById(d).style.display = "block";
 	}
