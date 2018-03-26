@@ -22,7 +22,12 @@ $menu = array();
 	<link type="text/css" rel="stylesheet" href="css/opmaak.css">
 	<link type="text/css" rel="stylesheet" href="css/Header.css">
 	<link type="text/css" rel="stylesheet" href="css/Footer.css">
-	
+
+    <!--Include jQuery from cdn-->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
+
+
 <!--Body-->
 <body>
 	<div class="container">
@@ -83,9 +88,31 @@ $menu = array();
                     <a href="#">
                         <li>Contact</li>
                     </a>
-                    <a href="Login.php">
-                        <li class="loginButton pull-right">Login</li>
-                    </a>
+                    <?php
+                    if(isset($_COOKIE['login_user']))
+                    {
+                        ?>
+                        <div class="dropdown">
+                            <li class="dropbtn pull-right">Account</li>
+                            <div class="dropdown-content">
+                                <a href="Customer.php?id=<?php echo $_COOKIE['login_user']; ?>"">Gegevens</a>
+                                <a href="Logout.php">Logout</a>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    else
+                    {
+                        ?>
+                        <a href="Login.php">
+                            <li class="loginButton pull-right">Login</li>
+                        </a>
+                        <?php
+                    }
+                    ?>
+
+
+
 				</ul>
 			<!--/nav - header--> 
 			</nav>

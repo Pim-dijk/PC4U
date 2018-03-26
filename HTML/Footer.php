@@ -49,9 +49,10 @@
 	<!--/container-->
 	</div>
 
-    <!--Include jQuery and jQuery.Forms from cdn-->
-
+    <!--Include scripts-->
 	<script src="js/hamburger.js"></script>
+
+
 </body>
 	
 </html>

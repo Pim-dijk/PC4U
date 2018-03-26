@@ -171,17 +171,14 @@ a:hover
 
 #image_data
 {
-	max-width: 75%;
 	display: block;
-	margin: 0 auto;
+	margin-bottom: 15px;
 }
 
 #image_data img
 {
-	margin: 10px;
-	width: 200px;
-	height: 150px;
-	float: left;
+	width: 150px;
+	height: 125px;
 }
 
 /*dit is voor de Laatstbekeken*/

@@ -1,5 +1,4 @@
 <?php
-
 include 'Header.php';
 
 if(isset($_POST['EditProduct']))
@@ -16,6 +15,9 @@ if(isset($_POST['EditProduct']))
     $product->Property2 = $_POST['Property2'];
     $product->update();
 
+    //The featured image
+    $featuredImage = $_POST['featuredImage'];
+
     if(($_FILES["upload_file"]["name"][0]) != "")
     {
         for($i=0; $i < count($_FILES["upload_file"]["name"]); $i++)
@@ -28,6 +30,23 @@ if(isset($_POST['EditProduct']))
             $image->Location = "$folder".$_FILES["upload_file"]["name"][$i];
             $image->create();
         }
+    }
+
+    // Get all the images for the product after they have all been added
+    $query = "SELECT * FROM Images WHERE ProductID = $product->ProductID";
+    $images = $image->find_by_sql($query);
+
+    foreach($images as $image)
+    {
+        if(basename($image->Location) == $featuredImage)
+        {
+            $image->Featured = 1;
+        }
+        else
+        {
+            $image->Featured = 0;
+        }
+        $image->update();
     }
 
 

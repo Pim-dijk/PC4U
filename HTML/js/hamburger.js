@@ -1,4 +1,5 @@
-$(document).ready(function() {
+$( document ).ready(function()
+{
     $('.hamburger').on('click', function(){
 //		alert("Henkie");
 		$('#header').toggleClass('open');

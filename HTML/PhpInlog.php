@@ -1,6 +1,5 @@
 <?php
-include("Includes/database.php");
-  session_start();
+include("Header.php");
   
    if(isset($_POST["submit"])) {   
       if(isset($_POST['email'])&&isset($_POST['password']))
@@ -14,21 +13,22 @@ include("Includes/database.php");
 		$hashed = hash("sha512", $salted);
 		  
       $sql = "SELECT * FROM customers WHERE email = '$myemail' AND password	 = '$hashed'";
-      $result = $database->query($sql);
-      $row = $result->num_rows;
-      $active = $row['active'];
+      $user = new User();
+      $result = $user->find_by_sql($sql);
+      $user = $result['0'];
+      $CustomerID = $user->CustomerID;
       
       
       
       // If result matched $myemail and $mypassword, table row must be 1 row
 		
-      if($row >= 1) {
+      if($CustomerID != NULL || $CustomerID != "") {
          
-         setcookie('login_user', $myemail, time() + 99999, "/");
-		 echo $_COOKIE['login_user'];
-         
+         setcookie('login_user', $CustomerID, time() + 99999, "/");
+
          header("Location: Index.php");
 		  exit();
+
       } else {
         echo 'Your Login Name or Password is invalid';
       }

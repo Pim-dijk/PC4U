@@ -127,7 +127,7 @@ include('initialize.php')?>
 		</div>
 	</div>
 
-		<?php include 'LastSeenProducts.php'; ?>
+<!--		--><?php //include 'LastSeenProducts.php'; ?>
 	<!--/Content-->
 </div>
 <?php include 'Footer.php';

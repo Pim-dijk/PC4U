@@ -1,4 +1,5 @@
-<?php include 'Header.php';
+<?php
+include 'Header.php';
 
     //If image preview is on, hide the other images
     $image_preview = 0;
@@ -19,17 +20,6 @@
 <!--jQuery script for uploading and previewing multiple images-->
 <script>
 
-function preview_image()
-{
-    //Get the number of images the user selected
-    var total_file=document.getElementById("upload_file").files.length;
-    //foreach image create an image and aad a <br>
-    for(var i=0;i<total_file;i++)
-    {
-        $('#image_data').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'>");
-    }
-}
-
 $( document ).ready(function()
 {
     $("#Category").on("change", function()
@@ -40,6 +30,22 @@ $( document ).ready(function()
         window.location = "EditProduct.php?id=" + selected_id;
     });
 });
+
+function preview_image()
+{
+    //Get the number of images the user selected
+    var total_file=document.getElementById("upload_file").files.length;
+    console.log(document.getElementById("upload_file").files.item(0).name);
+    //foreach image create an image and aad a <br>
+    for(var i=0;i<total_file;i++)
+    {
+        $('#image_data').append("<div class='col-sm-4 col-xs-12'>"
+        +"<input type='radio' name='featuredImage' value='"+(document.getElementById("upload_file").files.item(i).name)+"' >"
+        +"<img src='"+URL.createObjectURL(event.target.files[i])+"'>"
+        +"</div>");
+    }
+}
+
 </script>
 
 
@@ -67,10 +73,9 @@ $( document ).ready(function()
     $query = "SELECT * FROM Images WHERE ProductID = $product->ProductID";
     $images = $image->find_by_sql($query);
 
-    $image = $result[0];
+    $image = $images[0];
 
-
-//    Get a list of categories
+    // Get a list of categories
     $categories = $database->query("SELECT * FROM categories");
 
 ?>
@@ -137,6 +142,7 @@ $( document ).ready(function()
                 <?php
                 if(!empty($decoded_json))
                 {
+//                  Get the names of the properties to set as the label out of the json string
                     $PropertyLabel1 = $decoded_json['0']["key"];
                     $PropertyLabel2 = $decoded_json['1']["key"];
                     ?>
@@ -162,24 +168,25 @@ $( document ).ready(function()
                     <p class="help-block">Selecteer hier de afbeeldingen voor bij het product</p>
                 </div>
 
-                <button type="submit" class="btn btn-default" name="EditProduct">Toepassen</button>
-            </form>
-
-            <div id="image_data">
-                <?php
-                    if(!empty($image))
-                    {
-                        for($i=0; $i<count($images); $i++)
+                <div id="image_data" class="row">
+                    <?php
+                        if(!empty($image))
                         {
-                            echo "<div class='col-sm-4 col-xs-12'>";
-                                echo "<img src=" . $images[$i]->Location . ">";
-                                echo "<a href='DeleteImage.php?id=". $images[$i]->ImageID ." '>verwijder</a>";
-                            echo "</div>";
+                            for($i=0; $i<count($images); $i++)
+                            {
+                                echo "<div class='col-sm-4 col-xs-12'>";
+                                    echo "<input type='radio' id='featuredImage' name='featuredImage' value='" . basename($images[$i]->Location) . "' >";
+                                    echo "<img src=" . $images[$i]->Location . ">";
+                                    echo "<a href='DeleteImage.php?id=". $images[$i]->ImageID ." '>verwijder</a>";
+                                echo "</div>";
+                            }
                         }
-                    }
-                ?>
-            </div>
+                    ?>
+                </div>
 
+                <button type="submit" class="btn btn-default pull-left" name="EditProduct">Toepassen</button>
+
+            </form>
             <!--/Add product-->
         </div>
 
