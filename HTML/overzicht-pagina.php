@@ -1,8 +1,7 @@
-<?php include 'header.php';?>
+<?php include 'Header.php';?>
 
 <?php
-    $products = new Product();
-    $result = $products->find_all();
+    $result = $product->find_all();
 ?>
 <?php
     $images = new Image();
@@ -64,15 +63,15 @@
             <?php echo '<h2><a href="/R/webshop/producten-pagina.php?ID='.$product->ProductID.'" class="link">'.$product->ArtName.'</a></h2>'; ?>
             <p><?php echo $product->Description ?>...<?php echo '<a href="/R/webshop/producten-pagina.php?ID='.$product->ProductID.'" class="orangeunderline">Meer</a></p>'; ?>
       </div>
-
-      <div id="prijsvoorraad" class="col-md-2">
-        <h2>€ <?php echo $product->Price?></h2>
-          <?php if ($product->Availability == 1) {
-            echo '<p>Beschikbaar</p>';
-            } else {
-            echo '<p>Niet beschikbaar</p>';
-            } ?>
-          <form method="POST" action="shoppingcart.php">
+      <form method="POST" action="shoppingcart.php?ID=<?php echo $product->ProductID ?>">
+        <div id="prijsvoorraad" class="col-md-2">
+          <h2>€ <?php echo $product->Price?></h2>
+            <?php if ($product->Availability == 1) {
+              echo '<p>Beschikbaar</p>';
+              } else {
+              echo '<p>Niet beschikbaar</p>';
+              } ?>
+         
           <input type="hidden" name="productID" value="<?php echo $product->ProductID ?>">
             <select name="amount">
               <option value="1">1</option>
