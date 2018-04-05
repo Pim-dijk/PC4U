@@ -1,6 +1,6 @@
 <?php
 class User extends DatabaseObject {
-    protected static $table_name = "users";
+    protected static $table_name = "customers";
     protected static $db_fields =array('id', 'username', 'password', 'first_name', 'last_name');
     public $id;
     public $username;

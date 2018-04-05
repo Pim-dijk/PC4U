@@ -54,9 +54,9 @@
 				<input type="number" class="form-control" id="Price" name="Price" placeholder="Prijs" required>
 			</div>
 			
-			<div class="form-group">
+			<div class="form-group col-sm-9 col-xs-9">
 				<label for="Category">Categorie</label><br>
-				<select onchange="val()"  name="Category" id="Category">
+				<select onchange="val()"  name="Category" id="Category" class="form-control">
 					<?php
 						while ($row = $categories->fetch_assoc()) {
 							echo '<option value="'.$row['CategoryID'].'">'.$row['Category'].'</option>';
