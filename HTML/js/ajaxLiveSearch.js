@@ -1,24 +1,46 @@
 
 $(document).ready(function(){
-    $('.search-box input[type="text"]').on("keyup input", function(){
+    $('.search-box-artName input[type="text"]').on("keyup input", function(){
         /* Get input value on change */
         var inputVal = $(this).val();
-        var resultDropdown = $(this).siblings(".result");
+        var resultDropdownName = $(".result-name");
         if(inputVal.length){
-            $.get("backend-search.php", {term: inputVal}).done(function(data){
+            $.get("backend-search.php", {artName: inputVal}).done(function(data){
                 // Display the returned data in browser
-                resultDropdown.html(data);
+                resultDropdownName.html(data);
             });
         } else{
-            resultDropdown.empty();
+            resultDropdownName.empty();
+        }
+    });
+
+    $('.search-box-catName input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdownCat = $(".result-cat");
+        if(inputVal.length){
+            $.get("backend-search.php", {catName: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdownCat.html(data);
+            });
+        } else{
+            resultDropdownCat.empty();
         }
     });
 
     // Set search input value on click of result item
-    $(document).on("click", ".result p", function(){
-        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
-        $(this).parent(".result").empty();
+    $(document).on("click", ".result-name p", function(){
+        $(this).parents(".search-box-artName").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result-name").empty();
     });
+
+    // Set search input value on click of result item
+    $(document).on("click", ".result-cat p", function(){
+        $(this).parents(".search-box-catName").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result-cat").empty();
+    });
+
+
 
     // Change category labels on changing the category from dropdown
     $("#Category").on("change", function () {
@@ -35,5 +57,6 @@ $(document).ready(function(){
         })
 
     });
+
 
 });

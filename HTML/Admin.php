@@ -11,16 +11,21 @@
 
             <!--Aanbieding Form-->
             <form class="center-block myForm needs-validation" method="post" action="CreateDiscount.php">
-                <div class="form-group col-sm-4 col-xs-12 search-box">
+                <div class="form-group col-sm-6 col-xs-12 search-box-catName">
+                    <label for="Category">Categorie</label>
+                    <input type="text" class="form-control" id="Category" placeholder="Category" required>
+                    <div class="result-cat"></div>
+                </div>
+                <div class="form-group col-sm-6 col-xs-12 search-box-artName">
                     <label for="ArtNr">Artikelnaam</label>
                     <input type="text" class="form-control" id="ArtNr" placeholder="ArtNr/ArtName" required>
-                    <div class="result"></div>
+                    <div class="result-name"></div>
                 </div>
-                <div class="form-group col-sm-4 col-xs-12">
+                <div class="form-group col-sm-6 col-xs-12">
                     <label for="Discount">Nieuwe prijs</label>
                     <input type="number" class="form-control" id="Discount" placeholder="Nieuwe prijs" required>
                 </div>
-                <div class="form-group col-sm-4 col-xs-12">
+                <div class="form-group col-sm-6 col-xs-12">
                     <label for="Expire">Vervaldatum</label>
                     <input type="date" class="form-control" id="Expire" placeholder="Vervaldatum" required>
                 </div>

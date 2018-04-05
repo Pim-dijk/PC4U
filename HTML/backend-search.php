@@ -9,7 +9,8 @@ if($mysqli === false){
     die("ERROR: Could not connect. " . $mysqli->connect_error);
 }
 
-if(isset($_REQUEST['term'])){
+// Display live search items in the product name list
+if(isset($_REQUEST['artName'])){
     // Prepare a select statement
     $sql = "SELECT * FROM products WHERE ArtName LIKE ?";
 
@@ -18,7 +19,7 @@ if(isset($_REQUEST['term'])){
         $stmt->bind_param("s", $param_term);
 
         // Set parameters
-        $param_term = '%' . $_REQUEST['term'] . '%';
+        $param_term = '%' . $_REQUEST['artName'] . '%';
 
         // Attempt to execute the prepared statement
         if($stmt->execute()){
@@ -43,6 +44,43 @@ if(isset($_REQUEST['term'])){
 }
 
 
+// Display live search items in the product name list
+if(isset($_REQUEST['catName'])){
+    // Prepare a select statement
+    $sql = "SELECT * FROM Categories WHERE Category LIKE ?";
+
+    if($stmt = $mysqli->prepare($sql)){
+        // Bind variables to the prepared statement as parameters
+        $stmt->bind_param("s", $param_term);
+
+        // Set parameters
+        $param_term = '%' . $_REQUEST['catName'] . '%';
+
+        // Attempt to execute the prepared statement
+        if($stmt->execute()){
+            $result = $stmt->get_result();
+
+            // Check number of rows in the result set
+            if($result->num_rows > 0){
+                // Fetch result rows as an associative array
+                while($row = $result->fetch_array(MYSQLI_ASSOC)){
+                    echo "<p>" . $row["Category"] . "</p>";
+                }
+            } else{
+                echo "<p>No matches found</p>";
+            }
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+        }
+    }
+
+    // Close statement
+    $stmt->close();
+}
+
+
+
+// Update the category labels when editing product details
 if(isset($_REQUEST['cat'])) {
     $param_term = $_REQUEST['cat'];
     // Prepare a select statement
@@ -68,10 +106,6 @@ if(isset($_REQUEST['cat'])) {
     } else {
         echo "<p>Something went wrong!</p>";
     }
-}
-else
-{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
 
 // Close connection

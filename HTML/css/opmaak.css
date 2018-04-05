@@ -374,36 +374,54 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 }
 
 /* Formatting search box */
-.search-box{
+.search-box-artName .search-box-catName{
 	position: relative;
 	display: inline-block;
 }
-.search-box input[type="text"]{
+.search-box-artName .search-box-catName input[type="text"]{
 	padding: 5px 10px;
 	border: 1px solid #CCCCCC;
 }
-.result{
+.search-box-artName .search-box-catName input[type="text"], .result{
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Formatting result items */
+.result-cat{
 	position: absolute;
 	z-index: 999;
 	top: 100%;
 	left: 0;
 }
-.search-box input[type="text"], .result{
-	width: 100%;
-	box-sizing: border-box;
-}
-/* Formatting result items */
-.result p{
+.result-cat p{
 	margin: 0;
 	padding: 7px 10px;
 	border: 1px solid #CCCCCC;
 	background: white;
 	border-top: none;
 	cursor: pointer;
-	z-index: 100;
 }
-.result p:hover{
+.result-cat p:hover{
 	background: #f2f2f2;
+}
+
+.result-name{
+    position: absolute;
+    z-index: 999;
+    top: 100%;
+    left: 0;
+}
+.result-name p{
+    margin: 0;
+    padding: 7px 10px;
+    border: 1px solid #CCCCCC;
+    background: white;
+    border-top: none;
+    cursor: pointer;
+}
+.result-name p:hover{
+    background: #f2f2f2;
 }
 
 
