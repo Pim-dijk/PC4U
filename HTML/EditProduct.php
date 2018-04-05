@@ -1,34 +1,10 @@
 <?php
 include 'Header.php';
 
-    //If image preview is on, hide the other images
-    $image_preview = 0;
-
-    if(isset($_GET['id']))
-    {
-        $CategoryID = $_GET['id'];
-        //fire query using this id and get the name of employee and echo it
-        //Get the category name associated from the category table
-        $query = "SELECT * FROM Categories WHERE CategoryID = $CategoryID";
-        $result = $category->find_by_sql($query);
-        $category = $result[0];
-        $json = $category->Properties;
-        $decoded_json = json_decode($json,true)["fields"];
-    }
 ?>
 
 <!--jQuery script for uploading and previewing multiple images-->
 <script>
-
-$( document ).ready(function()
-{
-    $("#Category").on("change", function()
-    {
-        var selected_id = $(this).val();
-        var data = {id:selected_id};
-        window.location = "EditProduct.php?id=" + selected_id;
-    });
-});
 
 function preview_image()
 {
@@ -58,15 +34,14 @@ function preview_image()
     //First product in array, returns objects in array
     $product = $result[0];
 
-    if(!isset($CategoryID))
-    {
-        //Get the category name associated from the category table
-        $query = "SELECT * FROM Categories WHERE CategoryID = $product->CategoryID";
-        $result = $category->find_by_sql($query);
-        $category = $result[0];
-        $json = $category->Properties;
-        $decoded_json = json_decode($json,true)["fields"];
-    }
+    //Get the category name associated from the category table
+    $query = "SELECT * FROM Categories WHERE CategoryID = $product->CategoryID";
+    $result = $category->find_by_sql($query);
+    $category = $result[0];
+    $json = $category->Properties;
+    $decoded_json = json_decode($json,true)["fields"];
+    $PropertyLabel1 = $decoded_json['0']["key"];
+    $PropertyLabel2 = $decoded_json['1']["key"];
 
     //Get the images from the product
     $query = "SELECT * FROM Images WHERE ProductID = $product->ProductID";
@@ -138,24 +113,14 @@ function preview_image()
                     </select>
                 </div>
 <!--Foreach Property of the category, create a inputfield-->
-                <?php
-                if(!empty($decoded_json))
-                {
-//                  Get the names of the properties to set as the label out of the json string
-                    $PropertyLabel1 = $decoded_json['0']["key"];
-                    $PropertyLabel2 = $decoded_json['1']["key"];
-                    ?>
-                        <div class="form-group">
-                            <label for="<?=$PropertyLabel1?>"><?=$PropertyLabel1?></label>
-                            <input type="text" value="<?=$product->Property1?>" id="<?=$PropertyLabel1?>" name="Property1" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="<?=$PropertyLabel2?>"><?=$PropertyLabel2?></label>
-                            <input type="text" value="<?=$product->Property2?>" id="<?=$PropertyLabel2?>" name="Property2" class="form-control" />
-                        </div>
-                    <?php
-                }
-                ?>
+                <div class="form-group">
+                    <label for="Property1" class="propertyLabel1"><?php echo $PropertyLabel1;?></label>
+                    <input type="text" value="<?= $product->Property1 ?>" id="Property1" name="Property1" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="Property2" class="propertyLabel2"><?php echo $PropertyLabel2;?></label>
+                    <input type="text" value="<?= $product->Property2 ?>" id="Property2" name="Property2" class="form-control"/>
+                </div>
 
                 <div class="form-group">
                     <label for="Description">Beschrijving</label>
