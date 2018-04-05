@@ -3,6 +3,12 @@
 //probably smart to require it before we start.
 class DatabaseObject{
 
+    public $tableNameOfID;
+
+    function __construct($tableNameOfID) {
+        $this->tableNameOfID = $tableNameOfID;
+    }
+
     //common database methods
     public static function find_all(){
         global $database;
@@ -114,7 +120,9 @@ class DatabaseObject{
 
         $sql = "UPDATE ".static::$table_name." SET ";
         $sql .= join(", ", $attributes_pairs);
-        $sql .= " WHERE `id`=". $database->escape_value($this->id);
+        $sql .= " WHERE " .$this->tableNameOfID. "=". $database->escape_value($this->id);
+//        print_r($sql);
+//        exit;
         $database->query($sql);
         return($database->affected_rows($sql) == 1) ? true : false;
     }

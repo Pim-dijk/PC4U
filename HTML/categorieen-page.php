@@ -1,4 +1,4 @@
-<?php include 'header.php';
+<?php include 'Header.php';
 include 'initialize.php';
 	//	$id = $_GET['Category'];
       	$sql = "select * from products";
@@ -142,4 +142,4 @@ include 'initialize.php';
       
   </div>
 
-<?php include 'footer.php';?>
+<?php include 'Footer.php';?>

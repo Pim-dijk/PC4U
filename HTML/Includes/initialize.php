@@ -6,6 +6,7 @@
 defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 defined('SITE_ROOT') ? null : define('SITE_ROOT', DS . 'xampp' . DS . 'htdocs' . DS . 'PC4U' . DS . 'HTML');
 defined('LIB_PATH') ? null : define('LIB_PATH', SITE_ROOT.DS.'Includes');
+define('ROOT_PATH', $_SERVER["DOCUMENT_ROOT"] . "/PC4U/HTML/");
 //load confid file first
 require_once(LIB_PATH.DS. "config.php" );
 //load core object

@@ -177,8 +177,14 @@ a:hover
 
 #image_data img
 {
-	width: 150px;
-	height: 125px;
+	width: 200px;
+	height: 150px;
+	margin-left: 15px;
+}
+
+#image_data a
+{
+	margin-left: 25px;
 }
 
 /*dit is voor de Laatstbekeken*/
@@ -366,6 +372,40 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+
+/* Formatting search box */
+.search-box{
+	position: relative;
+	display: inline-block;
+}
+.search-box input[type="text"]{
+	padding: 5px 10px;
+	border: 1px solid #CCCCCC;
+}
+.result{
+	position: absolute;
+	z-index: 999;
+	top: 100%;
+	left: 0;
+}
+.search-box input[type="text"], .result{
+	width: 100%;
+	box-sizing: border-box;
+}
+/* Formatting result items */
+.result p{
+	margin: 0;
+	padding: 7px 10px;
+	border: 1px solid #CCCCCC;
+	background: white;
+	border-top: none;
+	cursor: pointer;
+	z-index: 100;
+}
+.result p:hover{
+	background: #f2f2f2;
+}
+
 
 /*Change table to cards at or below 768px*/
 @media screen and (max-width:768px)

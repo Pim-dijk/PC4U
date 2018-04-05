@@ -4,6 +4,7 @@ include 'Header.php';
 if(isset($_POST['EditProduct']))
 {
     $id = 1;
+    $product->id = $id;
     $product->ProductID = $id;
     $product->ArtNumber = $_POST['ArtNumber'];
     $product->ArtName = $_POST['ArtName'];
@@ -11,6 +12,7 @@ if(isset($_POST['EditProduct']))
     $product->Description = $_POST['Description'];
     $product->CategoryID = $_POST['Category'];
     $product->Brand = $_POST['Brand'];
+    $product->Availability = 0;
     $product->Property1 = $_POST['Property1'];
     $product->Property2 = $_POST['Property2'];
     $product->update();
@@ -38,6 +40,7 @@ if(isset($_POST['EditProduct']))
 
     foreach($images as $image)
     {
+        $image->id = $image->ImageID;
         if(basename($image->Location) == $featuredImage)
         {
             $image->Featured = 1;

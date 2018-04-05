@@ -1,5 +1,5 @@
 <?php
-include('initialize.php');
+include('Includes/initialize.php');
 $query = "SELECT * FROM categories";
 $result = $database->query($query);
 $menu = array();
@@ -26,6 +26,7 @@ $menu = array();
     <!--Include jQuery from cdn-->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
+    <script src="js/ajaxLiveSearch.js"></script>
 
 
 <!--Body-->

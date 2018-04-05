@@ -1,6 +1,6 @@
 <!--Include Header-->
 <?php include 'Header.php';
-	  require_once( "initialize.php" );	
+	  require_once("initialize.php");
 ?>
 
 <!--Page content goes here!!!-->

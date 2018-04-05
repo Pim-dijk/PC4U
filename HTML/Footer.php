@@ -39,8 +39,8 @@
 			</div>
 
 			<div id="footerSocial" class="col-xs-3"> 
-				<a href="https://www.facebook.com/"><img src="images/Header/facebook.png" alt="facebook"></a> 
-				<a href="https://twitter.com/"><img src="images/Header/twitter.png" alt="twitter"></a> 
+				<a href="https://www.facebook.com/"><img src="images/Header/facebook.png" alt="facebook"></a>
+				<a href="https://twitter.com/"><img src="images/Header/twitter.png" alt="twitter"></a>
 			<!--/headerImg-->
 			</div>
 

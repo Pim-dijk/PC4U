@@ -3,7 +3,8 @@
 class User extends DatabaseObject {
 
 	protected static $table_name = "customers";
-	protected static $db_fields =array('CustomerID', 'Email', 'Password', 'PhoneNumber', 'Street', 'Zipcode', 'HouseNumber', 'Addition', 'City', 'Country', 'Business', 'Initials',  'Lastname', 'DOB');
+	protected static $db_fields = array('CustomerID', 'Email', 'Password', 'PhoneNumber', 'Street', 'Zipcode', 'HouseNumber', 'Addition', 'City', 'Country', 'Business', 'Initials',  'Lastname', 'DOB');
+	public $id;
 	public $CustomerID = "";
 	public $Email = "";
 	public $Password = "";
@@ -18,6 +19,10 @@ class User extends DatabaseObject {
 	public $Initials = "";
 	public $Lastname = "";
 	public $DOB = "";
+
+    function __construct() {
+        parent::__construct("CustomerID", $this->CustomerID);
+    }
 
 	public
 	function full_name() {

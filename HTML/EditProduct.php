@@ -24,8 +24,7 @@ $( document ).ready(function()
 {
     $("#Category").on("change", function()
     {
-        console.log("Hello");
-        var selected_id = $("#Category").val();
+        var selected_id = $(this).val();
         var data = {id:selected_id};
         window.location = "EditProduct.php?id=" + selected_id;
     });
@@ -175,9 +174,10 @@ function preview_image()
                             for($i=0; $i<count($images); $i++)
                             {
                                 echo "<div class='col-sm-4 col-xs-12'>";
-                                    echo "<input type='radio' id='featuredImage' name='featuredImage' value='" . basename($images[$i]->Location) . "' >";
+                                    echo "<input type='radio' id='featuredImage' name='featuredImage' value='" . basename($images[$i]->Location) . "'";
+                                    echo $images[$i]->Featured == 1 ? "checked = checked >": ">";
                                     echo "<img src=" . $images[$i]->Location . ">";
-                                    echo "<a href='DeleteImage.php?id=". $images[$i]->ImageID ." '>verwijder</a>";
+                                    echo "<a href='DeleteImage.php?id=". $images[$i]->ImageID ." '>verwijder afbeelding</a>";
                                 echo "</div>";
                             }
                         }
@@ -194,4 +194,6 @@ function preview_image()
 
     <!--/End Content-->
 
-<?php include 'Footer.php' ?>
+<?php
+include 'Footer.php';
+?>

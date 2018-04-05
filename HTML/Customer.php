@@ -1,4 +1,4 @@
-<?php include 'Header.php'?>
+<?php include 'Header.php' ?>
 
 <!--Content goes here-->
 <div id="Customer" class="content">
@@ -126,4 +126,4 @@
 </div>
 <!--End of Content-->
 
-<?php include 'Footer.php'?>
+<?php include 'Footer.php' ?>

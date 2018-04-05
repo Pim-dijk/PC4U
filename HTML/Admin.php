@@ -10,21 +10,22 @@
             <h3>Aanbieding aanmaken</h3>
 
             <!--Aanbieding Form-->
-            <form class="center-block myForm needs-validation">
-                <div class="form-group col-sm-4 col-xs-12">
-                    <label for="ArtNr">Artikelnaam/nummer</label>
+            <form class="center-block myForm needs-validation" method="post" action="CreateDiscount.php">
+                <div class="form-group col-sm-4 col-xs-12 search-box">
+                    <label for="ArtNr">Artikelnaam</label>
                     <input type="text" class="form-control" id="ArtNr" placeholder="ArtNr/ArtName" required>
+                    <div class="result"></div>
                 </div>
                 <div class="form-group col-sm-4 col-xs-12">
-                    <label for="Discount">Korting %</label>
-                    <input type="number" class="form-control" id="Discount" placeholder="Korting %" required>
+                    <label for="Discount">Nieuwe prijs</label>
+                    <input type="number" class="form-control" id="Discount" placeholder="Nieuwe prijs" required>
                 </div>
                 <div class="form-group col-sm-4 col-xs-12">
                     <label for="Expire">Vervaldatum</label>
                     <input type="date" class="form-control" id="Expire" placeholder="Vervaldatum" required>
                 </div>
 
-                <button type="submit" class="btn btn-default">Aanmaken</button>
+                <button type="submit" name="discount" class="btn btn-default">Aanmaken</button>
             </form>
             <!--/Aanbieding aanmaken-->
         </div>

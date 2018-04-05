@@ -1,4 +1,4 @@
-<?php include 'Header.php'?>
+<?php include 'Header.php' ?>
 
 <!--Page content goes here!!!-->
 <div id="Login" class="row">
@@ -20,4 +20,4 @@
 
 </div>
 
-<?php include 'Footer.php'?>
+<?php include 'Footer.php' ?>

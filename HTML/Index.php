@@ -1,5 +1,5 @@
-<?php include 'Header.php'; 
-include('initialize.php')?>
+<?php include 'Header.php';
+include('initialize.php') ?>
 <!--Content-->
 <div id="Home" class="content">
 	<div class="box row">
