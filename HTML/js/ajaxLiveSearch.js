@@ -1,11 +1,18 @@
 
 $(document).ready(function(){
+
+//Admin panel
+//
+    //Add a discounted item
+    //
+    //Dynamically load the search results from the database when the user types
     $('.search-box-artName input[type="text"]').on("keyup input", function(){
         /* Get input value on change */
-        var inputVal = $(this).val();
-        var resultDropdownName = $(".result-name");
+        var inputVal = $(this).val(); //Value of the typed text
+        var resultDropdownName = $(".result-name"); //Found results to go in this dropdown element
+        var catVal = $('#CategoryDiscount :selected').val(); //The selected category
         if(inputVal.length){
-            $.get("backend-search.php", {artName: inputVal}).done(function(data){
+            $.get("backend-search.php", {artName: inputVal, catName: catVal}).done(function(data){
                 // Display the returned data in browser
                 resultDropdownName.html(data);
             });
@@ -14,34 +21,25 @@ $(document).ready(function(){
         }
     });
 
-    $('.search-box-catName input[type="text"]').on("keyup input", function(){
-        /* Get input value on change */
-        var inputVal = $(this).val();
-        var resultDropdownCat = $(".result-cat");
-        if(inputVal.length){
-            $.get("backend-search.php", {catName: inputVal}).done(function(data){
-                // Display the returned data in browser
-                resultDropdownCat.html(data);
-            });
-        } else{
-            resultDropdownCat.empty();
-        }
-    });
-
-    // Set search input value on click of result item
+    // Set search input value on clicking the result item
     $(document).on("click", ".result-name p", function(){
         $(this).parents(".search-box-artName").find('input[type="text"]').val($(this).text());
         $(this).parent(".result-name").empty();
     });
 
-    // Set search input value on click of result item
-    $(document).on("click", ".result-cat p", function(){
-        $(this).parents(".search-box-catName").find('input[type="text"]').val($(this).text());
-        $(this).parent(".result-cat").empty();
+    //If the user selects a category from the dropdown, make the rest of the form visible
+    //thus insuring that a category is always selected
+    $('.search-box-catName').on("change", function () {
+        $('#ArtNameHidden').removeClass('hidden');
+        $('#DiscountHidden').removeClass('hidden');
+        $('#ExpireHidden').removeClass('hidden');
+        $('#discountSubmit').removeClass('hidden');
     });
 
 
 
+
+//Edit product
     // Change category labels on changing the category from dropdown
     $("#Category").on("change", function () {
         var selected_id = $(this).val();
@@ -57,6 +55,4 @@ $(document).ready(function(){
         })
 
     });
-
-
 });

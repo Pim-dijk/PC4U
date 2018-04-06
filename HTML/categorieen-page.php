@@ -1,9 +1,9 @@
 <?php include 'Header.php';
-include 'initialize.php';
-	//	$id = $_GET['Category'];
+
+	    //$id = $_GET['Category'];
       	$sql = "select * from products";
 		$result = $database->query($sql);
- 
+
 ?>
 <div id="category-container" class="row overzichtpagina">
   
@@ -52,19 +52,19 @@ include 'initialize.php';
 	$product = $row["ArtName"];
 	$description = $row['Description'];
 	$price = $row['Price'];
-	$availability = $row['Availability']; 
+	$availability = $row['Availability'];
 ?>
   
   <div id="laptops" class="col-sm-9 col-xs-12">
    <h1 class="text-center">HP laptops</h1>
     <div id="laptopafbeelding" class="col-md-3 margintopafbeelding floatleft">
-      <img src="img/hp-15.png" width="200" height="150">
+      <img src="images/Products/chair.jpg" width="200" height="150">
     </div>
 
       <div id="productomschrijving" class="col-md-4">
             <h3 class="categorie">HP</h3>
 		<?php 
-	 		echo '<h2><a href="/R/webshop/producten-pagina.php?ID='.$row['ProductID'].'" class="link">'.$product.'</a></h2>'; 
+	 		echo '<h2><a href="/producten-pagina.php?ID='.$row['ProductID'].'" class="link">'.$product.'</a></h2>';
 	    ?>
             <p><?php echo $description; ?><a href="#" class="orangeunderline">Meer</a></p>
       </div>
@@ -102,12 +102,12 @@ include 'initialize.php';
       <div id="laptops" class="col-sm-9 col-xs-12">
    <h1 class="text-center">HP laptops</h1>
     <div id="laptopafbeelding" class="col-md-3 margintopafbeelding floatleft">
-      <img src="img/hp-15.png" width="200" height="150">
+      <img src="images/Products/chair.jpg" width="200" height="150">
     </div>
 
       <div id="productomschrijving" class="col-md-4">
             <h3 class="categorie">HP</h3>
-            <?php echo '<h2><a href="/R/webshop/producten-pagina.php?ID='.$row['ProductID'].'" class="link">'.$product.'</a></h2>'; ?>
+            <?php echo '<h2><a href="/producten-pagina.php?ID='.$row['ProductID'].'" class="link">'.$product.'</a></h2>'; ?>
             <p><?php echo $description; ?><a href="#" class="orangeunderline">Meer</a></p>
       </div>
 

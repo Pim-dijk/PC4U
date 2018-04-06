@@ -20,8 +20,6 @@ $menu = array();
 	
 	<!--Stylesheet-->
 	<link type="text/css" rel="stylesheet" href="css/opmaak.css">
-	<link type="text/css" rel="stylesheet" href="css/Header.css">
-	<link type="text/css" rel="stylesheet" href="css/Footer.css">
 
     <!--Include jQuery from cdn-->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -59,9 +57,11 @@ $menu = array();
 			<!--Nav section-->
 			<nav id="header" class="">
 				<ul>
-                    <a href="#">
-                        <li>Aanbiedingen</li>
-                    </a>
+                    <div class="dropdown">
+                        <a href="#">
+                            <li>Aanbiedingen</li>
+                        </a>
+                    </div>
 
                     <div class="dropdown">
                         <li class="dropbtn">Componenten</li>
@@ -73,22 +73,31 @@ $menu = array();
                             ?>
                         </div>
                     </div>
-
-                    <a href="#">
-                        <li>Software</li>
-                    </a>
-                    <a href="#">
-                        <li>Randapparatuur</li>
-                    </a>
-                    <a href="#">
-                        <li>Systemen</li>
-                    </a>
-                    <a href="#">
-                        <li>Service</li>
-                    </a>
-                    <a href="#">
-                        <li>Contact</li>
-                    </a>
+                    <div class="dropdown">
+                        <a href="#">
+                            <li>Software</li>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#">
+                            <li>Randapparatuur</li>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#">
+                            <li>Systemen</li>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#">
+                            <li>Service</li>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#">
+                            <li>Contact</li>
+                        </a>
+                    </div>
                     <?php
                     if(isset($_COOKIE['login_user']))
                     {

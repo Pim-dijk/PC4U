@@ -1,6 +1,6 @@
 <?php
 class Discount extends DatabaseObject {
-    protected static $table_name = "discount";
+    protected static $table_name = "discounts";
     protected static $db_fields =array('ProductID', 'NewPrice', 'ExpirationDate');
     public $id;
     public $ProductID;

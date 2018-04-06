@@ -18,4 +18,5 @@ require_once(LIB_PATH.DS. "user.php" );
 require_once(LIB_PATH.DS. "product.php");
 require_once(LIB_PATH.DS. "category.php");
 require_once(LIB_PATH.DS. "image.php");
+require_once(LIB_PATH.DS. "discount.php");
 ?>

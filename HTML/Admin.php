@@ -1,5 +1,9 @@
-<?php include 'Header.php' ?>
+<?php
+include 'Header.php';
 
+    // Get a list of categories
+    $categories = $database->query("SELECT * FROM categories");
+?>
     <!--Content-->
 
     <div id="Admin" class="content">
@@ -12,25 +16,30 @@
             <!--Aanbieding Form-->
             <form class="center-block myForm needs-validation" method="post" action="CreateDiscount.php">
                 <div class="form-group col-sm-6 col-xs-12 search-box-catName">
-                    <label for="Category">Categorie</label>
-                    <input type="text" class="form-control" id="Category" placeholder="Category" required>
-                    <div class="result-cat"></div>
+                    <label for="CategoryDiscount">Categorie</label>
+                    <select class="form-control" id="CategoryDiscount" name="Category" required>
+                        <option value="" disabled selected>Selecteer Categorie</option>
+                    <?php while ($row = $categories->fetch_assoc()) {
+                        echo '<option value="' . $row['CategoryID'] . '">' . $row['Category'] . '</option>';
+                    }
+                    ?>
+                    </select>
                 </div>
-                <div class="form-group col-sm-6 col-xs-12 search-box-artName">
-                    <label for="ArtNr">Artikelnaam</label>
-                    <input type="text" class="form-control" id="ArtNr" placeholder="ArtNr/ArtName" required>
+                <div id="ArtNameHidden" class="form-group col-sm-6 col-xs-12 search-box-artName hidden">
+                    <label for="ArtNameDiscount">Artikelnaam</label>
+                    <input type="text" class="form-control" id="ArtNameDiscount" name="ArtName" placeholder="ArtName" autocomplete="off" required>
                     <div class="result-name"></div>
                 </div>
-                <div class="form-group col-sm-6 col-xs-12">
+                <div id="DiscountHidden" class="form-group col-sm-6 col-xs-12 hidden">
                     <label for="Discount">Nieuwe prijs</label>
-                    <input type="number" class="form-control" id="Discount" placeholder="Nieuwe prijs" required>
+                    <input type="number" class="form-control" id="Discount" name="NewPrice" placeholder="Nieuwe prijs" required>
                 </div>
-                <div class="form-group col-sm-6 col-xs-12">
+                <div id="ExpireHidden" class="form-group col-sm-6 col-xs-12 hidden">
                     <label for="Expire">Vervaldatum</label>
-                    <input type="date" class="form-control" id="Expire" placeholder="Vervaldatum" required>
+                    <input type="date" class="form-control" id="Expire" name="ExpirationDate" placeholder="Vervaldatum" required>
                 </div>
 
-                <button type="submit" name="discount" class="btn btn-default">Aanmaken</button>
+                <button type="submit" id="discountSubmit" name="discount" class="btn btn-default hidden">Aanmaken</button>
             </form>
             <!--/Aanbieding aanmaken-->
         </div>

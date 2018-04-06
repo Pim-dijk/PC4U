@@ -1,5 +1,5 @@
 <?php
-include 'Header.php';
+include 'Includes/initialize.php';
 
 if(isset($_POST['EditProduct']))
 {

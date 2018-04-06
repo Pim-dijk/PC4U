@@ -121,8 +121,6 @@ class DatabaseObject{
         $sql = "UPDATE ".static::$table_name." SET ";
         $sql .= join(", ", $attributes_pairs);
         $sql .= " WHERE " .$this->tableNameOfID. "=". $database->escape_value($this->id);
-//        print_r($sql);
-//        exit;
         $database->query($sql);
         return($database->affected_rows($sql) == 1) ? true : false;
     }
