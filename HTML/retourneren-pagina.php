@@ -48,15 +48,13 @@
     </form>
   </div>
 
-    <div id="redenvanretour">
-      <div class="col-md-12">
-        <h2>Reden van retour</h2>
-        <textarea class="form-control" rows="4">
+        <div class="col-md-12">
+        <p>Anders</p>
+        <textarea id="CAPoutput" class="form-control" rows="4">
         </textarea>
         <br>
         <input class="voegtoebutton" type="button" value="Verzenden">
       </div>
     </div>
 
-  </div>
   <?php include 'Footer.php';?>

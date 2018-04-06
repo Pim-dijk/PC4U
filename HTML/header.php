@@ -1,25 +1,29 @@
+<?php include 'initialize.php'; ?>
+
 <!doctype html>
 <html>
 <meta charset="utf-8">
 	<title>PC4U</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+        
 	<!-- Slider -->
 	<link rel="stylesheet" type="text/css" href="slick-1.8.0/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="slick-1.8.0/slick/slick-theme.css"/>
-
+	
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<script src="js/respond.js"></script>
 	<script src="js/bootstrap-formhelpers-countries.js"></script>
-	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!--Stylesheet-->
 	<link type="text/css" rel="stylesheet" href="css/opmaak.css">
 	<link type="text/css" rel="stylesheet" href="css/Header.css">
 	<link type="text/css" rel="stylesheet" href="css/Footer.css">
-	
-<!--Body-->
+
+    <!--Include jQuery from cdn-->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script> src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"</script>
+
 <body>
 	<div class="container">
 		<!--Header-->
@@ -34,7 +38,7 @@
 				<a id="shoppingCart" href="#" class="pull-right">
 					<img src="img/shopping_cart.png" class="shoppingCart">
 					<!--Itemscount in cart-->
-					<p class="cartCount">2</p>
+					<p id="countHolder" class="cartCount">2</p>
 				</a>
 			</div>
 

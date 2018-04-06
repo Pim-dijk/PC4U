@@ -40,11 +40,11 @@
 
 body
 {
-	background-color:#FFFFFF;
+	background-color:#222222 !important;
 	font-family:gotham book;
 	font-weight:normal;
 	font-size:20px;
-	color:black;
+	color:white;
 	height:auto;
 	background-image: url(../images/../images/../images/pexels-photo-326240.jpeg);
 	background-repeat: repeat-y;
@@ -53,10 +53,9 @@ body
 .container
 {
 	max-width: 1000px;
-	background-color: #FFFFFF;
+	background-color: #4F4F4F;
 	padding:0;
 }
-
 h1
 {
 	padding:20px;
@@ -93,6 +92,10 @@ hr
 	border-color: #ff9900;
 }
 
+select {
+	color: black !important;
+}
+
 a:link
 {
 	color:#ff6600;
@@ -107,6 +110,9 @@ a:hover
 {
 	color:#ff9900;
 }
+#box1 {
+	margin-top: 20px;
+}
 #visibleform {
 	height: 1000px;
 }
@@ -115,6 +121,7 @@ a:hover
 	text-align: left;
 	padding-top:10px !important;
 	padding:0px;
+	margin-top: 15px !important;
 }
 .productenpagina h1 { 
 	text-align: left !important;
@@ -204,6 +211,9 @@ a:hover
 	width: 100%;
 	margin:0 auto;
 	}
+	#leftsidebar {
+	height:200px !important;
+}
 }
 .link {
 	color:#FF6600; 
@@ -224,7 +234,7 @@ a:hover
 	text-decoration:underline;	
 }
 .voegtoebutton {
-	width:167px;
+	width:150px;
 	height:40px;
 	background-color:rgba(255, 153, 0, 1);
 	color: black;
@@ -236,5 +246,9 @@ a:hover
 .floatleft {
 	float:left;
 }
+#leftsidebar {
+	height:500px;
+}
+
 
 

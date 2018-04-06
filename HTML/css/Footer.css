@@ -4,7 +4,8 @@
 	width:100%;
 	height:auto;
 	float:left;
-	background-color: #FFFFFF;
+	margin-left: 0px;
+	background-color: #333333;
 	padding: 25px 0;
 	border-top:1px solid black;
 }

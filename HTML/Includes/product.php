@@ -1,8 +1,9 @@
 <?php
 class Product extends DatabaseObject {
     protected static $table_name = "products";
-    protected static $id = "ProductID";
-    protected static $db_fields =array('ProductID', 'CategoryID', 'ArtNumber', 'ArtName', 'Description', 'Price' , 'Availability', 'Brand', 'Property1', 'Property2');
+    protected static $db_fields = array('ProductID', 'CategoryID', 'ArtNumber', 'ArtName', 'Description', 'Price' , 'Availability', 'Brand', 'Property1', 'Property2');
+    
+    public $id; //Just a placeholder for the database object functions
     public $ProductID;
     public $CategoryID;
     public $ArtNumber;
@@ -14,24 +15,12 @@ class Product extends DatabaseObject {
     public $Property1;
     public $Property2;
 
+    function __construct() {
+        parent::__construct("ProductID");
+    }
+
     //common database methods zitten in de database_object
 
-    public
-    function update() {
-        global $database;
-
-        $attributes = $this->sanitized_attributes();
-        $attributes_pairs =  array();
-        foreach($attributes as $key => $value){
-            $attributes_pairs[] = "{$key}='{$value}'";
-        }
-
-        $sql = "UPDATE ".static::$table_name." SET ";
-        $sql .= join(", ", $attributes_pairs);
-        $sql .= " WHERE `ProductID`=". $database->escape_value($this->ProductID);
-        $database->query($sql);
-        return($database->affected_rows($sql) == 1) ? true : false;
-    }
 
 }
 

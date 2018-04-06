@@ -26,8 +26,7 @@ if (isset($_POST['submit'])) {
 		setcookie('Order', $value, time() + (86400 * 30), "/");
 
 	}
-
 	// header('Location: ' . $_SERVER['HTTP_REFERER']);
 	header('Location: shoppingcart.php');
-}	
+}
 ?>
