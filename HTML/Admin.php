@@ -32,7 +32,7 @@ include 'Header.php';
                 </div>
                 <div id="DiscountHidden" class="form-group col-sm-6 col-xs-12 hidden">
                     <label for="Discount">Nieuwe prijs</label>
-                    <input type="number" class="form-control" id="Discount" name="NewPrice" placeholder="Nieuwe prijs" required>
+                    <input type="number" min="0" step=".01" class="form-control" id="Discount" name="NewPrice" placeholder="Nieuwe prijs" required>
                 </div>
                 <div id="ExpireHidden" class="form-group col-sm-6 col-xs-12 hidden">
                     <label for="Expire">Vervaldatum</label>

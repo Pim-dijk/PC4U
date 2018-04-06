@@ -10,7 +10,7 @@ define('ROOT_PATH', $_SERVER["DOCUMENT_ROOT"] . "/PC4U/HTML/");
 //load confid file first
 require_once(LIB_PATH.DS. "config.php" );
 //load core object
-require_once(LIB_PATH.DS. "session.php" );
+//require_once(LIB_PATH.DS. "session.php" );
 require_once(LIB_PATH.DS. "database.php" );
 require_once(LIB_PATH.DS. "database_object.php" );
 //load database-related classe

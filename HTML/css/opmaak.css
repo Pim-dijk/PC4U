@@ -564,6 +564,20 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     width: 32px;
 }
 
+/*### Alerts ###*/
+.alert
+{
+    position: fixed;
+    bottom:25px;
+    z-index: 5;
+}
+
+#alertWrapper
+{
+    max-width:750px;
+    margin: 10px auto 0 auto;
+}
+
 /*### Change table to cards at or below 768px ###*/
 @media screen and (max-width:768px)
 {

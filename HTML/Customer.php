@@ -25,63 +25,69 @@ if(isset($_GET['id']))
 			<h2>Gegevens</h2>
 			<hr>
 			
-			<form class="form-inline needs-validation">
+			<form class="form-inline needs-validation" method="POST" action="updateCustomer.php" enctype="multipart/form-data">
+                <input type="hidden" id="CustomerID" name="CustomerID" value="<?php echo $customer->CustomerID ?>">
 				<div class="form-group required">
 					<label class="sr-only" for="Email" class="control-label">Email address</label>
-					<input type="email" class="form-control" id="Email" placeholder="Email"
+					<input type="email" class="form-control" id="Email" name="Email" placeholder="Email"
                            value="<?php echo $customer->Email ?>" required>
 				</div>
 				<div class="form-group required">
-					<label class="sr-only" for="FirstLetter" class="control-label">Voorletter</label>
-					<input type="text" class="form-control" id="FirstLetter" placeholder="Voorletter"
+					<label class="sr-only" for="Initials" class="control-label">Voorletter</label>
+					<input type="text" class="form-control" id="Initials" name="Initials" placeholder="Voorletter"
                            value="<?php echo $customer->Initials ?>" required>
 				</div>
 				<div class="form-group">
 					<label class="sr-only" for="Prefix">Tussenvoegsel</label>
-					<input type="text" class="form-control" id="Prefix" placeholder="Tussenvoegsel"
-                           value="<?php echo $customer->Addition ?>">
+					<input type="text" class="form-control" id="Prefix" name="Prefix" placeholder="Tussenvoegsel"
+                           value="<?php echo $customer->Prefix ?>">
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="LastName" class="control-label">Achternaam</label>
-					<input type="text" class="form-control" id="LastName" placeholder="Achternaam"
+					<input type="text" class="form-control" id="LastName" name="Lastname" placeholder="Achternaam"
                            value="<?php echo $customer->Lastname ?>" required>
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="Street" class="control-label">Straatnaam</label>
-					<input type="text" class="form-control" id="Street" placeholder="Straatnaam"
+					<input type="text" class="form-control" id="Street" name="Street" placeholder="Straatnaam"
                            value="<?php echo $customer->Street ?>"required>
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="HouseNumber" class="control-label">Huisnummer</label>
-					<input type="text" class="form-control" id="HouseNumber" placeholder="Huisnummer"
+					<input type="text" class="form-control" id="HouseNumber" name="HouseNumber" placeholder="Huisnummer"
                            value="<?php echo $customer->HouseNumber ?>"required>
 				</div>
 				<div class="form-group">
-					<label class="sr-only" for="Additive">Toevoeging</label>
-					<input type="text" class="form-control" id="Additive" placeholder="Toevoeging"
-                           value="<?php echo $customer->Prefix ?>">
+					<label class="sr-only" for="Addition">Toevoeging</label>
+					<input type="text" class="form-control" id="Addition" name="Addition" placeholder="Toevoeging"
+                           value="<?php echo $customer->Addition ?>">
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="City" class="control-label">Plaats</label>
-					<input type="text" class="form-control" id="City" placeholder="Plaats"
+					<input type="text" class="form-control" id="City" name="City" placeholder="Plaats"
                            value="<?php echo $customer->City ?>" required>
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="Zipcode" class="control-label">Postcode</label>
-					<input type="text" class="form-control" id="Zipcode" placeholder="Postcode"
+					<input type="text" class="form-control" id="Zipcode" name="Zipcode" placeholder="Postcode"
                            value="<?php echo $customer->Zipcode ?>" required>
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="Country" class="control-label">Land</label>
-					<input type="text" class="form-control" id="Country" placeholder="Land"
+					<input type="text" class="form-control" id="Country" name="Country" placeholder="Land"
                            value="<?php echo $customer->Country ?>" required>
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="Phone" class="control-label">Telefoonnummer</label>
-					<input type="number" class="form-control" id="Phone" placeholder="Telefoonnummer"
+					<input type="number" class="form-control" id="Phone" name="PhoneNumber" placeholder="Telefoonnummer"
                            value="<?php echo $customer->PhoneNumber ?>" required>
 				</div>
-				<button type="submit" class="btn btn-default" name="submitCustomerChanges">Opslaan</button>
+                <div class="form-group required">
+                    <label class="sr-only" for="DOB" class="control-label">Telefoonnummer</label>
+                    <input type="date" class="form-control" id="DOB" name="DOB" placeholder="Geboortedatum"
+                           value="<?php echo $customer->DOB ?>" required>
+                </div>
+				<button type="submit" class="btn btn-default" id="sumbit" name="submit" >Opslaan</button>
 			</form>
 			
 		</div>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'Includes/initialize.php';
 
 if(isset($_POST['EditProduct']))
@@ -52,10 +53,11 @@ if(isset($_POST['EditProduct']))
         $image->update();
     }
 
+    $_SESSION["alert-type"] = "success";
+    $_SESSION["alert-message"] = "Product succesvol bijgewerkt!";
 
-    header("Location: EditProduct.php"); /* Redirect browser */
+    header("Location: Admin.php"); /* Redirect browser */
     exit();
 }
 
-include 'Footer.php';
 ?>

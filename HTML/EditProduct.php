@@ -26,7 +26,7 @@ function preview_image()
 
 <?php
 
-    //Get the ID from the product session (the page the linked to this)
+    //Get the ID from the product session (the page that linked to this)
     $ProductID = 1;
     //Get the information from the database
     $query = "SELECT * FROM Products WHERE ProductID = $ProductID";
@@ -74,7 +74,7 @@ function preview_image()
                 </div>
                 <div class="form-group col-sm-3 col-xs-12">
                     <label for="Brand">Merk</label>
-                    <input type="text" class="form-control" id="Brand" name="Brand" placeholder="Merk" required>
+                    <input type="text" class="form-control" id="Brand" name="Brand" placeholder="Merk" value="<?php echo $product->Brand ?>" required>
                 </div>
                 <div class="form-group col-sm-3 col-xs-12">
                     <label for="Price">Prijs</label>
