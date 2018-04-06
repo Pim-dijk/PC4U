@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2018 at 10:32 AM
+-- Generation Time: Apr 06, 2018 at 11:14 AM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.0.20
 
@@ -58,14 +58,42 @@ CREATE TABLE `customers` (
   `Street` varchar(48) NOT NULL,
   `Zipcode` varchar(10) NOT NULL,
   `HouseNumber` int(3) NOT NULL,
-  `HNAddition` varchar(5) NOT NULL,
+  `Addition` varchar(5) NOT NULL,
   `City` varchar(48) NOT NULL,
   `Country` varchar(48) NOT NULL,
-  `Private` int(1) NOT NULL,
-  `Firstname` varchar(48) NOT NULL,
+  `Business` int(1) NOT NULL,
+  `Initials` varchar(48) NOT NULL,
+  `Prefix` varchar(10) NOT NULL,
   `Lastname` varchar(64) NOT NULL,
   `DOB` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`CustomerID`, `Email`, `Password`, `PhoneNumber`, `Street`, `Zipcode`, `HouseNumber`, `Addition`, `City`, `Country`, `Business`, `Initials`, `Prefix`, `Lastname`, `DOB`) VALUES
+(1, 'henk@henk.henk', '99b1c0543c0bdfa0e745646833b586e53feb1076bf44633a488ae3f4e8c4c2b8d958115c827e2bd3a415c67b9c0212e13aa8899d28439ac8f7be6adad3b5fdfe', 2147483647, 'henk', '7067ak', 7581, '', 'Henkenstad', 'Belgie', 0, 'h', '', 'henk', '1990-08-15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `discounts`
+--
+
+CREATE TABLE `discounts` (
+  `id` int(11) NOT NULL,
+  `ProductID` int(10) NOT NULL,
+  `NewPrice` decimal(10,2) NOT NULL,
+  `ExpirationDate` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `discounts`
+--
+
+INSERT INTO `discounts` (`id`, `ProductID`, `NewPrice`, `ExpirationDate`) VALUES
+(1, 1, '49.00', '2018-05-25');
 
 -- --------------------------------------------------------
 
@@ -86,7 +114,34 @@ CREATE TABLE `images` (
 
 INSERT INTO `images` (`ImageID`, `ProductID`, `Location`, `Featured`) VALUES
 (6, 1, 'images/Products/Cover.jpg', 0),
-(17, 1, 'images/Products/Fire_Spirit-1-150x150.jpg', 0);
+(7, 1, 'images/Products/laptop.jpg', 0),
+(11, 1, 'images/Products/chair.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orderdetails`
+--
+
+CREATE TABLE `orderdetails` (
+  `OrderdetailsID` int(11) NOT NULL,
+  `OrderID` int(11) NOT NULL,
+  `ProductID` int(11) NOT NULL,
+  `Amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `OrderID` int(11) NOT NULL,
+  `CustomerID` int(11) NOT NULL,
+  `OrderDate` date NOT NULL,
+  `Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -101,7 +156,7 @@ CREATE TABLE `products` (
   `ArtName` varchar(40) NOT NULL,
   `Description` text NOT NULL,
   `Price` decimal(10,2) NOT NULL,
-  `Availability` int(2) NOT NULL,
+  `Availability` int(2) DEFAULT NULL,
   `Brand` varchar(100) NOT NULL,
   `Property1` varchar(100) NOT NULL,
   `Property2` varchar(100) NOT NULL
@@ -112,7 +167,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`ProductID`, `CategoryID`, `ArtNumber`, `ArtName`, `Description`, `Price`, `Availability`, `Brand`, `Property1`, `Property2`) VALUES
-(1, 4, 987654321, 'Cheddar', 'This is cheddar cheese, or is it?!', '249.95', 0, 'Lenovo', '3.5Ghz', 'Nee');
+(1, 4, 987654321, 'Cheddar', 'This is cheddar cheese, or is it?!', '249.95', 0, 'Lenovo', 'I7 7800', '3700Mhz'),
+(2, 3, 1236849, 'Not Cheddar', 'This really isn\'t cheddar you know.', '12.95', 1, 'Cheese', 'xATX', '0');
 
 --
 -- Indexes for dumped tables
@@ -129,6 +185,14 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`CustomerID`);
+
+--
+-- Indexes for table `discounts`
+--
+ALTER TABLE `discounts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ProductID` (`ProductID`),
+  ADD KEY `ProductID_2` (`ProductID`);
 
 --
 -- Indexes for table `images`
@@ -157,20 +221,31 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `CustomerID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `CustomerID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `discounts`
+--
+ALTER TABLE `discounts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `ImageID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ImageID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `ProductID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
+  MODIFY `ProductID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `discounts`
+--
+ALTER TABLE `discounts`
+  ADD CONSTRAINT `discounts_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `products` (`ProductID`);
 
 --
 -- Constraints for table `images`

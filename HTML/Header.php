@@ -1,5 +1,8 @@
 <?php
 include('Includes/initialize.php');
+
+//Find all available categories from the database
+//these will be displayed as a dropdown in the nav menu
 $query = "SELECT * FROM categories";
 $result = $database->query($query);
 $menu = array();

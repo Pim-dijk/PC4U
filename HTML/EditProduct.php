@@ -74,7 +74,7 @@ function preview_image()
                 </div>
                 <div class="form-group col-sm-3 col-xs-12">
                     <label for="Brand">Merk</label>
-                    <input type="text" class="form-control" id="Brand" name="Brand" placeholder="Merk" value="<?php echo $product->Brand ?>" required>
+                    <input type="text" class="form-control" id="Brand" name="Brand" placeholder="Merk" required>
                 </div>
                 <div class="form-group col-sm-3 col-xs-12">
                     <label for="Price">Prijs</label>

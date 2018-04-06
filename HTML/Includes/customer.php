@@ -3,7 +3,7 @@
 class Customer extends DatabaseObject {
 
 	protected static $table_name = "customers";
-	protected static $db_fields = array('CustomerID', 'Email', 'Password', 'PhoneNumber', 'Street', 'Zipcode', 'HouseNumber', 'Addition', 'City', 'Country', 'Business', 'Initials',  'Lastname', 'DOB');
+	protected static $db_fields = array('CustomerID', 'Email', 'Password', 'PhoneNumber', 'Street', 'Zipcode', 'HouseNumber', 'Addition', 'City', 'Country', 'Business', 'Initials', 'Prefix', 'Lastname', 'DOB');
 	public $id;
 	public $CustomerID = "";
 	public $Email = "";
@@ -14,9 +14,10 @@ class Customer extends DatabaseObject {
 	public $HouseNumber = "";
 	public $Addition = "";
 	public $City = "";
-	public $CountryList = "";
+	public $Country = "";
 	public $Business = "";
 	public $Initials = "";
+	public $Prefix = "";
 	public $Lastname = "";
 	public $DOB = "";
 
@@ -32,7 +33,6 @@ class Customer extends DatabaseObject {
 			return "";
 		}
 	}
-
 
 	public static
 	function authenticate( $username = "", $password = "" ) {
@@ -73,5 +73,6 @@ class Customer extends DatabaseObject {
 	//common database methods zitten in de database_object
 	
 }
+
 $customer = new Customer();
 ?>

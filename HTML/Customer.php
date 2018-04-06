@@ -6,7 +6,9 @@ if(isset($_GET['id']))
 {
     $customerID = $_GET['id'];
     $query = "SELECT * FROM customers WHERE CustomerID = $customerID";
-    $sql = $customer->find_by_id($customerID);
+
+    $result = $customer->find_by_sql($query);
+    $customer = $result[0];
 }
 
 ?>
@@ -26,49 +28,60 @@ if(isset($_GET['id']))
 			<form class="form-inline needs-validation">
 				<div class="form-group required">
 					<label class="sr-only" for="Email" class="control-label">Email address</label>
-					<input type="email" class="form-control" id="Email" placeholder="Email" required>
+					<input type="email" class="form-control" id="Email" placeholder="Email"
+                           value="<?php echo $customer->Email ?>" required>
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="FirstLetter" class="control-label">Voorletter</label>
-					<input type="text" class="form-control" id="FirstLetter" placeholder="Voorletter" required>
+					<input type="text" class="form-control" id="FirstLetter" placeholder="Voorletter"
+                           value="<?php echo $customer->Initials ?>" required>
 				</div>
 				<div class="form-group">
 					<label class="sr-only" for="Prefix">Tussenvoegsel</label>
-					<input type="text" class="form-control" id="Prefix" placeholder="Tussenvoegsel">
+					<input type="text" class="form-control" id="Prefix" placeholder="Tussenvoegsel"
+                           value="<?php echo $customer->Addition ?>">
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="LastName" class="control-label">Achternaam</label>
-					<input type="text" class="form-control" id="LastName" placeholder="Achternaam" required>
+					<input type="text" class="form-control" id="LastName" placeholder="Achternaam"
+                           value="<?php echo $customer->Lastname ?>" required>
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="Street" class="control-label">Straatnaam</label>
-					<input type="text" class="form-control" id="Street" placeholder="Straatnaam" required>
+					<input type="text" class="form-control" id="Street" placeholder="Straatnaam"
+                           value="<?php echo $customer->Street ?>"required>
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="HouseNumber" class="control-label">Huisnummer</label>
-					<input type="text" class="form-control" id="HouseNumber" placeholder="Huisnummer" required>
+					<input type="text" class="form-control" id="HouseNumber" placeholder="Huisnummer"
+                           value="<?php echo $customer->HouseNumber ?>"required>
 				</div>
 				<div class="form-group">
 					<label class="sr-only" for="Additive">Toevoeging</label>
-					<input type="text" class="form-control" id="Additive" placeholder="Toevoeging">
+					<input type="text" class="form-control" id="Additive" placeholder="Toevoeging"
+                           value="<?php echo $customer->Prefix ?>">
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="City" class="control-label">Plaats</label>
-					<input type="text" class="form-control" id="City" placeholder="Plaats" required>
+					<input type="text" class="form-control" id="City" placeholder="Plaats"
+                           value="<?php echo $customer->City ?>" required>
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="Zipcode" class="control-label">Postcode</label>
-					<input type="text" class="form-control" id="Zipcode" placeholder="Postcode" required>
+					<input type="text" class="form-control" id="Zipcode" placeholder="Postcode"
+                           value="<?php echo $customer->Zipcode ?>" required>
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="Country" class="control-label">Land</label>
-					<input type="text" class="form-control" id="Country" placeholder="Land" required>
+					<input type="text" class="form-control" id="Country" placeholder="Land"
+                           value="<?php echo $customer->Country ?>" required>
 				</div>
 				<div class="form-group required">
 					<label class="sr-only" for="Phone" class="control-label">Telefoonnummer</label>
-					<input type="number" class="form-control" id="Phone" placeholder="Telefoonnummer" required>
+					<input type="number" class="form-control" id="Phone" placeholder="Telefoonnummer"
+                           value="<?php echo $customer->PhoneNumber ?>" required>
 				</div>
-				<button type="submit" class="btn btn-default">Opslaan</button>
+				<button type="submit" class="btn btn-default" name="submitCustomerChanges">Opslaan</button>
 			</form>
 			
 		</div>
