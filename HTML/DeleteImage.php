@@ -1,5 +1,5 @@
 <?php
-include 'Header.php';
+include 'Includes/initialize.php';
 
 $id = $_GET['id'];
 $query = "DELETE FROM Images WHERE ImageID = $id";

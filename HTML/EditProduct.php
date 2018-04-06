@@ -1,5 +1,4 @@
 <?php
-include 'Header.php';
 
 ?>
 
@@ -25,6 +24,10 @@ function preview_image()
 
 
 <?php
+
+if(isset($_GET['id']))
+{
+    include 'Header.php';
 
     //Get the ID from the product session (the page that linked to this)
     $ProductID = $_GET['id'];
@@ -165,11 +168,17 @@ function preview_image()
     <!--/End Content-->
 
 <?php
-// If no product is found, just display an empty page and return a warning message
+    // If no product is found, just display an empty page and return a warning message
+    }
+    else
+    {
+        echo "<h2>Unable to find product with id of " . $_GET['id'] . "!</h2>";
+    }
+
 }
 else
 {
-    echo "<h2>Unable to find product with id of " . $_GET['id'] . "!</h2>";
+    header("Location: index.php");
 }
 
 
