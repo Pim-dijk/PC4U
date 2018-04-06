@@ -3,8 +3,8 @@
     <h1 class="text-center margin-bottom">Winkelwagen</h1>
     <form action="updateShoppingcart.php" method="POST" name="shoppingcart" enctype="multipart/form-data">
         <?php 
-            if (isset($_COOKIE['Shoppingcart'])) {
-                $shoppingcartData = unserialize($_COOKIE['Shoppingcart']);
+            if (isset($_COOKIE['Order'])) {
+                $shoppingcartData = unserialize($_COOKIE['Order']);
                 $totalSum = 0;
                 $totalProducts = 0;
                 for ($i = 0; $i < count($shoppingcartData); $i++) {
@@ -43,7 +43,6 @@
                             </div>
                             <div id="winkelwagenDiv">
                                 <p class="bold">Totaal prijs</p>
-                                <input type="hidden" name="hiddenTotalPriceProduct" id="hiddenTotalPriceProduct-<?php echo $object->ProductID; ?>" value="<?php echo "€ ".number_format($productTotalSum, 2); ?>" disabled>
                                 <label class="margin-top-20" name="totalPriceProduct" id="totalPriceProduct-<?php echo $object->ProductID; ?>"><?php echo "€ ".number_format($productTotalSum, 2); ?></label>
                             </div>
                         </div>

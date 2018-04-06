@@ -1,4 +1,4 @@
-<?php include 'initialize.php'; ?>
+<?php include 'Includes/initialize.php'; ?>
 
 <!doctype html>
 <html>

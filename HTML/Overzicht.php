@@ -4,8 +4,8 @@
     <h3>Overzicht artikelen</h3>
 
     <?php 
-        if (isset($_COOKIE['Shoppingcart'])) {
-            $cookieData = unserialize($_COOKIE['Shoppingcart']);
+        if (isset($_COOKIE['Order'])) {
+            $cookieData = unserialize($_COOKIE['Order']);
             $sumTotal = 0;
             $sumTotalBTW = 0;
 

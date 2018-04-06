@@ -3,7 +3,7 @@
 
     if (isset($_POST['totalProducts'])) {
         $totalProducts = $_POST['totalProducts'];
-        $cookieName = "Shoppingcart";
+        $cookieName = "Order";
         $cookieArray = array();
 
         for ($i = 0; $i < $totalProducts; $i++) {

@@ -1,0 +1,447 @@
+/* Algemeen */
+#content {
+    max-width: 1000px;
+    width: 100%;
+    min-height: 600px;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+}
+
+/* Admin reparaties overzicht */
+#reparatiesOverzichtUitlijningDiv {
+    width: 70%;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+}
+#reparatiesOverzichtUitlijningDiv form select {
+    margin-left: 15px;
+}
+#reparatiesOverzichtUitlijningDiv form input[type="submit"] {
+    margin-left: 15px;
+}
+#reparatiesOverzichtRow {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    float: left;
+}
+#reparatiesOverzichtRowDiv {
+    width: 150px;
+    height: 75px;
+    float: left;
+}
+#reparatiesOverzichtRowDiv a {
+    line-height: 20px;
+}
+
+/* Admin reparatie */
+#reparatiesUitlijningDiv {
+    width: 70%;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+}
+#reparatiesUitlijningDiv p {
+    display: inline-block;
+}
+#reparatiesUitlijningDiv a {
+    margin: 15px 0px 15px 10px;
+    float: right;
+}
+
+/* Admin retourneren overzicht */
+#retournerenOverzichtUitlijningDiv{
+    width: 70%;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+}
+#retournerenOverzichtUitlijningDiv form select {
+    margin-left: 15px;
+}
+#retournerenOverzichtUitlijningDiv form input[type="submit"] {
+    margin-left: 15px;
+}
+#retournerenOverzichtRow {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    float: left;
+}
+#retournerenOverzichtRowDiv {
+    width: 150px;
+    height: 75px;
+    float: left;
+}
+#retournerenOverzichtRowDiv a {
+    line-height: 20px;
+}
+
+/* Admin retourneren */
+#retournerenUitlijningDiv {
+    width: 70%;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+}
+#retournerenUitlijningDiv p {
+    display: inline-block;
+}
+#retournerenUitlijningDiv a {
+    margin: 15px 0px 15px 10px;
+    float: right;
+}
+
+/* Admin RMA overzicht */
+#RMAOverzichtUitlijningDiv {
+    width: 70%;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+}
+#RMAOverzichtUitlijningDiv form select {
+    margin-left: 15px;
+}
+#RMAOverzichtUitlijningDiv form input[type="submit"] {
+    margin-left: 15px;
+}
+#RMAOverzichtRow {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    float: left;
+}
+#RMAOverzichtRowDiv {
+    width: 150px;
+    height: 75px;
+    float: left;
+}
+#RMAOverzichtRowDiv a {
+    line-height: 20px;
+}
+
+/* Admin RMA */
+#RMAUitlijningDiv {
+    width: 60%;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+}
+#RMAUitlijningDiv p {
+    display: inline-block;
+}
+#RMAUitlijningDiv a {
+    margin: 15px 0px 15px 10px;
+    float: right;
+}
+
+/* Winkelwagen */
+#winkelwagenDivContainer {
+    width: 310px;
+    height: 125px;
+    float: left;
+}
+#winkelwagenDiv {
+    width: 150px;
+    height: 125px;
+    float: left;
+}
+#winkelwagenDiv img {
+    width: 150px;
+    height: 125px;
+}
+#winkelwagenDiv input[type="text"] {
+    width: 50px;
+    margin-top: 20px;
+}
+#winkelwagenTotaal {
+    width: 40%;
+    height: auto;
+    float: right;
+    overflow: auto;
+    border: solid 1px black;
+}
+#winkelwagenTotaal p {
+    margin: 15px 0px 0px 15px;
+    display: inline-block;
+}
+#winkelwagenTotaal input[type="submit"] {
+    float: right;
+    margin: 10px 20px 20px 0px;
+}
+
+/* Winkelwagen overzicht */
+#winkelwagenOverzichtDivContainer {
+    width: 320px;
+    height: auto;
+    overflow: auto;
+    float: left;
+}
+#winkelwagenOverzichtDiv {
+    width: 150px;
+    height: auto;
+    overflow: auto;
+    float: left;
+    margin-right: 10px;
+}
+#totaalOverzicht {
+    width: 50%;
+    height: auto;
+    overflow: auto;
+    float: right;
+    border: solid 1px black;
+}
+#totaalOverzicht p {
+    margin: 15px 0px 0px 15px;
+    display: inline-block;
+}
+#totaalOverzicht input[type="submit"] {
+    float: right;
+    margin: 10px 20px 20px 0px;
+}
+
+/* Betalen */
+#betalenUitlijningDiv {
+    width: 60%;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+}
+#betalenDiv {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    float: left;
+}
+#betalenDiv p {
+    display: inline-block;
+}
+#betalenDiv input[type="submit"] {
+    float: right;
+    margin: 10px 20px 20px 0px;
+}
+#paymentMethods {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    float: left;
+}
+
+/* Algemene klassen */
+.h1-margin {
+    margin: 30px 0px 50px 0px;
+}
+.bold {
+    font-weight: bold;
+}
+.button-color 
+{
+    background-color: #FF9900;
+}
+
+/* Admin reparatie klassen */
+.reparaties-p-left {
+    width: 150px;
+}
+.reparaties-p-right {
+    width: 70%;
+}
+
+/* Admin retourneren klassen */
+.retourneren-p-left {
+    width: 150px;
+}
+.retourneren-p-right {
+    width: 70%;
+}
+
+/* Admin RMA klassen*/
+.RMA-p-left {
+    width: 150px;
+}
+.RMA-p-right {
+    width: 70%;
+}
+
+/* Winkelwagen klassen */
+.line-height-75-winkelwagen {
+    line-height: 75px;
+}
+.line-height-125-winkelwagen {
+    line-height: 125px;
+}
+.div-width-75-winkelwagen {
+    width: 75px;
+}
+.winkelwagen-p-left {
+    width: 30%;
+}
+.winkelwagen-p-right {
+    width: 60%;
+}
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+/* Winkelwagen overzicht klassen */
+.winkelwagenOverzicht-p-left {
+    width: 60%;
+}
+.winkelwagenOverzicht-p-right {
+    width: 30%;
+}
+
+/* Betalen klassen */
+.betalen-p-left {
+    width: 30%;
+}
+.betalen-p-right {
+    width: 60%;
+}
+
+/* Media Admin reparaties overzicht */
+@media (max-width: 393px) {    
+    #reparatiesOverzichtUitlijningDiv form input[type="submit"] {
+        margin: 15px 0px 0px 15px;
+    }
+}
+@media (max-width: 673px) {
+    #reparatiesOverzichtUitlijningDiv {
+        width: 100%;
+    }
+}
+
+/* Media Admin reparaties */
+@media (max-width: 761px) {
+    #reparatiesUitlijningDiv {
+        width: 100%;
+    }
+    .reparaties-p-left {
+        width: 40%;
+    }
+    .reparaties-p-right {
+        width: 60%;
+    }
+}
+
+/* Media Admin retourneren overzicht */
+@media (max-width: 660px) {
+    #retournerenOverzichtUitlijningDiv {
+        width: 100%;
+    }
+}
+@media (max-width: 341px) {
+    #retournerenOverzichtUitlijningDiv input[type="submit"] {
+        margin: 15px 0px 0px 15px;
+    }
+}
+
+/* Media Admin retourneren */
+@media (max-width: 761px) {
+    #retournerenUitlijningDiv {
+        width: 100%;
+    }
+    .retourneren-p-left {
+        width: 20%;
+    }
+    .retourneren-p-right {
+        width: 80%;
+    }
+}
+@media (max-width: 620px) {
+    .retourneren-p-left {
+        width: 30%;
+    }
+    .retourneren-p-right {
+        width: 70%;
+    }
+}
+@media (max-width: 430px) {
+    .retourneren-p-left {
+        width: 40%;
+    }
+    .retourneren-p-right {
+        width: 60%;
+    }
+}
+
+/* Media Admin RMA overzicht */
+@media (max-width: 646px) {
+    #RMAOverzichtUitlijningDiv {
+        width: 100%;
+    }
+}
+@media (max-width: 362px) {    
+    #RMAOverzichtUitlijningDiv form input[type="submit"] {
+        margin: 15px 0px 0px 15px;
+    }
+}
+
+/* Media Admin RMA */
+@media (max-width: 991px) {
+    .RMA-p-left {
+        width: 30%;
+    }
+    .RMA-p-right {
+        width: 70%;
+    }
+}
+@media (max-width: 660px) {
+    #RMAUitlijningDiv {
+        width: 100%;
+    }
+    .RMA-p-left {
+        width: 20%;
+    }
+    .RMA-p-right {
+        width: 80%;
+    }
+}
+@media (max-width: 600px) {
+    .RMA-p-left {
+        width: 25%;
+    }
+    .RMA-p-right {
+        width: 75%;
+    }
+}
+@media (max-width: 485px) {
+    .RMA-p-left {
+        width: 30%;
+    }
+    .RMA-p-right {
+        width: 70%;
+    }
+}
+@media (max-width: 405px) {
+    .RMA-p-left {
+        width: 35%;
+    }
+    .RMA-p-right {
+        width: 65%;
+    }
+}
+
+/* Media Betalen */
+@media (max-width: 680px) {
+    #betalenUitlijningDiv {
+        width: 100%;
+    }
+
+    .betalen-p-left {
+        width: 20%;
+    }
+    .betalen-p-right {
+        width: 80%;
+    }
+}
+@media (max-width: 600px) {
+    .betalen-p-left {
+        width: 30%;
+    }
+    .betalen-p-right {
+        width: 60%;
+    }
+}

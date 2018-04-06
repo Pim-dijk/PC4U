@@ -1,34 +1,30 @@
 <?php
-include("Header.php");
-include("initialize.php");
+include "Includes/initialize.php";
+
 // Escape user inputs for security
-
-
     if(isset($_POST['register'])){
-		//$user = new User();
 		
-			$user->Email =  $_POST['email'];
+			$customer->Email = $_POST['email'];
 			$salted = "8723687hdwuyu2ygeou".$_POST['password']."78t127438crb78oet8";
 			$hashed = hash("sha512", $salted);
-			$user->Password = $hashed;
-			$user->Initials = $_POST['initials'];
-			$user->Prefix = $_POST['prefix'];
-			$user->Lastname = $_POST['lastname'];
-			$user->Street = $_POST['straat'];
-			$user->HouseNumber = $_POST['housenumber'];
-			$user->Addition = $_POST['addition'];
-			$user->City = $_POST['city'];
-			$user->Zipcode = $_POST['zipcode'];
-			$user->PhoneNumber = $_POST['phonenumber'];
-			$user->Country = $_POST['Country'];
-			$user->DOB = $_POST['DOB'];
+			$customer->Password = $hashed;
+			$customer->Initials = $_POST['initials'];
+			$customer->Prefix = $_POST['prefix'];
+			$customer->Lastname = $_POST['lastname'];
+			$customer->Street = $_POST['straat'];
+			$customer->HouseNumber = $_POST['housenumber'];
+			$customer->Addition = $_POST['addition'];
+			$customer->City = $_POST['city'];
+			$customer->Zipcode = $_POST['zipcode'];
+			$customer->PhoneNumber = $_POST['phonenumber'];
+			$customer->Country = $_POST['Country'];
+			$customer->DOB = $_POST['DOB'];
+			$customer->Business = $_POST['Business'];
 
 		
-		$user->create();
+		$customer->create();
 		
-		header("Location: home.php");
+		header("Location: Index.php");
 		exit();
     }
-
-include("Footer.php");
  ?>

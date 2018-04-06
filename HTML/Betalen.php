@@ -1,18 +1,24 @@
 <?php include 'Header.php'; ?>
 <div id="content">
+    <?php 
+        $CustomerID = $_COOKIE['login_user'];
+        $sql = "SELECT * FROM customers WHERE `CustomerID` = '$CustomerID'";
+        $query = $database->query($sql);
+        $result = $database->fetch_array($query);
+    ?>
     <h1 class="text-center h1-margin">Betalen</h1>
 
     <div id="betalenUitlijningDiv">
-        <form action="Bedankt.php">
+        <form action="AddOrder.php">
             <div id="betalenDiv">
                 <h3>Klantgegevens</h3>
-                <p class="bold betalen-p-left">Voornaam:</p><p class="betalen-p-right">Jan</p>
-                <p class="bold betalen-p-left">Tussenvoegsel:</p><p class="betalen-p-right">ter</p>
-                <p class="bold betalen-p-left">Achternaam:</p><p class="betalen-p-right">Aardt</p>
-                <p class="bold betalen-p-left">Straat:</p><p class="betalen-p-right">Testweg</p>
-                <p class="bold betalen-p-left">Huisnummer:</p><p class="betalen-p-right">1A</p>
-                <p class="bold betalen-p-left">Postcode:</p><p class="betalen-p-right">7000AB</p>
-                <p class="bold betalen-p-left">Plaats:</p><p class="betalen-p-right">Doetinchem</p>                 
+                <p class="bold betalen-p-left">Voornaam:</p><p class="betalen-p-right"><?php echo $result['Initials']; ?></p>
+                <p class="bold betalen-p-left">Tussenvoegsel:</p><p class="betalen-p-right"><?php echo $result['Prefix']; ?></p>
+                <p class="bold betalen-p-left">Achternaam:</p><p class="betalen-p-right"><?php echo $result['Lastname']; ?></p>
+                <p class="bold betalen-p-left">Straat:</p><p class="betalen-p-right"><?php echo $result['Street']; ?></p>
+                <p class="bold betalen-p-left">Huisnummer:</p><p class="betalen-p-right"><?php echo $result['HouseNumber'].$result['Addition']; ?></p>
+                <p class="bold betalen-p-left">Postcode:</p><p class="betalen-p-right"><?php echo $result['Zipcode']; ?></p>
+                <p class="bold betalen-p-left">Plaats:</p><p class="betalen-p-right"><?php echo $result['City']; ?></p>                 
             </div>
             <hr style="border-color: black; border-width: 2px; width: 100%;">
             <div id="betalenDiv">
