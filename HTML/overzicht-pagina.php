@@ -4,9 +4,8 @@
     $result = $product->find_all();
 ?>
 
-<body>
 <div id="container" class="col-md-12 overzichtpagina">
-  <h1 class="text-center">(Categorie) laptops</h1>
+  <h1 class="text-center">Alle laptops</h1>
     <div id="leftsidebar" class="col-md-3 bodyborder margintop">
       <form action="#">
             <h3 class="removemobile" style="font-weight: bold">Merk</h3>
@@ -53,14 +52,16 @@
   $query = "SELECT * FROM images WHERE ProductID = {$product->ProductID}"; 
   $resultimage = $image->find_by_sql($query);  ?>
 
+
       <div id="laptopafbeelding" class="col-md-3 margintopafbeelding floatleft">
-        <?php echo '<img src="'.$resultimage[0]->Location.'" width="180" height="150">'; ?>
+        <?php echo '<img src="'.$resultimage[0]->Location.'" width="190" height="160">'; ?>
       </div>
       <div id="productomschrijving" class="col-md-4">
             <h3 class="categorie"><?php echo $product->Brand ?></h3>
             <?php echo '<h2><a href="/R/webshop/producten-pagina.php?id='.$product->ProductID.'" class="link">'.$product->ArtName.'</a></h2>'; ?>
             <p><?php echo $product->Description ?>...<?php echo '<a href="/R/webshop/producten-pagina.php?id='.$product->ProductID.'" class="orangeunderline">Meer</a></p>'; ?>
       </div>
+
       <form method="POST" action="shoppingcart.php">
         <div id="prijsvoorraad" class="col-md-2">
           <h2>€ <?php echo $product->Price?></h2>
@@ -92,5 +93,5 @@
       <?php } ?>
     </div> 
   </div>
-</body>
+
 <?php include 'footer.php';?>

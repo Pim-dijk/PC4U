@@ -52,6 +52,8 @@
 <!--Include scripts-->
 <script src="js/hamburger.js"></script>
 
+<!--Slick slider-->
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.2/slick/slick.min.js"></script>
 </body>
 
 </html>

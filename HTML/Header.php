@@ -23,11 +23,17 @@ $menu = array();
 
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/respond.js"></script>
 
 <!--Stylesheet-->
 <link type="text/css" rel="stylesheet" href="css/opmaak.css">
+<link type="text/css" rel="stylesheet" href="css/opmaak_rik.css">
+
+<!--slick slider-->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.2/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.2/slick/slick-theme.css"/>
 
 <!--Body-->
 <body>
@@ -36,7 +42,7 @@ $menu = array();
     <div id="headerContainer" class="row">
         <!--Logo-->
         <div class="col-xs-12">
-            <a href="Index.php">
+            <a href="/pc4u/html">
                 <img id="logo" src="images/Header/logo.png" class="">
             </a>
 

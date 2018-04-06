@@ -27,27 +27,31 @@ function preview_image()
 <?php
 
     //Get the ID from the product session (the page that linked to this)
-    $ProductID = 1;
+    $ProductID = $_GET['id'];
     //Get the information from the database
     $query = "SELECT * FROM Products WHERE ProductID = $ProductID";
     $result = $product->find_by_sql($query);
     //First product in array, returns objects in array
-    $product = $result[0];
+    if(!empty($result))
+    {
+        $product = $result[0];
 
-    //Get the category name associated from the category table
-    $query = "SELECT * FROM Categories WHERE CategoryID = $product->CategoryID";
-    $result = $category->find_by_sql($query);
-    $category = $result[0];
-    $json = $category->Properties;
-    $decoded_json = json_decode($json,true)["fields"];
-    $PropertyLabel1 = $decoded_json['0']["key"];
-    $PropertyLabel2 = $decoded_json['1']["key"];
+        //Get the category name associated from the category table
+        $query = "SELECT * FROM Categories WHERE CategoryID = $product->CategoryID";
+        $result = $category->find_by_sql($query);
+        $category = $result[0];
+        $json = $category->Properties;
+        $decoded_json = json_decode($json,true)["fields"];
+        $PropertyLabel1 = $decoded_json['0']["key"];
+        $PropertyLabel2 = $decoded_json['1']["key"];
 
-    //Get the images from the product
-    $query = "SELECT * FROM Images WHERE ProductID = $product->ProductID";
-    $images = $image->find_by_sql($query);
-
-    $image = $images[0];
+        //Get the images from the product
+        $query = "SELECT * FROM Images WHERE ProductID = $product->ProductID";
+        $images = $image->find_by_sql($query);
+        if(!empty($images))
+        {
+            $image = $images[0];
+        }
 
     // Get a list of categories
     $categories = $database->query("SELECT * FROM categories");
@@ -61,9 +65,10 @@ function preview_image()
         <hr>
 
         <div id="EditProduct" class="row">
-            <h3>Product wijzigen</h3>
+            <h3 class="">Product wijzigen</h3>
 
             <form id="editForm" class="center-block myForm needs-validation" action="update_product.php" method="POST" name="EditProduct" enctype="multipart/form-data">
+                <input type="hidden" id="ProductID" name="ProductID" value="<?= $ProductID ?>">
                 <div class="form-group col-sm-4 col-xs-12">
                     <label for="ArtNumber">Artikelnummer</label>
                     <input type="text" class="form-control" id="ArtNumber" name="ArtNumber" placeholder="ArtikelNummer" value="<?php echo $product->ArtNumber ?>" required>
@@ -126,7 +131,7 @@ function preview_image()
                     <label for="Description">Beschrijving</label>
                     <textarea type="text" class="form-control textAreaInput" id="Description" name="Description" placeholder="Beschrijving" required><?php echo $product->Description ?></textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-group required">
                     <label for="UploadFile">Afbeelding(en) toevoegen</label>
                     <input type="file" id="upload_file" name="upload_file[]" onchange="preview_image();" multiple/>
                     <p class="help-block">Selecteer hier de afbeeldingen voor bij het product</p>
@@ -139,7 +144,7 @@ function preview_image()
                             for($i=0; $i<count($images); $i++)
                             {
                                 echo "<div class='col-sm-4 col-xs-12'>";
-                                    echo "<input type='radio' id='featuredImage' name='featuredImage' value='" . basename($images[$i]->Location) . "'";
+                                    echo "<input type='radio' id='featuredImage' name='featuredImage' required value='" . basename($images[$i]->Location) . "'";
                                     echo $images[$i]->Featured == 1 ? "checked = checked >": ">";
                                     echo "<img src=" . $images[$i]->Location . ">";
                                     echo "<a href='DeleteImage.php?id=". $images[$i]->ImageID ." '>verwijder afbeelding</a>";
@@ -160,5 +165,13 @@ function preview_image()
     <!--/End Content-->
 
 <?php
+// If no product is found, just display an empty page and return a warning message
+}
+else
+{
+    echo "<h2>Unable to find product with id of " . $_GET['id'] . "!</h2>";
+}
+
+
 include 'Footer.php';
 ?>

@@ -12,7 +12,7 @@
 		<form class="center-block loginForm needs-validation" action="PhpInlog.php" method="POST">
 			<div class="form-group">
 				<label for="Email">Email address</label>
-				<input type="email" class="form-control" name="email" id="Email" placeholder="Email" required>
+				<input type="email" class="form-control" name="email" id="Email" placeholder="Email" autofocus required>
 			</div>
 			<div class="form-group">
 				<label for="Password">Password</label>

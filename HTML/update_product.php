@@ -4,7 +4,7 @@ include 'Includes/initialize.php';
 
 if(isset($_POST['EditProduct']))
 {
-    $id = 1;
+    $id = $_POST['ProductID'];
     $product->id = $id;
     $product->ProductID = $id;
     $product->ArtNumber = $_POST['ArtNumber'];
