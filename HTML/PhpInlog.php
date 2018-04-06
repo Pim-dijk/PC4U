@@ -13,10 +13,10 @@ include("Header.php");
 		$hashed = hash("sha512", $salted);
 		  
       $sql = "SELECT * FROM customers WHERE email = '$myemail' AND password	 = '$hashed'";
-      $user = new User();
-      $result = $user->find_by_sql($sql);
-      $user = $result['0'];
-      $CustomerID = $user->CustomerID;
+      $customer = new Customer();
+      $result = $customer->find_by_sql($sql);
+      $customer = $result['0'];
+      $CustomerID = $customer->CustomerID;
       
       
       

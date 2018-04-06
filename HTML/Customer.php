@@ -1,4 +1,15 @@
-<?php include 'Header.php' ?>
+<?php
+
+include 'Header.php';
+
+if(isset($_GET['id']))
+{
+    $customerID = $_GET['id'];
+    $query = "SELECT * FROM customers WHERE CustomerID = $customerID";
+    $sql = $customer->find_by_id($customerID);
+}
+
+?>
 
 <!--Content goes here-->
 <div id="Customer" class="content">

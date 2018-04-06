@@ -1,6 +1,6 @@
 <?php
 
-class User extends DatabaseObject {
+class Customer extends DatabaseObject {
 
 	protected static $table_name = "customers";
 	protected static $db_fields = array('CustomerID', 'Email', 'Password', 'PhoneNumber', 'Street', 'Zipcode', 'HouseNumber', 'Addition', 'City', 'Country', 'Business', 'Initials',  'Lastname', 'DOB');
@@ -73,5 +73,5 @@ class User extends DatabaseObject {
 	//common database methods zitten in de database_object
 	
 }
-$user = new User();
+$customer = new Customer();
 ?>
