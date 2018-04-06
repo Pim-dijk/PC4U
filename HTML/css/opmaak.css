@@ -638,9 +638,32 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         width: 100%;
     }
 
+    .dropdown-content
+    {
+        top: 0px;
+    }
+
     #myDropdown
     {
         width:100%;
+        position:relative;
+    }
+
+    #myDropdown a
+    {
+        padding: 0;
+    }
+
+    #myDropdown li
+    {
+        color: #FF1100;
+        border-bottom:2px solid #FF1100 !important;
+    }
+
+    #myDropdown li:hover
+    {
+        color:#FF6600;
+        border-bottom:3px solid #FF6600 !important;
     }
 
     #header

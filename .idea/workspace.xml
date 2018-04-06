@@ -45,17 +45,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="opmaak.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="opmaak.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HTML/css/opmaak.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="557" column="21" lean-forward="true" selection-start-line="557" selection-start-column="21" selection-end-line="557" selection-end-column="21" />
+            <state relative-caret-position="10948">
+              <caret line="644" column="0" lean-forward="true" selection-start-line="644" selection-start-column="0" selection-end-line="644" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Header.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Header.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
@@ -101,6 +101,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>dropdown</find>
+      <find>drop</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,8 +150,8 @@
         <option value="$PROJECT_DIR$/HTML/categorieen-page.php" />
         <option value="$PROJECT_DIR$/HTML/Index.php" />
         <option value="$PROJECT_DIR$/HTML/Logout.php" />
-        <option value="$PROJECT_DIR$/HTML/css/opmaak.css" />
         <option value="$PROJECT_DIR$/HTML/Header.php" />
+        <option value="$PROJECT_DIR$/HTML/css/opmaak.css" />
       </list>
     </option>
   </component>
@@ -363,12 +364,12 @@
       <workItem from="1521811228485" duration="2828000" />
       <workItem from="1522047643043" duration="15179000" />
       <workItem from="1522838299195" duration="24072000" />
-      <workItem from="1522997080865" duration="3815000" />
+      <workItem from="1522997080865" duration="5564000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91082000" />
+    <option name="totallyTimeSpent" value="92831000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -826,14 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/css/opmaak.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="557" column="21" lean-forward="true" selection-start-line="557" selection-start-column="21" selection-end-line="557" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HTML/Header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -841,6 +834,14 @@
           <folding>
             <marker date="1523000922943" expanded="true" signature="52:76" ph="SELECT * FRO... categories" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/css/opmaak.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10948">
+          <caret line="644" column="0" lean-forward="true" selection-start-line="644" selection-start-column="0" selection-end-line="644" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
