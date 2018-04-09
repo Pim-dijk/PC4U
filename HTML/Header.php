@@ -29,6 +29,8 @@ $menu = array();
 <!--Stylesheet-->
 <link type="text/css" rel="stylesheet" href="css/opmaak.css">
 <link type="text/css" rel="stylesheet" href="css/opmaak_rik.css">
+<link type="text/css" rel="stylesheet" href="css/opmaak_ivan.css">
+
 
 <!--slick slider-->
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.7.1/slick/slick.css"/>
