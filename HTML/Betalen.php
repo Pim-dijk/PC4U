@@ -6,7 +6,7 @@
         $query = $database->query($sql);
         $result = $database->fetch_array($query);
     ?>
-    <h1 class="text-center h1-margin">Betalen</h1>
+    <h1 class="text-center">Betalen</h1>
 
     <div id="betalenUitlijningDiv">
         <form action="AddOrder.php">

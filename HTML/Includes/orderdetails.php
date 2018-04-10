@@ -8,10 +8,15 @@ class Orderdetails extends DatabaseObject {
     public $OrderID;
     public $ProductID;
     public $Amount;
-
-    function __construct() {
+    
+function __construct() {
         parent::__construct("OrderdetailsID");
     }
+
 }
-$Orderdetails = new Orderdetails();
+
+$orderdetail = new Orderdetails();
+
+?>
+
     

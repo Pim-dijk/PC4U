@@ -62,14 +62,25 @@ include("initialize.php");
 			</div>
 			<div class="form-group required col-sm-6 col-xs-12">
 				<label for="Country" class="control-label">Land</label>
-				<input type="text" name="Country" class="form-control" id="Country" placeholder="Land" required>
+                <select name="Country" class="form-control" id="Country">
+                    <option value="Nederland">Nederland</option>
+                    <option value="Belgie">Belgie</option>
+                    <option value="Duitsland">Duitsland</option>
+                </select>
 			</div>
 			<div class="form-group required col-sm-6 col-xs-12">
 				<label for="Phone" class="control-label">Geboortedatum</label>
 				<input type="date" name="DOB" class="form-control" id="date" placeholder="Geboortedatum" required>
 			</div>
-			
-			<button type="submit" name="register" class="btn btn-default col-sm-2 pull-left">Registreer</button>
+            <div class="form-group col-sm-12">
+                <label for="Business" class="control-label"> Aanvinken voor zakelijk account</label>
+                <input class="pull-left" type="checkbox" name="Business" value="1"><br>
+            </div>
+
+			<div class="form-group col-sm-12">
+                <button type="submit" name="register" class="btn btn-default pull-left">Registreer</button>
+            </div>
+
 		</form>
 	</div>
 

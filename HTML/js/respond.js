@@ -1,3 +1,11 @@
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+//just to test..
+
 /*! Respond.js v1.4.2: min/max-width media query polyfill
  * Copyright 2014 Scott Jehl
  * Licensed under MIT

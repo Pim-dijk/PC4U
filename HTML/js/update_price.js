@@ -27,6 +27,6 @@ function updatePrice(id) {
     sumTotal -= totalPriceProduct;
     sumTotal += newTotalPriceProduct;
     
-    totalPriceProductElement.textContent = "€ " + newTotalPriceProduct;
+    totalPriceProductElement.textContent = "€ " + newTotalPriceProduct.toFixed(2);
     sumTotalElement.textContent = "€ " + sumTotal;
 }

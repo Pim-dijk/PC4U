@@ -1,0 +1,136 @@
+#box1 {
+	margin-top: 20px;
+}
+#visibleform {
+	height: 1000px;
+}
+/*Text align center gewijzigd*/
+/*.overzichtpagina h2,h3 {*/
+	/*text-align: left;*/
+	/*padding-top:10px !important;*/
+	/*padding:0px;*/
+	/*margin-top: 15px !important;*/
+/*}*/
+/*.productenpagina h1 { */
+	/*text-align: left !important;*/
+/*}*/
+/*.productenpagina h2 {*/
+	/*text-align: left !important;*/
+	/*padding:0px;*/
+/*}*/
+
+/*.productenpagina h3 {*/
+	/*text-align: left;*/
+	/*padding-top: 20px !important;*/
+	/*padding:0px;*/
+/*}*/
+/*.categoriepagina h2,h3 {*/
+	/*text-align:left !important;*/
+	/*padding:0px;*/
+	/*padding-top:10px !important;*/
+/*}*/
+
+
+/*Overzicht.css*/
+@media screen and (min-width:100px) and (max-width: 550px) {
+	#merk, #prijsoverzicht, #processor, #scherm {
+		display: none;
+	}
+	.filter {
+		display:none;
+		margin-top:0px;
+		margin-left:12%;
+	}
+	#laptops {
+		margin-bottom: 15px;
+	}
+	.removemobile {
+		display:none !important;
+	}
+}
+@media screen and (min-width:551px) {
+	.filterpopup {
+		display:none;
+	}
+}
+/*Products.css*/
+.bodyborder {
+    border: 1px solid grey;
+}
+.margintopafbeelding {
+	margin-top:30px;
+}
+.filter {
+	width:132px;
+	height:40px;
+	background-color:rgba(255, 153, 0, 1);
+	color: black;
+	border: 1px solid rgba(121, 121, 121, 1);	
+	border-radius: 5px;
+	margin-top:20px;
+	margin-bottom:20px;
+	transition: all 0.3s ease-out;
+}
+.categorie {
+	font-size:14px;
+	font-weight: bold;
+}
+#productomschrijving {
+	margin-top:15px;
+}
+#prijzen {
+	width: 53%;
+	margin-top:17% !important;
+	margin:0 auto;
+}
+#specificaties {
+	width: 53%;
+	margin:0 auto;
+}
+.sliderafbeeldingen {
+	margin-left: 25px;
+}
+@media screen and (min-width:250px) and (max-width: 800px) {
+	#prijzen {
+	width: 100%;
+	margin-top:17% !important;
+	margin:0 auto;
+	}
+	#specificaties {
+	width: 100%;
+	margin:0 auto;
+	}
+	#leftsidebar {
+	height:200px !important;
+}
+}
+.slick-prev:before, .slick-next:before {
+	color:black !important;
+}
+.slick-slide {
+	height:auto;
+}
+/*Retourneren.css*/
+.orangeunderline {
+	color:#FF6600;
+	text-decoration:underline;	
+}
+.voegtoebutton {
+	width:150px;
+	height:40px;
+	background-color:rgba(255, 153, 0, 1);
+	color: black;
+	border: 1px solid rgba(121, 121, 121, 1);	
+	border-radius: 5px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.floatleft {
+	float:left;
+}
+#leftsidebar {
+	height:500px;
+}
+
+
+

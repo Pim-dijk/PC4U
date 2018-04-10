@@ -1,10 +1,11 @@
 <?php
-
-include 'Header.php';
+session_start();
+include 'Includes/initialize.php';
 
 if(isset($_POST['EditProduct']))
 {
-    $id = 1;
+    $id = $_POST['ProductID'];
+    $product->id = $id;
     $product->ProductID = $id;
     $product->ArtNumber = $_POST['ArtNumber'];
     $product->ArtName = $_POST['ArtName'];
@@ -12,9 +13,13 @@ if(isset($_POST['EditProduct']))
     $product->Description = $_POST['Description'];
     $product->CategoryID = $_POST['Category'];
     $product->Brand = $_POST['Brand'];
+    $product->Availability = 0;
     $product->Property1 = $_POST['Property1'];
     $product->Property2 = $_POST['Property2'];
     $product->update();
+
+    //The featured image
+    $featuredImage = $_POST['featuredImage'];
 
     if(($_FILES["upload_file"]["name"][0]) != "")
     {
@@ -30,10 +35,29 @@ if(isset($_POST['EditProduct']))
         }
     }
 
+    // Get all the images for the product after they have all been added
+    $query = "SELECT * FROM Images WHERE ProductID = $product->ProductID";
+    $images = $image->find_by_sql($query);
 
-    header("Location: EditProduct.php"); /* Redirect browser */
+    foreach($images as $image)
+    {
+        $image->id = $image->ImageID;
+        if(basename($image->Location) == $featuredImage)
+        {
+            $image->Featured = 1;
+        }
+        else
+        {
+            $image->Featured = 0;
+        }
+        $image->update();
+    }
+
+    $_SESSION["alert-type"] = "success";
+    $_SESSION["alert-message"] = "Product succesvol bijgewerkt!";
+
+    header("Location: Admin.php"); /* Redirect browser */
     exit();
 }
 
-include 'Footer.php';
 ?>

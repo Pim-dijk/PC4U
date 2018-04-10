@@ -1,12 +1,13 @@
 <?php
-    include 'Header.php';
+    include 'Includes/initialize.php';
 
-    if ( isset($_POST['Category']) && isset($_POST['Artnr']) && isset($_POST['Artname']) && isset($_POST['Description']) && isset($_POST['Price']) ) {
+    if ( isset($_POST['Category']) && isset($_POST['Artnr']) && isset($_POST['Artname']) && isset($_POST['Description']) && isset($_POST['Price']) && isset($_POST['Brand']) ) {
         $product->CategoryID = $_POST['Category'];
         $product->ArtNumber = $_POST['Artnr'];
         $product->ArtName = $_POST['Artname'];
         $product->Description = $_POST['Description'];
         $product->Price = $_POST['Price'];
+        $product->Brand = $_POST['Brand'];
         if ( $_POST['Category'] == 1 ) {
             $product->Property1 = $_POST['Property1Processor'];
             $product->Property2 = $_POST['Property2Processor'];
@@ -21,6 +22,8 @@
             $product->Property2 = $_POST['Property2Laptop'];
         }
         $product->create();
+
+        $featuredImage = $_POST['featuredImage'];
 
         $artNr = $_POST['Artnr'];
         $sql = "SELECT * FROM products WHERE ArtNumber=$artNr";
@@ -39,6 +42,11 @@
 
                 $image->ProductID = $id;
                 $image->Location = "$folder".$_FILES["upload_file"]["name"][$i];
+                if (basename($image->Location) == $featuredImage) {
+                    $image->Featured = 1;
+                } else {
+                    $image->Featured = 0;
+                }
                 $image->create();
             }
         }

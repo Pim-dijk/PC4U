@@ -22,7 +22,7 @@ class Customer extends DatabaseObject {
 	public $DOB = "";
 
     function __construct() {
-        parent::__construct("CustomerID", $this->CustomerID);
+        parent::__construct("CustomerID");
     }
 
 	public
@@ -69,6 +69,26 @@ class Customer extends DatabaseObject {
 				return false;
 			}
 	}
+
+    public
+    function update() {
+        global $database;
+
+        $attributes = $this->sanitized_attributes();
+        $attributes_pairs =  array();
+        foreach($attributes as $key => $value){
+            if($key != "Password")
+            {
+                $attributes_pairs[] = "{$key}='{$value}'";
+            }
+        }
+
+        $sql = "UPDATE ".static::$table_name." SET ";
+        $sql .= join(", ", $attributes_pairs);
+        $sql .= " WHERE CustomerID =". $database->escape_value($this->id);
+        $database->query($sql);
+        return($database->affected_rows($sql) == 1) ? true : false;
+    }
 
 	//common database methods zitten in de database_object
 	

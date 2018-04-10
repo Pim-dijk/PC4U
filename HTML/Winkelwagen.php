@@ -9,7 +9,7 @@
                 $totalProducts = 0;
                 for ($i = 0; $i < count($shoppingcartData); $i++) {
                     $object = $shoppingcartData[$i];
-                    $sql = "SELECT * FROM products INNER JOIN images ON products.ProductID = images.ProductID WHERE products.ProductID = $object->ProductID";
+                    $sql = "SELECT * FROM products INNER JOIN images ON products.ProductID = images.ProductID WHERE products.ProductID = $object->ProductID AND images.Featured = 1";
                     $product = $database->query($sql);
                     $result = $database->fetch_array($product);
                     $productTotalSum = $object->Amount * $result['Price'];
@@ -17,32 +17,32 @@
                     $totalProducts += 1;
 
                     ?>
-                        <div id="winkelwagenDivContainer">
+                        <div id="winkelwagenDivContainer" style="margin-left: 20px;">
                             <input type="hidden" name="productID-<?php echo $i; ?>" value="<?php echo $object->ProductID; ?>">
                             <div id="winkelwagenDiv">
                                 <img src="<?php echo $result["Location"] ?>">
                             </div>
                             <div id="winkelwagenDiv" style="margin-left: 10px;">
-                                <p class="bold">Artikelnaam</p>
+                                <p class="winkelwagenHeaders">Artikelnaam</p>
                                 <label class="margin-top-20"><?php echo $result['ArtName'] ?></label>
                             </div>
                         </div>
-                        <div id="winkelwagenDivContainer" style="width: 175px;">
+                        <div id="winkelwagenDivContainer" style="width: 225px;">
                             <div id="winkelwagenDiv" style="width: 75px;">
-                                <p class="bold">Aantal</p>
+                                <p class="winkelwagenHeaders">Aantal</p>
                                 <input type="text" name="aantal-<?php echo $object->ProductID; ?>" id="aantal-<?php echo $object->ProductID; ?>" value="<?php echo $object->Amount; ?>" onchange="updatePrice(this.name)">
                             </div>
-                            <div id="winkelwagenDiv" style="width: 100px;">
+                            <div id="winkelwagenDiv" style="width: 150px;">
                                 <a href="deleteItemShoppingcart.php?productID=<?php echo $object->ProductID; ?>" class="line-height-125-winkelwagen"><span class="glyphicon glyphicon-trash"> Verwijderen</a>
                             </div>
                         </div>
                         <div id="winkelwagenDivContainer" style="margin-left: 20px;">
                             <div id="winkelwagenDiv">
-                                <p class="bold">Prijs</p>
+                                <p class="winkelwagenHeaders">Prijs</p>
                                 <label class="margin-top-20" id="productPrice-<?php echo $object->ProductID; ?>"><?php echo "€  ".$result['Price']; ?></label>
                             </div>
-                            <div id="winkelwagenDiv">
-                                <p class="bold">Totaal prijs</p>
+                            <div id="winkelwagenDiv ">
+                                <p class="winkelwagenHeaders">Totaal prijs</p>
                                 <label class="margin-top-20" name="totalPriceProduct" id="totalPriceProduct-<?php echo $object->ProductID; ?>"><?php echo "€ ".number_format($productTotalSum, 2); ?></label>
                             </div>
                         </div>

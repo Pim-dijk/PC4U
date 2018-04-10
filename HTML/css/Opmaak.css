@@ -1,447 +1,747 @@
-/* Algemeen */
-#content {
-    max-width: 1000px;
-    width: 100%;
-    min-height: 600px;
-    height: auto;
-    overflow: auto;
-    margin: auto;
-}
-
-/* Admin reparaties overzicht */
-#reparatiesOverzichtUitlijningDiv {
-    width: 70%;
-    height: auto;
-    overflow: auto;
-    margin: auto;
-}
-#reparatiesOverzichtUitlijningDiv form select {
-    margin-left: 15px;
-}
-#reparatiesOverzichtUitlijningDiv form input[type="submit"] {
-    margin-left: 15px;
-}
-#reparatiesOverzichtRow {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    float: left;
-}
-#reparatiesOverzichtRowDiv {
-    width: 150px;
-    height: 75px;
-    float: left;
-}
-#reparatiesOverzichtRowDiv a {
-    line-height: 20px;
-}
-
-/* Admin reparatie */
-#reparatiesUitlijningDiv {
-    width: 70%;
-    height: auto;
-    overflow: auto;
-    margin: auto;
-}
-#reparatiesUitlijningDiv p {
-    display: inline-block;
-}
-#reparatiesUitlijningDiv a {
-    margin: 15px 0px 15px 10px;
-    float: right;
-}
-
-/* Admin retourneren overzicht */
-#retournerenOverzichtUitlijningDiv{
-    width: 70%;
-    height: auto;
-    overflow: auto;
-    margin: auto;
-}
-#retournerenOverzichtUitlijningDiv form select {
-    margin-left: 15px;
-}
-#retournerenOverzichtUitlijningDiv form input[type="submit"] {
-    margin-left: 15px;
-}
-#retournerenOverzichtRow {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    float: left;
-}
-#retournerenOverzichtRowDiv {
-    width: 150px;
-    height: 75px;
-    float: left;
-}
-#retournerenOverzichtRowDiv a {
-    line-height: 20px;
-}
-
-/* Admin retourneren */
-#retournerenUitlijningDiv {
-    width: 70%;
-    height: auto;
-    overflow: auto;
-    margin: auto;
-}
-#retournerenUitlijningDiv p {
-    display: inline-block;
-}
-#retournerenUitlijningDiv a {
-    margin: 15px 0px 15px 10px;
-    float: right;
-}
-
-/* Admin RMA overzicht */
-#RMAOverzichtUitlijningDiv {
-    width: 70%;
-    height: auto;
-    overflow: auto;
-    margin: auto;
-}
-#RMAOverzichtUitlijningDiv form select {
-    margin-left: 15px;
-}
-#RMAOverzichtUitlijningDiv form input[type="submit"] {
-    margin-left: 15px;
-}
-#RMAOverzichtRow {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    float: left;
-}
-#RMAOverzichtRowDiv {
-    width: 150px;
-    height: 75px;
-    float: left;
-}
-#RMAOverzichtRowDiv a {
-    line-height: 20px;
-}
-
-/* Admin RMA */
-#RMAUitlijningDiv {
-    width: 60%;
-    height: auto;
-    overflow: auto;
-    margin: auto;
-}
-#RMAUitlijningDiv p {
-    display: inline-block;
-}
-#RMAUitlijningDiv a {
-    margin: 15px 0px 15px 10px;
-    float: right;
-}
-
-/* Winkelwagen */
-#winkelwagenDivContainer {
-    width: 310px;
-    height: 125px;
-    float: left;
-}
-#winkelwagenDiv {
-    width: 150px;
-    height: 125px;
-    float: left;
-}
-#winkelwagenDiv img {
-    width: 150px;
-    height: 125px;
-}
-#winkelwagenDiv input[type="text"] {
-    width: 50px;
-    margin-top: 20px;
-}
-#winkelwagenTotaal {
-    width: 40%;
-    height: auto;
-    float: right;
-    overflow: auto;
-    border: solid 1px black;
-}
-#winkelwagenTotaal p {
-    margin: 15px 0px 0px 15px;
-    display: inline-block;
-}
-#winkelwagenTotaal input[type="submit"] {
-    float: right;
-    margin: 10px 20px 20px 0px;
-}
-
-/* Winkelwagen overzicht */
-#winkelwagenOverzichtDivContainer {
-    width: 320px;
-    height: auto;
-    overflow: auto;
-    float: left;
-}
-#winkelwagenOverzichtDiv {
-    width: 150px;
-    height: auto;
-    overflow: auto;
-    float: left;
-    margin-right: 10px;
-}
-#totaalOverzicht {
-    width: 50%;
-    height: auto;
-    overflow: auto;
-    float: right;
-    border: solid 1px black;
-}
-#totaalOverzicht p {
-    margin: 15px 0px 0px 15px;
-    display: inline-block;
-}
-#totaalOverzicht input[type="submit"] {
-    float: right;
-    margin: 10px 20px 20px 0px;
-}
-
-/* Betalen */
-#betalenUitlijningDiv {
-    width: 60%;
-    height: auto;
-    overflow: auto;
-    margin: auto;
-}
-#betalenDiv {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    float: left;
-}
-#betalenDiv p {
-    display: inline-block;
-}
-#betalenDiv input[type="submit"] {
-    float: right;
-    margin: 10px 20px 20px 0px;
-}
-#paymentMethods {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    float: left;
-}
-
-/* Algemene klassen */
-.h1-margin {
-    margin: 30px 0px 50px 0px;
-}
-.bold {
-    font-weight: bold;
-}
-.button-color 
+@font-face
 {
-    background-color: #FF9900;
+	font-family:montserrat-bold;
+	src:url(../fonts/Montserrat-Bold.otf);
+}
+@font-face
+{
+	font-family:header;
+	src:url(../fonts/Myriad%20Pro%20Regular.ttf);
+}
+@font-face
+{
+	font-family:gotham book;
+	src:url(../fonts/Gotham%20Book%20Regular.otf);
+}
+@font-face
+{
+	font-family:gotham book;
+	src:url(../fonts/Gotham%20Book%20Regular.otf);
+	font-weight:bold;
+}
+@font-face
+{
+	font-family:myriad pro;
+	src:url(../fonts/Myriad%20Pro%20Regular.woff);
+	font-weight:bold;
 }
 
-/* Admin reparatie klassen */
-.reparaties-p-left {
-    width: 150px;
-}
-.reparaties-p-right {
-    width: 70%;
-}
-
-/* Admin retourneren klassen */
-.retourneren-p-left {
-    width: 150px;
-}
-.retourneren-p-right {
-    width: 70%;
+body
+{
+	background-color:#FFFFFF;
+	font-family:gotham book;
+	font-weight:normal;
+	font-size:20px;
+	color:black;
+	height:auto;
+	background-image: url(../images/../images/../images/pexels-photo-326240.jpeg);
+	background-repeat: repeat-y;
 }
 
-/* Admin RMA klassen*/
-.RMA-p-left {
-    width: 150px;
-}
-.RMA-p-right {
-    width: 70%;
-}
-
-/* Winkelwagen klassen */
-.line-height-75-winkelwagen {
-    line-height: 75px;
-}
-.line-height-125-winkelwagen {
-    line-height: 125px;
-}
-.div-width-75-winkelwagen {
-    width: 75px;
-}
-.winkelwagen-p-left {
-    width: 30%;
-}
-.winkelwagen-p-right {
-    width: 60%;
-}
-.margin-top-20 {
-    margin-top: 20px;
+.container
+{
+	max-width: 1000px;
+	background-color: #FFFFFF;
+	padding:0;
 }
 
-/* Winkelwagen overzicht klassen */
-.winkelwagenOverzicht-p-left {
-    width: 60%;
-}
-.winkelwagenOverzicht-p-right {
-    width: 30%;
+.breadcrumb li
+{
+	font-size: 14px;
 }
 
-/* Betalen klassen */
-.betalen-p-left {
-    width: 30%;
-}
-.betalen-p-right {
-    width: 60%;
+h1
+{
+	padding:20px;
+	color:#ff6600;
+	margin:0;
+	text-align: center;
 }
 
-/* Media Admin reparaties overzicht */
-@media (max-width: 393px) {    
-    #reparatiesOverzichtUitlijningDiv form input[type="submit"] {
-        margin: 15px 0px 0px 15px;
+h2
+{
+	padding:10px;
+	color:#ff9900;
+	text-align: center;
+}
+
+h3
+{
+	text-align: center;
+	color:#ff9900;
+	font-family:gotham book;
+	padding:10px;
+	margin:0;
+}
+
+p
+{
+	font-size:15px;
+	font-family:gotham book;
+}
+
+hr
+{
+	width: 100%;
+	border-color: #ff9900;
+}
+
+a:link
+{
+	color:#ff6600;
+}
+
+a:visited
+{
+	color:#ff6600;
+}
+
+a:hover
+{
+	color:#ff9900;
+}
+
+/*My form styling*/
+.myForm
+{
+	max-width:75% !important;
+	width: 75% !important;
+	margin:0 auto;
+	padding-bottom: 25px;
+	display:block;
+}
+
+.loginForm
+{
+	width:50% !important;
+}
+
+.textAreaInput
+{
+    min-width:99%;
+	max-width:100%;
+}
+
+.form-group.required .control-label:after { 
+	content:"*";
+	color:red;
+}
+
+.content
+{
+	padding:0 25px 25px 25px;
+}
+
+/*Customer page*/
+#Customer form
+{
+	margin:25px;
+}
+
+#Customer table
+{
+	margin:15px auto;
+}
+
+/*Order History page*/
+#OrderHistory table
+{
+	margin:0 auto;
+	margin-bottom: 25px;
+}
+
+.Services
+{
+	text-align: left;
+	float:left;
+	padding:25px;
+}
+
+.form-group
+{
+	padding-right:15px;
+	padding-bottom:5px;
+}
+
+/*Admin Edit product*/
+#EditProduct select
+{
+	color: black !important;
+	display:block;
+}
+
+#image_data
+{
+	display: block;
+	margin-bottom: 15px;
+}
+
+#image_data img
+{
+	width: 200px;
+	height: 150px;
+	margin-left: 15px;
+}
+
+#image_data a
+{
+	margin-left: 25px;
+}
+
+/*dit is voor de Laatstbekeken*/
+#laatstBekeken img{
+	width: 200px;
+	height: 150px;
+	padding:10px;
+}
+
+
+/*dit is dus een andere slider*/
+
+.box {
+	width: 200px;
+	padding: 20px;
+	margin: 10px;
+	border: 1px solid darkorange;
+	border-radius: 8px;
+
+}
+
+
+.slides {
+	padding: 0;
+	max-width: 970px;
+	width: 100%;
+	height: 420px;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+}
+
+.slides * {
+	user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+	top: 0;
+	opacity: 0;
+	max-width: 970px;
+	width:100%;
+	height: 420px;
+	display: block;
+	position: absolute;
+
+	transform: scale(0);
+
+	transition: all .7s ease-in-out;
+}
+
+.slide img {
+	width: 100%;
+	height: 100%;
+}
+
+.nav label {
+	max-width: 200px;
+	width: 20%;
+	height: 100%;
+	display: none;
+	position: absolute;
+
+	opacity: 0;
+	z-index: 9;
+	cursor: pointer;
+
+	transition: opacity .2s;
+
+	color: #FFF;
+	font-size: 156pt;
+	text-align: center;
+	line-height: 380px;
+	font-family: "Varela Round", sans-serif;
+	background-color: rgba(255, 255, 255, .3);
+	text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+	opacity: 1;
+
+	transform: scale(1);
+
+	transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+	padding-top: 441px;
+	width: 100%;
+	bottom: 9px;
+	height: 11px;
+	display: block;
+	text-align: center;
+
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 5;
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: orange;
+	border-bottom: none;
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+	background-color:orange;
+}
+
+#Aanbiedingen
+{
+	display:block;
+}
+
+
+.aanbiedingImg {
+	padding:15px;
+	text-align: center;
+	width: 200px;
+	height: 150px;
+}
+
+/*Home dropdown menu*/
+/* Dropdown Button */
+.dropbtn {
+	color: #FF6600;
+	padding: 16px;
+	border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	top:30px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* Formatting search box */
+.search-box-artName .search-box-catName{
+	position: relative;
+	display: inline-block;
+}
+.search-box-artName .search-box-catName input[type="text"]{
+	padding: 5px 10px;
+	border: 1px solid #CCCCCC;
+}
+.search-box-artName .search-box-catName input[type="text"], .result{
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Formatting result items */
+.result-cat{
+	position: absolute;
+	z-index: 999;
+	top: 100%;
+	left: 0;
+}
+.result-cat p{
+	margin: 0;
+	padding: 7px 10px;
+	border: 1px solid #CCCCCC;
+	background: white;
+	border-top: none;
+	cursor: pointer;
+}
+.result-cat p:hover{
+	background: #f2f2f2;
+}
+
+.result-name{
+    position: absolute;
+    z-index: 999;
+    top: 100%;
+    left: 0;
+}
+.result-name p{
+    margin: 0;
+    padding: 7px 10px;
+    border: 1px solid #CCCCCC;
+    background: white;
+    border-top: none;
+    cursor: pointer;
+}
+.result-name p:hover{
+    background: #f2f2f2;
+}
+
+/*### HEADER ###*/
+#headerContainer
+{
+    max-width: 1000px;
+    width:100%;
+    height:auto;
+    float:left;
+    padding:5px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid black;
+}
+
+#logo
+{
+    height:	75px;
+    margin-left: 50px;
+}
+
+.loginButton
+{
+    color:#ff6600;
+}
+
+
+.shoppingCart
+{
+    margin-top: 25px;
+    width:35px;
+    height:35px;
+    float:left;
+}
+
+.cartCount
+{
+    margin-top:25px;
+    margin-left: 5px;
+    margin-right: 50px;
+    float:left;
+    color:#ff6600;
+    font-size: 20px;
+}
+
+#header
+{
+    width:auto;
+    float:left;
+    margin-left:15px;
+    height:auto;
+    font-family:header;
+    font-size:18px;
+}
+
+#header a
+{
+    text-decoration:none;
+}
+
+#header li:hover
+{
+    border-bottom:5px solid #FF9900;
+}
+
+#header ul
+{
+    list-style:none;
+    margin-top:15px;
+    padding:0;
+    float:left;
+}
+
+#header li
+{
+    width:auto;
+    height:35px;
+    float:left;
+    padding:0px 18px;
+    text-align: center;
+}
+
+.breadcrumb
+{
+    background-color: #FFFFFF;
+    margin-bottom:0;
+    border-radius: 0;
+    border-bottom: 1px solid black;
+}
+
+
+/*### FOOTER ###*/
+#FooterContainer
+{
+    max-width:1000px;
+    width:100%;
+    height:auto;
+    float:left;
+    background-color: #FFFFFF;
+    padding: 25px 0;
+    border-top:1px solid black;
+}
+
+#copyright
+{
+    padding-top: 70px;
+    padding-left:50px;
+    font-size:12px;
+    color:black;
+    text-align:center;
+}
+
+#subMenu li
+{
+    font-size: 14px;
+    list-style-type: none;
+    color:#ff6600;
+}
+
+#subMenu a:hover
+{
+    text-decoration: none;
+}
+
+#Adress
+{
+    color:black;
+    padding-left: 25px;
+}
+
+#footerSocial
+{
+    padding-left:50px;
+    padding-top:50px;
+}
+
+#footerSocial img
+{
+    height: 32px;
+    width: 32px;
+}
+
+/*### Alerts ###*/
+.alert
+{
+    position: fixed;
+    width:750px;
+    bottom:25px;
+    z-index: 5;
+}
+
+#alertWrapper
+{
+    max-width:750px;
+    margin: 10px auto 0 auto;
+}
+
+/*### Change table to cards at or below 768px ###*/
+@media screen and (max-width:768px)
+{
+/*	Turn table into cards*/
+	table
+	{
+		font-size: 0.7em;
+		
+	}
+	
+	.table-responsive {
+		border: 0;
+	}
+
+	#card table{
+		border:0;
+	}
+	
+	#card table thead{
+		display:none;
+	}
+	
+	#card table tr{
+		margin-bottom:20px;
+		display:block;
+		border-bottom: 1px solid #ddd;
+	}
+	
+	#card table td{
+		display:block;
+		text-align: right;
+		font-size: 13px;
+		padding: 5px;
+		border-left:1px solid #ddd;
+	}
+	
+	#card table td:last-child{
+		border-bottom: 0px;
+		border-right: 1px solid #ddd;
+	}
+	
+	#card table td::before{
+		content:attr(data-label);
+		float:left;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+}
+
+/*### Responsive Header ###*/
+@media screen and (max-width:600px)
+{
+    .hamburger
+    {
+        cursor: pointer;
+        padding: 15px;
+        display: block;
+        float:right;
+        margin-top:30px;
+        margin-right:15px;
     }
-}
-@media (max-width: 673px) {
-    #reparatiesOverzichtUitlijningDiv {
+
+    .line
+    {
+        border-bottom: 4px solid #bbb;
+        width: 35px;
+        margin-bottom: 6px;
+    }
+
+    .dropdown
+    {
         width: 100%;
     }
-}
 
-/* Media Admin reparaties */
-@media (max-width: 761px) {
-    #reparatiesUitlijningDiv {
-        width: 100%;
+    .dropdown-content
+    {
+        top: 0px;
     }
-    .reparaties-p-left {
-        width: 40%;
-    }
-    .reparaties-p-right {
-        width: 60%;
-    }
-}
 
-/* Media Admin retourneren overzicht */
-@media (max-width: 660px) {
-    #retournerenOverzichtUitlijningDiv {
-        width: 100%;
+    #myDropdown
+    {
+        width:100%;
+        position:relative;
     }
-}
-@media (max-width: 341px) {
-    #retournerenOverzichtUitlijningDiv input[type="submit"] {
-        margin: 15px 0px 0px 15px;
-    }
-}
 
-/* Media Admin retourneren */
-@media (max-width: 761px) {
-    #retournerenUitlijningDiv {
-        width: 100%;
+    #myDropdown a
+    {
+        padding: 0;
     }
-    .retourneren-p-left {
-        width: 20%;
-    }
-    .retourneren-p-right {
-        width: 80%;
-    }
-}
-@media (max-width: 620px) {
-    .retourneren-p-left {
-        width: 30%;
-    }
-    .retourneren-p-right {
-        width: 70%;
-    }
-}
-@media (max-width: 430px) {
-    .retourneren-p-left {
-        width: 40%;
-    }
-    .retourneren-p-right {
-        width: 60%;
-    }
-}
 
-/* Media Admin RMA overzicht */
-@media (max-width: 646px) {
-    #RMAOverzichtUitlijningDiv {
-        width: 100%;
+    #myDropdown li
+    {
+        color: #FF1100;
+        border-bottom:2px solid #FF1100 !important;
     }
-}
-@media (max-width: 362px) {    
-    #RMAOverzichtUitlijningDiv form input[type="submit"] {
-        margin: 15px 0px 0px 15px;
-    }
-}
 
-/* Media Admin RMA */
-@media (max-width: 991px) {
-    .RMA-p-left {
-        width: 30%;
+    #myDropdown li:hover
+    {
+        color:#FF6600;
+        border-bottom:3px solid #FF6600 !important;
     }
-    .RMA-p-right {
-        width: 70%;
+
+    #header
+    {
+        height:0;
+        width:0;
+        overflow:hidden;
+        margin:0;
+        float:right;
+        padding:0;
     }
-}
-@media (max-width: 660px) {
-    #RMAUitlijningDiv {
-        width: 100%;
+
+    #header li
+    {
+        width:100%;
+        height:35px;
+        background: white;
+        border-bottom:1px solid #FF6600;
+        text-align:center;
+        margin:0;
+        line-height: 35px;
     }
-    .RMA-p-left {
-        width: 20%;
+
+    #header ul
+    {
+        margin:0;
+        float:none;
     }
-    .RMA-p-right {
-        width: 80%;
+
+    #headerImg
+    {
+        float:none;
+        width:205px;
+        margin-left:125px;
+        padding:0;
     }
-}
-@media (max-width: 600px) {
-    .RMA-p-left {
-        width: 25%;
+
+    #shoppingCart
+    {
+        margin-left: 25px;
     }
-    .RMA-p-right {
-        width: 75%;
+
+    .open
+    {
+        height:auto !important;
+        width:100% !important;
+        max-width:100%;
+        float:none;
     }
-}
-@media (max-width: 485px) {
-    .RMA-p-left {
-        width: 30%;
-    }
-    .RMA-p-right {
-        width: 70%;
-    }
-}
-@media (max-width: 405px) {
-    .RMA-p-left {
-        width: 35%;
-    }
-    .RMA-p-right {
-        width: 65%;
+
+    #logo
+    {
+        margin:17px 0 0 15px;
+        height:50px;
     }
 }
 
-/* Media Betalen */
-@media (max-width: 680px) {
-    #betalenUitlijningDiv {
-        width: 100%;
-    }
 
-    .betalen-p-left {
-        width: 20%;
-    }
-    .betalen-p-right {
-        width: 80%;
-    }
-}
-@media (max-width: 600px) {
-    .betalen-p-left {
-        width: 30%;
-    }
-    .betalen-p-right {
-        width: 60%;
-    }
+/*### Hide the slider on mobile ###*/
+@media screen and (max-width: 500px) {
+	#slider
+	{
+		visibility:hidden;
+	}
 }
