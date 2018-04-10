@@ -82,6 +82,7 @@ p
 
 hr
 {
+    height:1px;
 	width: 100%;
 	border-color: #ff9900;
 }
@@ -148,13 +149,6 @@ a:hover
 {
 	margin:0 auto;
 	margin-bottom: 25px;
-}
-
-.Services
-{
-	text-align: left;
-	float:left;
-	padding:25px;
 }
 
 .form-group
@@ -258,7 +252,7 @@ a:hover
 	position: absolute;
 
 	opacity: 0;
-	z-index: 9;
+	z-index: 6;
 	cursor: pointer;
 
 	transition: opacity .2s;
@@ -358,14 +352,16 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 	position: absolute;
 	background-color: #f1f1f1;
 	min-width: 160px;
+    width: 100%;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
 	top:30px;
+    padding-bottom:15px;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-	padding: 12px 16px;
+	padding: 12px 10px;
 	text-decoration: none;
 	display: block;
 }
@@ -444,6 +440,12 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     margin-left: 50px;
 }
 
+li.active
+{
+    color:#FF1100;
+    border-bottom:2px solid #FF1100;
+}
+
 .loginButton
 {
     color:#ff6600;
@@ -513,6 +515,11 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     border-bottom: 1px solid black;
 }
 
+.lastBc
+{
+    color: grey;
+}
+
 
 /*### FOOTER ###*/
 #FooterContainer
@@ -571,7 +578,7 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
     position: fixed;
     width:750px;
     bottom:25px;
-    z-index: 5;
+    z-index: 25;
 }
 
 #alertWrapper
@@ -681,6 +688,29 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
         color:#FF6600;
         border-bottom:3px solid #FF6600 !important;
     }
+
+	#loginDropdown
+	{
+        width:100%;
+		position:relative;
+	}
+
+	#loginDropdown a
+	{
+		padding: 0;
+	}
+
+	#loginDropdown li
+	{
+		color: #FF1100;
+		border-bottom:2px solid #FF1100 !important;
+	}
+
+	#loginDropdown li:hover
+	{
+		color:#FF6600;
+		border-bottom:3px solid #FF6600 !important;
+	}
 
     #header
     {

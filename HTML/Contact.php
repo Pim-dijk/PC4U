@@ -1,5 +1,7 @@
-<!--Include Header-->
-<?php include 'Header.php'; ?>
+<?php
+    $page = "contact";
+    include 'Header.php';
+?>
 
 	<!--Page content goes here!!!-->
 	<div id="Contact" class="row">

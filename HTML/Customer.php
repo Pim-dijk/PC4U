@@ -1,5 +1,6 @@
 <?php
 
+$page = "customer";
 include 'Header.php';
 
 if(isset($_GET['id']))

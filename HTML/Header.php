@@ -69,7 +69,7 @@ $menu = array();
             <ul>
                 <div class="dropdown">
                     <a href="#">
-                        <li>Aanbiedingen</li>
+                        <li class="<?php echo ($page == "aanbiedingen" ? "active" : "")?>">Aanbiedingen</li>
                     </a>
                 </div>
 
@@ -78,34 +78,34 @@ $menu = array();
                     <div id="myDropdown" class="dropdown-content">
                         <?php
                         while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<a href="categorieen-page.php?id=' . $row['Category'] . '"><li>' . $row['Category'] . '</li></a>';
+                            echo '<a href="categorieen-page.php?cat=' . $row['Category'] . '"><li>' . $row['Category'] . '</li></a>';
                         }
                         ?>
                     </div>
                 </div>
                 <div class="dropdown">
                     <a href="#">
-                        <li>Software</li>
+                        <li class="<?php echo ($page == "software" ? "active" : "")?>">Software</li>
                     </a>
                 </div>
                 <div class="dropdown">
                     <a href="#">
-                        <li>Randapparatuur</li>
+                        <li class="<?php echo ($page == "randapparatuur" ? "active" : "")?>">Randapparatuur</li>
                     </a>
                 </div>
                 <div class="dropdown">
                     <a href="#">
-                        <li>Systemen</li>
+                        <li class="<?php echo ($page == "systemen" ? "active" : "")?>">Systemen</li>
                     </a>
                 </div>
                 <div class="dropdown">
                     <a href="#">
-                        <li>Service</li>
+                        <li class="<?php echo ($page == "service" ? "active" : "")?>">Service</li>
                     </a>
                 </div>
                 <div class="dropdown">
-                    <a href="#">
-                        <li>Contact</li>
+                    <a href="Contact.php">
+                        <li class="<?php echo ($page == "contact" ? "active" : "")?>">Contact</li>
                     </a>
                 </div>
                 <?php
@@ -113,16 +113,28 @@ $menu = array();
                     ?>
                     <div class="dropdown">
                         <li class="dropbtn pull-right">Account</li>
-                        <div class="dropdown-content">
-                            <a href="Customer.php?id=<?php echo $_COOKIE['login_user']; ?>"">Gegevens</a>
-                            <a href="Logout.php">Logout</a>
+                        <div id="loginDropdown" class="dropdown-content">
+                            <a href="Customer.php?id=<?php echo $_COOKIE['login_user']; ?>""><li>Gegevens</li></a>
+                            <a href="Logout.php"><li>Logout</li></a>
                         </div>
                     </div>
                     <?php
-                } else {
+                }
+                else if(isset($_COOKIE['login_admin'])){
+                    ?>
+                    <div class="dropdown">
+                        <li class="dropbtn pull-right">Admin</li>
+                        <div id="loginDropdown" class="dropdown-content">
+                            <a href="Admin.php""><li>Admin Panel</li></a>
+                            <a href="Logout.php"><li>Logout</li></a>
+                        </div>
+                    </div>
+                    <?php
+                }
+                else {
                     ?>
                     <a href="Login.php">
-                        <li class="loginButton pull-right">Login</li>
+                        <li class="loginButton pull-right">Login<li>
                     </a>
                     <?php
                 }
@@ -135,8 +147,52 @@ $menu = array();
         <!--/headerContainer-->
     </div>
 
-    <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Klant</a></li>
-        <li class="active">Bestellingen</li>
-    </ol>
+<!--    <ol class="breadcrumb">-->
+<!--        --><?php
+//        if($_SERVER["REQUEST_URI"] != "/pc4u/html/")
+//        {
+//            $crumbs = explode("/",$_SERVER["REQUEST_URI"]);
+//            //echo "<li><a href='/pc4u/html/'>Home</a></li>";
+//            foreach($crumbs as $crumb)
+//            {
+//                if($crumb != "pc4u" && $crumb != "html")
+//                {
+//                    //If it's the category page, do some other logic
+//                    if(strpos($crumb, '?cat=') !== false)
+//                    {
+//                        $crumb = explode("?cat=", $crumb);
+//                        $append = $crumb[0];
+//                        foreach($crumb as $crum)
+//                        {
+//                            if($crum == "categorieen-page.php")
+//                            {
+//                                echo "<li><a href='" . $crum . "'>" . ucfirst(str_replace(array(".php","_"),array(""," "),$crum) . ' ') . "</a></li>";
+//                            }
+//                            else
+//                            {
+//                                echo "<li class='lastBc'>" . ucfirst(str_replace(array(".php","_"),array(""," "),$crum) . ' ') . "</a></li>";
+//                            }
+//                        }
+//                    }
+//                    else if(strpos($crumb, '?id=') !== false)
+//                    {
+//                        $crumb = explode("?id=", $crumb);
+//                        $append = $crumb[1];
+//                        foreach($crumb as $crum)
+//                        {
+//                            if($crum == "Customer.php")
+//                            {
+//                                echo "<li class='lastBc'>" . ucfirst(str_replace(array(".php","_"),array(""," "),$crum) . ' ') . "</a></li>";
+//                            }
+//                        }
+//                    }
+//                    else
+//                    {
+//                        echo "<li class='lastBc'>" . ucfirst(str_replace(array(".php","_"),array(""," "),$crumb) . ' ') . "</a></li>";
+//                    }
+//
+//                }
+//            }
+//        }
+//        ?>
+<!--    </ol>-->

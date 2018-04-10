@@ -26,6 +26,11 @@
 				<p>Wachtwoord vergeten? klik <a href="ResetPassword.php" class="Link">hier</a></p>
 			</div>
 
+            <div class="form-group">
+                <label for="Admin">Admin?</label>
+                <input type="checkbox" class="form-input" name="admin" id="Admin" placeholder="admin">
+            </div>
+
 			<button type="submit" name="submit" class="btn btn-default">Login</button>
 		</form>
 	</div>

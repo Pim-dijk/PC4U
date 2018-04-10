@@ -1,4 +1,5 @@
 <?php
+$page = "home";
 include 'Header.php';
 ?>
 <!--Content-->

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "Includes/initialize.php";
 
 // Escape user inputs for security
@@ -22,9 +23,21 @@ include "Includes/initialize.php";
 			$customer->Business = $_POST['Business'];
 
 		
-		$customer->create();
-		
-		header("Location: Index.php");
-		exit();
+		if($customer->create())
+		{
+            $_SESSION["alert-type"] = "success";
+            $_SESSION["alert-message"] = "Uw account is succesvol aangemaakt, u kunt nu inloggen!";
+
+            header("Location: Login.php");
+            exit();
+        }
+        else
+        {
+            $_SESSION["alert-type"] = "error";
+            $_SESSION["alert-message"] = "Er is iets fout gegaan bij het aanmaken van uw account!";
+
+            header("Location: Index.php");
+            exit();
+        }
     }
  ?>

@@ -128,9 +128,9 @@ include 'Header.php';
             <hr>
 
             <div>
-                <h3 class="Services"><a href="#">Reparatie</a></h3>
-                <h3 class="Services"><a href="#">Retouren</a></h3>
-                <h3 class="Services"><a href="#">RMA</a></h3>
+                <h3 class="col-sm-offset-3 col-sm-2"><a href="#">Reparatie</a></h3>
+                <h3 class="col-sm-2"><a href="#">Retouren</a></h3>
+                <h3 class="col-sm-2"><a href="#">RMA</a></h3>
             </div>
             <!--/Admin Services-->
         </div>
@@ -139,14 +139,14 @@ include 'Header.php';
             <h2 class="text-center">Register new admin</h2>
             <hr>
             <div>
-                <form class="center-block myForm needs-validation">
+                <form class="center-block myForm needs-validation" method="post" action="newAdmin.php">
                     <div class="form-group col-sm-6 col-xs-12">
                         <label for="Email">Email</label>
-                        <input type="email" class="form-control" id="Email" placeholder="Email" required>
+                        <input type="email" class="form-control" id="Email" name="email" placeholder="Email" required>
                     </div>
                     <div class="form-group col-sm-6 col-xs-12">
                         <label for="Password">Wachtwoord</label>
-                        <input type="password" class="form-control" id="Password" placeholder="Wachtwoord" required>
+                        <input type="password" class="form-control" id="Password" name="password" placeholder="Wachtwoord" required>
                     </div>
 
                     <button type="submit" name="RegisterAdmin" class="btn btn-default">Toevoegen</button>

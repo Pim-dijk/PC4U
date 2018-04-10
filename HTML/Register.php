@@ -1,6 +1,5 @@
 <!--Include Header-->
-<?php include 'Header.php'; 
-include("initialize.php");
+<?php include 'Header.php';
 ?>
 
 
