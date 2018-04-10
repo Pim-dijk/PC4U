@@ -21,6 +21,6 @@
         setcookie($cookieName, serialize($cookieArray), time() + (86400 * 30), "/"); // 86400 = 1 day
     }
 
-    header("Location: winkelwagenOverzicht.php");
+    header("Location: bestelling_overzicht.php");
 
     include "footer.php";

@@ -43,7 +43,7 @@
                             </div>
                             <div id="winkelwagenDiv ">
                                 <p class="winkelwagenHeaders">Totaal prijs</p>
-                                <label class="margin-top-20" name="totalPriceProduct" id="totalPriceProduct-<?php echo $object->ProductID; ?>"><?php echo "€ ".number_format($productTotalSum, 2); ?></label>
+                                <label class="margin-top-20" name="totalPriceProduct" id="totalPriceProduct-<?php echo $object->ProductID; ?>"><?php echo "€ ".sprintf("%.2f", $productTotalSum); ?></label>
                             </div>
                         </div>
                         <hr style="width: 100%; border-color: black;">
@@ -52,7 +52,7 @@
                 ?>
                     <!-- Winkelwagen totaal -->
                     <div id="winkelwagenTotaal">
-                        <p class="bold winkelwagen-p-left">Totaalprijs:</p><p class="winkelwagen-p-right" id="totalSum">€ <?php echo number_format($totalSum, 2); ?></p>
+                        <p class="bold winkelwagen-p-left">Totaalprijs:</p><p class="winkelwagen-p-right" id="totalSum">€ <?php echo sprintf( "%.2f", $totalSum); ?></p>
                         <p class="bold winkelwagen-p-left">Verzendkosten:</p><p class="winkelwagen-p-right">€ 3,50</p>
                         <input type="submit" value="Bestellen" class="btn button-color">
                         <input type="hidden" name="totalProducts" value="<?php echo $totalProducts; ?>"

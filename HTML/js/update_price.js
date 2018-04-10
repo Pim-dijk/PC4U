@@ -15,12 +15,12 @@ function updatePrice(id) {
     var totalPriceProductElement = document.getElementById(totalPriceProductElementID);
     var totalPriceProductValue = totalPriceProductElement.textContent;
     var totalPriceProductValueSplitString = totalPriceProductValue.split(" ");
-    var totalPriceProduct = eval(totalPriceProductValueSplitString[1]);
+    var totalPriceProduct = parseFloat(totalPriceProductValueSplitString[1]);
 
     var sumTotalElement = document.getElementById("totalSum");
     var sumTotalElementValue = sumTotalElement.textContent;
     var sumTotalElementValueSplitString = sumTotalElementValue.split(" ");
-    var sumTotal = eval(sumTotalElementValueSplitString[1]);
+    var sumTotal = parseFloat(sumTotalElementValueSplitString[1]);
 
     var newTotalPriceProduct = amount * productPrice;
 
@@ -28,5 +28,5 @@ function updatePrice(id) {
     sumTotal += newTotalPriceProduct;
     
     totalPriceProductElement.textContent = "€ " + newTotalPriceProduct.toFixed(2);
-    sumTotalElement.textContent = "€ " + sumTotal;
+    sumTotalElement.textContent = "€ " + sumTotal.toFixed(2);
 }

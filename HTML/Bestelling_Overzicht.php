@@ -21,7 +21,7 @@
                 $sumTotal += $totalSum;
                 ?>
                 
-                <div id="winkelwagenOverzichtDivContainer">
+                <div id="winkelwagenOverzichtDivContainer" style="margin-left: 20px;">
                     <div id="winkelwagenOverzichtDiv">
                         <p class="bold">Artikelnummer</p>
                         <p><?php echo $result['ArtNumber'] ?></p>
