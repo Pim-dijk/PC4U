@@ -12,13 +12,32 @@
         <form action="AddOrder.php">
             <div id="betalenDiv">
                 <h3>Klantgegevens</h3>
-                <p class="bold betalen-p-left">Voornaam:</p><p class="betalen-p-right"><?php echo $result['Initials']; ?></p>
-                <p class="bold betalen-p-left">Tussenvoegsel:</p><p class="betalen-p-right"><?php echo $result['Prefix']; ?></p>
-                <p class="bold betalen-p-left">Achternaam:</p><p class="betalen-p-right"><?php echo $result['Lastname']; ?></p>
-                <p class="bold betalen-p-left">Straat:</p><p class="betalen-p-right"><?php echo $result['Street']; ?></p>
-                <p class="bold betalen-p-left">Huisnummer:</p><p class="betalen-p-right"><?php echo $result['HouseNumber'].$result['Addition']; ?></p>
-                <p class="bold betalen-p-left">Postcode:</p><p class="betalen-p-right"><?php echo $result['Zipcode']; ?></p>
-                <p class="bold betalen-p-left">Plaats:</p><p class="betalen-p-right"><?php echo $result['City']; ?></p>                 
+
+                <table class="table-responsive">
+                    <tbody>
+                        <tr>
+                            <td class="betalen-td-padding">Voornaam:</td><td><?php echo $result['Initials']; ?></td>
+                        </tr>
+                        <tr>
+                            <td class="betalen-td-padding">Tussenvoegsel:</td><td><?php echo $result['Prefix']; ?></td>
+                        </tr>
+                        <tr>
+                            <td class="betalen-td-padding">Achternaam:</td><td><?php echo $result['Lastname']; ?></td>
+                        </tr>
+                        <tr>
+                            <td class="betalen-td-padding">Straat:</td><td><?php echo $result['Street']; ?></td>
+                        </tr>
+                        <tr>
+                            <td class="betalen-td-padding">Huisnummer:</td><td><?php echo $result['HouseNumber'].$result['Addition']; ?></td>
+                        </tr>
+                        <tr>
+                            <td class="betalen-td-padding">Postcode:</td><td><?php echo $result['Zipcode']; ?></td>
+                        </tr>
+                        <tr>
+                            <td class="betalen-td-padding">Plaats:</td><td><?php echo $result['City']; ?></td>
+                        </tr>
+                    </tbody>
+                </table>            
             </div>
             <hr style="border-color: black; border-width: 2px; width: 100%;">
             <div id="betalenDiv">

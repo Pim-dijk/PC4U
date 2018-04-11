@@ -290,11 +290,8 @@
 }
 
 /* Betalen klassen */
-.betalen-p-left {
-    width: 30%;
-}
-.betalen-p-right {
-    width: 60%;
+.betalen-td-padding {
+    padding: 5px 10px 5px 0px;
 }
 
 /* Media Admin reparaties overzicht */
