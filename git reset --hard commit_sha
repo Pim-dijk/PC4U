@@ -1,0 +1,47 @@
+[33mb75719f[m[33m ([m[1;36mHEAD -> [m[1;32mMergeAttempt[m[33m, [m[1;31morigin/MergeAttempt[m[33m)[m HEAD@{0}: commit: Retour pagina Klant PHP
+[33m2190401[m HEAD@{1}: commit: PHP Orderhistory klant
+[33mb2a08bc[m HEAD@{2}: commit: Hixed header, added admin register/login, added alerts to pages
+[33me6051d1[m HEAD@{3}: commit: Merged Ivan's branch
+[33m6b7493b[m HEAD@{4}: commit: Updated database
+[33m2f7af78[m HEAD@{5}: commit: Fixed header redirecting for DeleteImage and EditProduct
+[33m8695e0a[m HEAD@{6}: commit: Filled Database and Merged Rik's content as best I could
+[33m92b6787[m[33m ([m[1;31morigin/Release_Branch[m[33m, [m[1;32mRelease_Branch[m[33m)[m HEAD@{7}: checkout: moving from Release_Branch to MergeAttempt
+[33m92b6787[m[33m ([m[1;31morigin/Release_Branch[m[33m, [m[1;32mRelease_Branch[m[33m)[m HEAD@{8}: commit: Added alerts, edited databaseobject to work again
+[33m6ee982c[m HEAD@{9}: commit: Updated Database and Customer
+[33m2c94802[m HEAD@{10}: commit: Changed User to Customer
+[33m7dee15e[m HEAD@{11}: commit: Fixed header dropdown styling on mobile
+[33m0a35921[m HEAD@{12}: commit: Cleaned up CSS, finished adding discounts
+[33mebc5a6d[m HEAD@{13}: commit: Admin search category when making discount
+[33maf47d1f[m HEAD@{14}: commit: Live update of Category Labels with Ajax
+[33m9b457a4[m HEAD@{15}: commit: Fixed database object and added live search to discounts
+[33mccdb530[m HEAD@{16}: commit: Made the Featured product image selectable
+[33m8c89617[m HEAD@{17}: checkout: moving from Pim to Release_Branch
+[33mcbc0972[m[33m ([m[1;31morigin/Pim[m[33m, [m[1;32mPim[m[33m)[m HEAD@{18}: checkout: moving from Release_Branch to Pim
+[33m8c89617[m HEAD@{19}: commit: Merged Zana's work int Release Branch
+[33m841a167[m HEAD@{20}: checkout: moving from Pim to Release_Branch
+[33mcbc0972[m[33m ([m[1;31morigin/Pim[m[33m, [m[1;32mPim[m[33m)[m HEAD@{21}: commit: Fixed database
+[33m014c954[m HEAD@{22}: commit: Updated Database and Categories
+[33m0bb8e8a[m HEAD@{23}: commit: Updated database
+[33me40ea01[m HEAD@{24}: commit: Updated database
+[33m4512fe9[m HEAD@{25}: checkout: moving from Zana to Pim
+[33m64e1a02[m HEAD@{26}: checkout: moving from Zana to Zana
+[33m64e1a02[m HEAD@{27}: checkout: moving from Zana to Zana
+[33m64e1a02[m HEAD@{28}: checkout: moving from Zana to Zana
+[33m64e1a02[m HEAD@{29}: checkout: moving from Pim to Zana
+[33m4512fe9[m HEAD@{30}: commit: Added database
+[33m24da7af[m HEAD@{31}: checkout: moving from Release_Branch to Pim
+[33me9a48ea[m HEAD@{32}: checkout: moving from Ivan to Release_Branch
+[33mc83038d[m HEAD@{33}: checkout: moving from Release_Branch to Ivan
+[33me9a48ea[m HEAD@{34}: pull --no-rebase --progress origin: Merge made by the 'recursive' strategy.
+[33m49470c1[m HEAD@{35}: commit: Updated header and footer
+[33mcb58bc9[m HEAD@{36}: checkout: moving from Pim to Release_Branch
+[33m24da7af[m HEAD@{37}: checkout: moving from Release_Branch to Pim
+[33mcb58bc9[m HEAD@{38}: merge Pim: Merge made by the 'recursive' strategy.
+[33m405c4b5[m HEAD@{39}: checkout: moving from Pim to Release_Branch
+[33m24da7af[m HEAD@{40}: commit: Refined Forms
+[33m541bd9c[m HEAD@{41}: commit: Added Admin page, tweaked CSS (tables, forms)
+[33mb0768b9[m HEAD@{42}: commit: Added Customer, OrderHistory and ResetPassword pages
+[33m91d7fef[m HEAD@{43}: commit: Added pages: Register, Login, Contact
+[33m6d7a774[m HEAD@{44}: commit: Header and Footer Responsive + base CSS
+[33m11aa094[m HEAD@{45}: checkout: moving from master to Pim
+[33me5c2db6[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{46}: clone: from https://github.com/Pim-dijk/PC4U.git

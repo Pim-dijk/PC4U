@@ -37,6 +37,11 @@ $(document).ready(function(){
     });
 
 
+//Return item
+    //If the user selects the other option in the Reason dropdown, display the textarea
+    $('#Reason').on("change", function(){
+        $('#hiddenTextArea').removeClass('hidden');
+    });
 
 
 //Edit product
