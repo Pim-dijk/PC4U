@@ -7,7 +7,7 @@
 <body>
 <div id="container" class="col-md-12 overzichtpagina">
   <h1 class="text-center">(Categorie) laptops</h1>
-    <div id="leftsidebar" class="col-md-3 bodyborder margintop">
+    <div id="leftsidebar" class="col-md-3 margintop">
       <form action="#">
             <h3 class="removemobile" style="font-weight: bold">Merk</h3>
           <select id="merk">
@@ -43,10 +43,11 @@
               <option value="17">17 inch</option>
           </select>
         <br>
-              <a class="filterpopup text-center" href="javascript:window.open('filter.php','mypopuptitle','width=600,height=400')">Open filter</a>
+              <a class="filterpopup text-center" href="javascript:window.open('/r/MergeAttempt/Includes/filter.php','mypopuptitle','width=600,height=400')">Open filter</a>
               <button class="filter">Filter</button>
       </form>
       </div>
+     
       
   <div id="laptops">
  <?php foreach ($result as $product) { 
@@ -58,8 +59,8 @@
       </div>
       <div id="productomschrijving" class="col-md-4">
             <h3 class="categorie"><?php echo $product->Brand ?></h3>
-            <?php echo '<h2><a href="/R/webshop/producten-pagina.php?id='.$product->ProductID.'" class="link">'.$product->ArtName.'</a></h2>'; ?>
-            <p><?php echo $product->Description ?>...<?php echo '<a href="/R/webshop/producten-pagina.php?id='.$product->ProductID.'" class="orangeunderline">Meer</a></p>'; ?>
+            <?php echo '<h2><a href="/R/MergeAttempt/producten-pagina.php?id='.$product->ProductID.'" class="link">'.$product->ArtName.'</a></h2>'; ?>
+            <p class="verbergbeschrijving"><?php echo $product->Description ?>...<?php echo '<a href="/R/MergeAttempt/producten-pagina.php?id='.$product->ProductID.'" class="orangeunderline">Meer</a></p>'; ?>
       </div>
       <form method="POST" action="shoppingcart.php">
         <div id="prijsvoorraad" class="col-md-2">
@@ -72,19 +73,9 @@
          
           <input type="hidden" name="productID" value="<?php echo $product->ProductID ?>">
             <select name="amount">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
+            <?php for ($x = 1; $x <= 10; $x++) { 
+             echo '<option value="1">'.$x.'</option>';
+               } ?>
             </select>
               <input name="submit" class="voegtoebutton" type="submit" value="In winkelwagen">
           </form>   

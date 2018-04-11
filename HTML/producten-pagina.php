@@ -19,7 +19,7 @@
 
 <div id="container" class="productenpagina">
   <div class="col-md-6">
-	  <h1><?php echo $product->ArtName; ?></h1>
+	  <h1 class="productenpagina"><?php echo $product->ArtName; ?></h1>
       <div class="sliderafbeeldingen">
 
         <div class="slider-for">
@@ -36,8 +36,8 @@
       </div>
 
     <div class="productbeschrijving">
-      <h2>Productbeschrijving</h2>
-        <p><?php echo $product->Description; ?></p>
+      <h2 class="productenpagina">Productbeschrijving</h2>
+        <p style="padding-left:20px;"><?php echo $product->Description; ?></p>
     </div>
   </div>
 
@@ -54,19 +54,9 @@
          <p>Voor 24:00 besteld, morgen in huis!</p>
           <input type="hidden" name="productID" value="<?php echo $product->ProductID ?>">
             <select name="amount">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
+              <?php for ($x = 1; $x <= 10; $x++) { 
+             echo '<option value="1">'.$x.'</option>';
+               } ?>
             </select>
               <input name="submit" class="voegtoebutton" type="submit" value="In winkelwagen">
           </form> 
@@ -78,8 +68,6 @@
 </body>
 
 <?php require_once 'Footer.php';?>
-
-<script type="text/javascript" src="slick-1.8.0/slick/slick.min.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function(){

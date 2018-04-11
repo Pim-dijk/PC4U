@@ -3,6 +3,12 @@
 //probably smart to require it before we start.
 class DatabaseObject{
 
+    public $tableNameOfID;
+
+    function __construct($tableNameOfID) {
+        $this->tableNameOfID = $tableNameOfID;
+    }
+
     //common database methods
     public static function find_all(){
         global $database;
@@ -10,7 +16,7 @@ class DatabaseObject{
     }
 
     public static function find_by_id($id=0){
-        $result_array =static::find_by_sql("SELECT * FROM ".static::$table_name." WHERE ".static::$id."={$id} LIMIT 1");
+        $result_array =static::find_by_sql("SELECT * FROM ".static::$table_name." WHERE id={$id} LIMIT 1");
         return !empty($result_array) ? array_shift($result_array) :false;
     }
 
@@ -114,7 +120,7 @@ class DatabaseObject{
 
         $sql = "UPDATE ".static::$table_name." SET ";
         $sql .= join(", ", $attributes_pairs);
-        $sql .= " WHERE `id`=". $database->escape_value($this->id);
+        $sql .= " WHERE " .$this->tableNameOfID. "=". $database->escape_value($this->id);
         $database->query($sql);
         return($database->affected_rows($sql) == 1) ? true : false;
     }

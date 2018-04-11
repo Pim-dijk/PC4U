@@ -4,13 +4,12 @@
 //DIRECTORY_SEPARATOR is a PHP pre-defined constant
 // (\ for windows / for unix)
 defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
-defined('SITE_ROOT') ? null : define('SITE_ROOT', DS . 'xampp' . DS . 'htdocs' . DS . 'PC4U' . DS . 'HTML');
+defined('SITE_ROOT') ? null : define('SITE_ROOT', DS . 'xampp' . DS . 'htdocs' . DS . 'R' . DS . 'MergeAttempt');
 defined('LIB_PATH') ? null : define('LIB_PATH', SITE_ROOT.DS.'Includes');
-define('ROOT_PATH', $_SERVER["DOCUMENT_ROOT"] . "/PC4U/HTML/");
 //load confid file first
 require_once(LIB_PATH.DS. "config.php" );
 //load core object
-require_once(LIB_PATH.DS. "session.php" );
+//require_once(LIB_PATH.DS. "session.php" );
 require_once(LIB_PATH.DS. "database.php" );
 require_once(LIB_PATH.DS. "database_object.php" );
 //load database-related classe
