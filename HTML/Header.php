@@ -1,6 +1,10 @@
 <?php
 
-//Set active link with $page = "name of the page' before including header.php
+//Set active link with $page = 'name of the page file' before including header.php
+
+// To add an alert to the page set the following sessions
+//$_SESSION["alert-type"] = "success, info, warning, danger";
+//$_SESSION["alert-message"] = "custom message";
 
 session_start();
 include('Includes/initialize.php');
