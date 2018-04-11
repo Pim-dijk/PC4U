@@ -19,6 +19,7 @@ if (isset($_SESSION['orderHistory'])) {
             $totalOrders = 0;
             $totalPrice = 0;
             $oldPrice = NULL;
+            $OrderHistory = array();
 
         }
     }
@@ -40,6 +41,7 @@ if (isset($_SESSION['orderHistory'])) {
                     <th>Aantal</th>
                     <th>Prijs p.s.</th>
                     <th>Totaal</th>
+                    <th>Retour</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -60,24 +62,27 @@ if (isset($_SESSION['orderHistory'])) {
                     ?>
                     <tr>
                         <td data-label="Artikelnummer"><?= $row['ArtNumber'] ?></td>
-                        <td data-label="Artikelnaam"><a
-                                    href="producten-pagina.php?id=<?= $row['ProductID'] ?>"><?= $row['ArtName'] ?>
-                            </a>
+                        <td data-label="Artikelnaam">
+                            <a href="producten-pagina.php?id=<?= $row['ProductID'] ?>"><?= $row['ArtName'] ?></a>
                         </td>
                         <td data-label="Aantal"><?= $row['Amount'] ?></td>
                         <td data-label="Prijs p.s."><?= $price . ".-" ?></td>
                         <td data-label="Totaal"><?= $row['Amount'] * $price . ".-" ?></td>
+                        <td data-label="Retour"><a href="retourneren-pagina.php?id=<?=$row['ProductID']?>">Retour</a></td>
                     </tr>
                     <?php
+                    array_push($OrderHistory, serialize($row));
                     $oldPrice = NULL;
                 }
+                $_SESSION['returnOrder'] = $OrderHistory;
                 ?>
                 <tr>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
                     <td data-label="Totaal aantal"><?= $totalOrders ?></td>
-                    <td>-</td>
+                    <td></td>
                     <td data-label="Totaal"><?= $totalPrice . ".-" ?></td>
+                    <td></td>
                 </tr>
                 </tbody>
             </table>

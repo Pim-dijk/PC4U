@@ -1,4 +1,7 @@
 <?php
+
+//Set active link with $page = "name of the page' before including header.php
+
 session_start();
 include('Includes/initialize.php');
 
