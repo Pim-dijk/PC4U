@@ -1,5 +1,4 @@
 <?php
-
 $page = "customer";
 include 'Header.php';
 
@@ -99,49 +98,51 @@ if(isset($_GET['id']))
 	
 		
 	<!--Orders-->
-	<div id="Orders" class="row">
-	
 	<h2 class="text-center">Bestellingen</h2>
 	<hr>	
-		
-	<div id="card" class="table-responsive">
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>Bestel datum</th>
-				<th>Artikel(en)</th>
-				<th>Totaalprijs</th>
-				<th>Status</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td data-label="Bestel datum">01-01-2018</td>
-				<td data-label="Artikel(en)"><a href="#">Artikel omschrijving</a></td>
-				<td data-label="Totaalprijs">123.-</td>
-				<td data-label="Status"><a href="OrderHistory.php">In behandeling</a></td>
-			</tr>
-			<tr>
-				<td data-label="Bestel datum">01-01-2018</td>
-				<td data-label="Artikel(en)"><a href="#">Artikel omschrijving</a></td>
-				<td data-label="Totaalprijs">234.-</td>
-				<td data-label="Status"><a href="OrderHistory.php">Wacht op betaling</a></td>
-			</tr>
-			<tr>
-				<td data-label="Bestel datum">01-01-2018</td>
-				<td data-label="Artikel(en)"><a href="#">Artikel omschrijving</a></td>
-				<td data-label="Totaalprijs">345.-</td>
-				<td data-label="Status"><a href="OrderHistory.php">Geleverd</a></td>
-			</tr>
-		</tbody>
-	</table>
-	<!--/Responsive Table-->
-	</div>
-	<!--/Orders-->
-	</div>
-	
-	
-	
+
+<!--Get customers orders-->
+<?php
+$id = $customer->CustomerID;
+$query = "SELECT * FROM orders WHERE CustomerID = $id";
+$orders = $order->find_by_sql($query);
+
+?>
+    <div id="card" class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Ordernummer</th>
+                <th>Besteldatum</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $SessionOrders = array();
+            if(!empty($orders))
+            {
+                foreach($orders as $order)
+                {
+                ?>
+                <tr>
+                    <td data-label="Ordernummer"><?=$order->OrderID?></td>
+                    <td data-label="Besteldatum"><?=$order->OrderDate?></td>
+                    <td data-label="Status"><a href="OrderHistory.php?id=<?=$order->OrderID?>"><?=$order->Status?></a></td>
+                    <?php array_push($SessionOrders, serialize($order)); ?>
+                </tr>
+                <?php
+                }
+                $_SESSION['orderHistory'] = $SessionOrders;
+            }
+            ?>
+            </tbody>
+        </table>
+        <!--/Responsive Table-->
+    </div>
+    <!--/Orders-->
+
+
 	<div id="Services" class="row">
 		
 		<h2 class="text-center">Services</h2>
