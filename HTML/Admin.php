@@ -14,7 +14,7 @@ include 'Header.php';
             <h3>Aanbieding aanmaken</h3>
 
             <!--Aanbieding Form-->
-            <form class="center-block myForm needs-validation" method="post" action="CreateDiscount.php">
+            <form class="center-block myForm needs-validation" method="post" action="adminAction.php">
                 <div class="form-group col-sm-6 col-xs-12 search-box-catName">
                     <label for="CategoryDiscount">Categorie</label>
                     <select class="form-control" id="CategoryDiscount" name="Category" required>
@@ -39,7 +39,7 @@ include 'Header.php';
                     <input type="date" class="form-control" id="Expire" name="ExpirationDate" placeholder="Vervaldatum" required>
                 </div>
 
-                <button type="submit" id="discountSubmit" name="discount" class="btn btn-default hidden">Aanmaken</button>
+                <button type="submit" id="discountSubmit" name="submitDiscount" class="btn btn-default hidden">Aanmaken</button>
             </form>
             <!--/Aanbieding aanmaken-->
         </div>
@@ -122,6 +122,31 @@ include 'Header.php';
             <!--/Add product-->
         </div>
 
+        <hr>
+
+        <div id="AddCategory" class="row">
+            <h3>Categorie toevoegen</h3>
+
+            <form class="center-block myForm needs-validation" action="adminAction.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group col-sm-12">
+                    <label for="CatName">Naam van de Categorie</label>
+                    <input type="text" class="form-control" id="CatName" name="Category" placeholder="Categorie" required>
+                </div>
+                <div class="form-group col-sm-6 col-xs-12">
+                    <label for="Property1">Eigenschap 1</label>
+                    <input type="text" class="form-control" id="Property1" name="Property1" placeholder="Eigenschap 1" required>
+                </div>
+                <div class="form-group col-sm-6 col-xs-12">
+                    <label for="Property2">Eigenschap 2</label>
+                    <input type="text" class="form-control" id="Property2" name="Property2" placeholder="Eigenschap 2" required>
+                </div>
+
+                <button type="submit" name="submitCategory" class="btn btn-default">Aanmaken</button>
+            </form>
+            <!--/Add category-->
+        </div>
+
+
         <div id="AdminServices" class="row">
 
             <h2>Services</h2>
@@ -139,7 +164,7 @@ include 'Header.php';
             <h2 class="text-center">Register new admin</h2>
             <hr>
             <div>
-                <form class="center-block myForm needs-validation" method="post" action="newAdmin.php">
+                <form class="center-block myForm needs-validation" method="post" action="adminAction.php">
                     <div class="form-group col-sm-6 col-xs-12">
                         <label for="Email">Email</label>
                         <input type="email" class="form-control" id="Email" name="email" placeholder="Email" required>
