@@ -18,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Header.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Header.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -41,36 +41,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditProduct.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTML/EditProduct.php">
+      <file leaf-file-name="Admin.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HTML/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="140" column="22" lean-forward="true" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
+            <state relative-caret-position="540">
+              <caret line="160" column="14" lean-forward="false" selection-start-line="160" selection-start-column="14" selection-end-line="160" selection-end-column="14" />
               <folding>
-                <marker date="1523037068165" expanded="true" signature="926:967" ph="SELECT * FRO... Products" />
-                <marker date="1523037068165" expanded="true" signature="1227:1271" ph="SELECT * FRO... Categories" />
-                <marker date="1523037068165" expanded="true" signature="1641:1680" ph="SELECT * FRO... Images" />
-                <marker date="1523037068165" expanded="true" signature="1899:1923" ph="SELECT * FRO... categories" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminAction.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HTML/adminAction.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="45" column="72" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="45" selection-end-column="72" />
-              <folding>
-                <marker date="1523447069762" expanded="true" signature="235:272" ph="SELECT * FRO... Products" />
-                <marker date="1523447069762" expanded="true" signature="235:273" ph="SELECT * FRO... products" />
-                <marker date="1523447069762" expanded="true" signature="235:274" ph="SELECT * FRO... Products" />
-                <marker date="1523447069762" expanded="true" signature="235:275" ph="SELECT * FRO... products" />
-                <marker date="1523447069762" expanded="true" signature="235:284" ph="SELECT * FRO... products" />
-                <marker date="1523447069762" expanded="true" signature="428:470" ph="SELECT * FRO... discounts" />
-                <marker date="1523447069762" expanded="true" signature="428:477" ph="SELECT * FRO... discounts" />
-                <marker date="1523447069762" expanded="true" signature="428:480" ph="SELECT * FRO... discounts" />
-                <marker date="1523447069762" expanded="true" signature="4297:4336" ph="SELECT * FRO... Images" />
+                <marker date="1523447716279" expanded="true" signature="97:121" ph="SELECT * FRO... categories" />
               </folding>
             </state>
           </provider>
@@ -162,10 +139,10 @@
         <option value="$PROJECT_DIR$/HTML/retourneren-pagina.php" />
         <option value="$PROJECT_DIR$/HTML/CreateDiscount.php" />
         <option value="$PROJECT_DIR$/HTML/newAdmin.php" />
-        <option value="$PROJECT_DIR$/HTML/Admin.php" />
         <option value="$PROJECT_DIR$/HTML/action.php" />
         <option value="$PROJECT_DIR$/HTML/adminAction.php" />
         <option value="$PROJECT_DIR$/HTML/Header.php" />
+        <option value="$PROJECT_DIR$/HTML/Admin.php" />
       </list>
     </option>
   </component>
@@ -348,19 +325,19 @@
       <workItem from="1522997080865" duration="34027000" />
       <workItem from="1523256381217" duration="19893000" />
       <workItem from="1523431778153" duration="9314000" />
-      <workItem from="1523443841096" duration="3312000" />
+      <workItem from="1523443841096" duration="3885000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153813000" />
+    <option name="totallyTimeSpent" value="154386000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19472913" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39060205" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -378,6 +355,26 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39060205" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3769716" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -397,7 +394,7 @@
         <state relative-caret-position="357">
           <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
           <folding>
-            <marker date="1523446917689" expanded="true" signature="97:121" ph="SELECT * FRO... categories" />
+            <marker date="1523447716279" expanded="true" signature="97:121" ph="SELECT * FRO... categories" />
           </folding>
         </state>
       </provider>
@@ -746,16 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/Admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="133" column="22" lean-forward="true" selection-start-line="133" selection-start-column="22" selection-end-line="133" selection-end-column="22" />
-          <folding>
-            <marker date="1523446917689" expanded="true" signature="97:121" ph="SELECT * FRO... categories" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HTML/Footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -772,22 +759,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/EditProduct.php">
+    <entry file="file://$PROJECT_DIR$/HTML/Header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="140" column="22" lean-forward="true" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
+        <state relative-caret-position="102">
+          <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
           <folding>
-            <marker date="1523037068165" expanded="true" signature="926:967" ph="SELECT * FRO... Products" />
-            <marker date="1523037068165" expanded="true" signature="1227:1271" ph="SELECT * FRO... Categories" />
-            <marker date="1523037068165" expanded="true" signature="1641:1680" ph="SELECT * FRO... Images" />
-            <marker date="1523037068165" expanded="true" signature="1899:1923" ph="SELECT * FRO... categories" />
+            <element signature="e#5829#5883#0#PHP" expanded="true" />
+            <marker date="1523447170017" expanded="true" signature="431:455" ph="SELECT * FRO... categories" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HTML/adminAction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="765">
           <caret line="45" column="72" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="45" selection-end-column="72" />
           <folding>
             <marker date="1523447069762" expanded="true" signature="235:272" ph="SELECT * FRO... Products" />
@@ -803,13 +788,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/Header.php">
+    <entry file="file://$PROJECT_DIR$/HTML/EditProduct.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+        <state relative-caret-position="1309">
+          <caret line="140" column="22" lean-forward="true" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
           <folding>
-            <element signature="e#5829#5883#0#PHP" expanded="true" />
-            <marker date="1523447170017" expanded="true" signature="431:455" ph="SELECT * FRO... categories" />
+            <marker date="1523037068165" expanded="true" signature="926:967" ph="SELECT * FRO... Products" />
+            <marker date="1523037068165" expanded="true" signature="1227:1271" ph="SELECT * FRO... Categories" />
+            <marker date="1523037068165" expanded="true" signature="1641:1680" ph="SELECT * FRO... Images" />
+            <marker date="1523037068165" expanded="true" signature="1899:1923" ph="SELECT * FRO... categories" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="160" column="14" lean-forward="false" selection-start-line="160" selection-start-column="14" selection-end-line="160" selection-end-column="14" />
+          <folding>
+            <marker date="1523447716279" expanded="true" signature="97:121" ph="SELECT * FRO... categories" />
           </folding>
         </state>
       </provider>

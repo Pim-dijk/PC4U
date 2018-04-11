@@ -4,6 +4,24 @@ include 'Header.php';
     // Get a list of categories
     $categories = $database->query("SELECT * FROM categories");
 ?>
+
+    <script>
+        function preview_image()
+        {
+            //Get the number of images the user selected
+            var total_file=document.getElementById("upload_file").files.length;
+            console.log(document.getElementById("upload_file").files.item(0).name);
+            //foreach image create an image and aad a <br>
+            for(var i=0;i<total_file;i++)
+            {
+                $('#image_data').append("<div class='col-sm-4 col-xs-12'>"
+                    +"<input type='radio' name='featuredImage' value='"+(document.getElementById("upload_file").files.item(i).name)+"' >"
+                    +"<img src='"+URL.createObjectURL(event.target.files[i])+"'>"
+                    +"</div>");
+            }
+        }
+    </script>
+
     <!--Content-->
 
     <div id="Admin" class="content">
@@ -76,45 +94,65 @@ include 'Header.php';
                     </select>
                 </div>
                 <div class="form-group">
+                    <div id="1">
+                        <div class="form-group">
+                            <label for="Property1Processor">Snelheid</label>
+                            <input class="form-control" type="text" id="Property1Processor" name="Property1Processor" placeholder="Snelheid">
+                        </div>
+                        <div class="form-group">
+                            <label for="Property2Processor">Boxed</label>
+                            <input class="form-control" type="text" id="Property2Processor" name="Property2Processor" placeholder="Boxed">
+                        </div>
+                    </div>
+                    <div id="2">
+                        <div class="form-group">
+                            <label for="Property1Harddisk">Capaciteit</label>
+                            <input class="form-control" type="text" id="Property1Harddisk" name="Property1Harddisk" placeholder="Capaciteit">
+                        </div>
+                        <div class="form-group">
+                            <label for="Property2Harddisk">Snelheid</label>
+                            <input class="form-control" type="text" id="Property2Harddisk" name="Property2Harddisk" placeholder="Snelheid">
+                        </div>
+                    </div>
+
+                    <div id="3">
+                        <div class="form-group">
+                            <label for="Property1Housing">Formfactor</label>
+                            <input class="form-control" type="text" id="Property1Housing" name="Property1Housing" placeholder="Merk">
+                        </div>
+                        <div class="form-group">
+                            <label for="Property2Housing">Met voeding</label>
+                            <input class="form-control" type="text" id="Property2Housing" name="Property2Housing" placeholder="Type">
+                        </div>
+                    </div>
+
+                    <div id="4">
+                        <div class="form-group">
+                            <label for="Property1Laptop">CPU</label>
+                            <input class="form-control" type="text" id="Property1Laptop" name="Property1Laptop" placeholder="Merk">
+                        </div>
+                        <div class="form-group">
+                            <label for="Property2Laptop">Size</label>
+                            <input class="form-control" type="text" id="Property2Laptop" name="Property2Laptop" placeholder="Processor serie">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Brand">Merk</label>
+                    <input class="form-control" type="text" id="Brand" name="Brand" placeholder="Merk">
+                </div>
+                <div class="form-group">
                     <label for="Description">Beschrijving</label>
                     <textarea type="text" class="form-control textAreaInput" id="Description" name="Description" placeholder="Beschrijving" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="ImageInput">Afbeelding(en) toevoegen</label>
-                    <input type="file" id="upload_file" name="upload_file[]" multiple>
+                    <input type="file" id="upload_file" name="upload_file[]" onchange="preview_image()" multiple>
                     <p class="help-block">Selecteer hier de afbeeldingen voor bij het product</p>
                 </div>
 
-                <div id="1">
-                    <label for="Property1Processor">Snelheid</label>
-                    <input class="form-control" type="text" id="Property1Processor" name="Property1Processor" placeholder="Snelheid">
+                <div id="image_data" class="row">
 
-                    <label for="Property2Processor">Boxed</label>
-                    <input class="form-control" type="text" id="Property2Processor" name="Property2Processor" placeholder="Boxed">
-                </div>
-
-                <div id="2">
-                    <label for="Property1Harddisk">Capaciteit</label>
-                    <input class="form-control" type="text" id="Property1Harddisk" name="Property1Harddisk" placeholder="Capaciteit">
-
-                    <label for="Property2Harddisk">Snelheid</label>
-                    <input class="form-control" type="text" id="Property2Harddisk" name="Property2Harddisk" placeholder="Snelheid">
-                </div>
-
-                <div id="3">
-                    <label for="Property1Housing">Formfactor</label>
-                    <input class="form-control" type="text" id="Property1Housing" name="Property1Housing" placeholder="Merk">
-
-                    <label for="Property2Housing">Met voeding</label>
-                    <input class="form-control" type="text" id="Property2Housing" name="Property2Housing" placeholder="Type">
-                </div>
-
-                <div id="4">
-                    <label for="Property1Laptop">CPU</label>
-                    <input class="form-control" type="text" id="Property1Laptop" name="Property1Laptop" placeholder="Merk">
-
-                    <label for="Property2Laptop">Size</label>
-                    <input class="form-control" type="text" id="Property2Laptop" name="Property2Laptop" placeholder="Processor serie">
                 </div>
 
                 <button type="submit" class="btn btn-default">Toevoegen</button>
