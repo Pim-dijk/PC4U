@@ -1,14 +1,20 @@
 <?php
-include("Header.php");
+
 include("initialize.php");
 // Escape user inputs for security
 
 
     if(isset($_POST['register'])){
 		//$user = new User();
-		
+		$database->escape_value($_POST['email']);
+
+	// Check to see if a user exists with this e-mail
+	$query = "SELECT email FROM customers WHERE email = '{$_POST['email']}'";
+	//$database->query($query);
+	$EmailExists = $database->query($query);
+		if (!$EmailExists){
 			$user->Email =  $_POST['email'];
-			$salted = "8723687hdwuyu2ygeou".$_POST['password']."78t127438crb78oet8";
+			$salted = "8723687hdwuyu2ygeou78t127438crb78oet8".$_POST['password'];
 			$hashed = hash("sha512", $salted);
 			$user->Password = $hashed;
 			$user->Initials = $_POST['initials'];
@@ -28,7 +34,15 @@ include("initialize.php");
 		
 		header("Location: home.php");
 		exit();
+			
+		} else{	
+			 $_SESSION["alert-type"] = "success";
+		$_SESSION["alert-message"] = "Email already in Database";
+        
+		}
+
+		
+	
     }
 
-include("Footer.php");
  ?>

@@ -3,7 +3,7 @@
 class User extends DatabaseObject {
 
 	protected static $table_name = "customers";
-	protected static $db_fields =array('CustomerID', 'Email', 'Password', 'PhoneNumber', 'Street', 'Zipcode', 'HouseNumber', 'HNAddition', 'City', 'Country', 'Private', 'Initials',  'Lastname', 'DOB');
+	protected static $db_fields =array('CustomerID', 'Email', 'Password', 'PhoneNumber', 'Street', 'Zipcode', 'HouseNumber', 'Addition', 'City', 'Country', 'Business', 'Initials',  'Lastname', 'DOB');
 	public $CustomerID = "";
 	public $Email = "";
 	public $Password = "";
@@ -11,10 +11,11 @@ class User extends DatabaseObject {
 	public $Street = "";
 	public $Zipcode = "";
 	public $HouseNumber = "";
-	public $HNAddition = "";
+	public $Addition = "";
 	public $City = "";
-	public $CountryList = "";
-	public $Private = "";
+	public $Country = "";
+	public $Bussines = "";
+	public $Initials="";
 	public $Lastname = "";
 	public $DOB = "";
 

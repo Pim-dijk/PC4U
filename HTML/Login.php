@@ -24,7 +24,7 @@
 				<p>Nog geen account? <a href="Register.php" class="Link">registreer</a></p>
 			</div>
 			<div>
-				<p>Wachtwoord vergeten? klik <a href="ResetPassword.php" class="Link">hier</a></p>
+				<p>Wachtwoord vergeten? klik <a href="forgotpassword.php" class="Link">hier</a></p>
 			</div>
 
 			<button type="submit" name="submit" class="btn btn-default">Login</button>
