@@ -11,17 +11,6 @@
 #reparatiesOverzichtUitlijningDiv form input[type="submit"] {
     margin-left: 15px;
 }
-#reparatiesOverzichtRow {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    float: left;
-}
-#reparatiesOverzichtRowDiv {
-    width: 150px;
-    height: 75px;
-    float: left;
-}
 #reparatiesOverzichtRowDiv a {
     line-height: 20px;
 }
@@ -33,10 +22,11 @@
     overflow: auto;
     margin: auto;
 }
-#reparatiesUitlijningDiv p {
-    display: inline-block;
+#reparatiesUitlijningDiv td {
+    padding-right: 20px;
 }
 #reparatiesUitlijningDiv a {
+    color: black;
     margin: 15px 0px 15px 10px;
     float: right;
 }
@@ -239,6 +229,11 @@
 }
 .reparaties-p-right {
     width: 70%;
+}
+.reparatieDiv {
+    width: 150px;
+    height: 75px;
+    float: left;
 }
 
 /* Admin retourneren klassen */

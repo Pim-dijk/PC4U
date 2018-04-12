@@ -132,7 +132,7 @@ class DatabaseObject{
         $sql .= "WHERE id='". $database->escape_value($this->id);
         $sql .= "' LIMIT 1";
         $database->query($sql);
-        return ($database-> affected_rows() == 1) ? true : false;
+        return ($database->affected_rows($sql) == 1) ? true : false;
 
     }
 }

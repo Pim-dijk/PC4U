@@ -6,30 +6,56 @@
         <!-- Filter -->
         <form>
             <span class="bold">Filter op status: </span>
-            <select name="reparatiesFilter">
-                <option value="inBehandeling">In behandeling</option>
-                <option value="defect">Defect</option>
-                <option value="voltooid">Voltooid</option>
+            <select name="reparatiesFilter" onchange="filterReparaties(this.value)">
+                <option value="Alles">Alles</option>
+                <option value="In behandeling">In behandeling</option>
+                <option value="Defect">Defect</option>
+                <option value="Voltooid">Voltooid</option>
             </select>
-            <input type="submit" value="Filter" class="btn button-color">
         </form>
-        <hr style="border-color: black; width: 100%;">
+        <hr>
 
-        <!-- Item 1 -->
-        <div id="reparatiesOverzichtRow">
-            <div id="reparatiesOverzichtRowDiv">
-                <p class="bold">Reparatienummer</p>
-                <a href="AdminReparaties.php">03928375</a>
-            </div>
-            <div id="reparatiesOverzichtRowDiv">
-                <p class="bold">Klantnaam</p>
-                <p>Jan ter Aardt</p>
-            </div>
-            <div id="reparatiesOverzichtRowDiv" style="width: 120px;">
-                <a href="AdminReparaties.php" class="btn button-color" style="margin-top: 20px;"><span class="glyphicon glyphicon-trash"></span> Verwijderen</a>
+
+        <?php
+            $counter = 0;
+            $numbering = 0;
+            $sql = "SELECT * FROM reparaties";
+            $reparaties = $database->query($sql);
+            while ($row = $reparaties->fetch_assoc()) {
+                $customerID = $row['CustomerID'];
+                $sql = "SELECT * FROM customers WHERE CustomerID = '$customerID'";
+                $query = $database->query($sql);
+                $result = $database->fetch_array($query);
+                $customerName = $result['Initials']." ".$result['Prefix']." ".$result['Lastname'];
+                ?>
+        <div class="row">
+            <div id="reparatieRowDiv-<?php echo $numbering; ?>">
+                    <div class="reparatieDiv">
+                        <p class="bold">Reparatie ID</p>
+                        <a href="AdminReparaties.php?reparatieID=<?php echo $row['id']; ?>"><?php echo $row['id']; ?></a>
+                    </div>
+                    <div class="reparatieDiv">
+                        <p class="bold">Klantnaam</p>
+                        <p><?php echo $customerName; ?></p>
+                    </div>
+                <div class="reparatieDiv" style="width: 185px;">
+                    <p class="bold">Verwijderen</p>
+                    <a href="delete_reparatie.php?reparatieID=<?php echo $row['id'] ?>"><span class="glyphicon glyphicon-trash"> Verwijderen</a>
+                </div>
+                <div class="reparatieDiv">
+                    <p class="bold">Status</p>
+                    <p id="status-<?php echo $numbering; ?>" ><?php echo $row['Status']; ?></p>
+                </div>
+                <hr>
             </div>
         </div>
-        <hr style="border-color: black; width: 100%;">
+        <?php
+                $numbering++;
+                $counter++;
+            }
+        ?>
+        <input type="hidden" id="totalRows" name="totalRows" value="<?php echo $counter; ?>">
     </div>
 </div>
+<script src="js/filter_reparaties.js"></script>
 <?php include 'Footer.php'; ?>
