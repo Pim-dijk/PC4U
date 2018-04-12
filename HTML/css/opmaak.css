@@ -128,9 +128,15 @@ a:hover
 	color:red;
 }
 
+.fileUpload{
+    max-width:325px;
+    display:inline-block !important;
+}
+
 .content
 {
 	padding:0 25px 25px 25px;
+    float:left;
 }
 
 /*Customer page*/
@@ -168,13 +174,14 @@ a:hover
 {
 	display: block;
 	margin-bottom: 15px;
+    overflow: hidden;
 }
 
 #image_data img
 {
-	width: 200px;
 	height: 150px;
 	margin-left: 15px;
+
 }
 
 #image_data a

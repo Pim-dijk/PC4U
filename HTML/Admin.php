@@ -145,10 +145,10 @@ include 'Header.php';
                     <label for="Description">Beschrijving</label>
                     <textarea type="text" class="form-control textAreaInput" id="Description" name="Description" placeholder="Beschrijving" required></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="ImageInput">Afbeelding(en) toevoegen</label>
-                    <input type="file" id="upload_file" name="upload_file[]" onchange="preview_image()" multiple>
-                    <p class="help-block">Selecteer hier de afbeeldingen voor bij het product</p>
+                <div class="form-group row">
+                    <label class="col-lg-12 col-sm-12" for="ImageInput">Afbeelding(en) toevoegen</label>
+                    <input type="file" class="fileUpload col-lg-12 col-sm-12" id="upload_file" name="upload_file[]" onchange="preview_image()" multiple>
+                    <p class="help-block col-lg-12 col-sm-12">Selecteer hier de afbeeldingen voor bij het product</p>
                 </div>
 
                 <div id="image_data" class="row">

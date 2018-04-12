@@ -70,7 +70,7 @@ if(isset($_GET['id']))
         <div id="EditProduct" class="row">
             <h3 class="">Product wijzigen</h3>
 
-            <form id="editForm" class="center-block myForm needs-validation" action="update_product.php" method="POST" name="EditProduct" enctype="multipart/form-data">
+            <form id="editForm" class="center-block myForm needs-validation" action="adminAction.php" method="POST" name="EditProduct" enctype="multipart/form-data">
                 <input type="hidden" id="ProductID" name="ProductID" value="<?= $ProductID ?>">
                 <div class="form-group col-sm-4 col-xs-12">
                     <label for="ArtNumber">Artikelnummer</label>
@@ -134,10 +134,10 @@ if(isset($_GET['id']))
                     <label for="Description">Beschrijving</label>
                     <textarea type="text" class="form-control textAreaInput" id="Description" name="Description" placeholder="Beschrijving" required><?php echo $product->Description ?></textarea>
                 </div>
-                <div class="form-group required">
-                    <label for="UploadFile">Afbeelding(en) toevoegen</label>
-                    <input type="file" id="upload_file" name="upload_file[]" onchange="preview_image();" multiple/>
-                    <p class="help-block">Selecteer hier de afbeeldingen voor bij het product</p>
+                <div class="form-group required row">
+                    <label class="col-lg-12 col-sm-12" for="UploadFile">Afbeelding(en) toevoegen</label>
+                    <input type="file" class="fileUpload col-lg-12 col-sm-12" id="upload_file" name="upload_file[]" onchange="preview_image();" multiple/>
+                    <p class="help-block col-lg-12 col-sm-12">Selecteer hier de afbeeldingen voor bij het product</p>
                 </div>
 
                 <div id="image_data" class="row">
