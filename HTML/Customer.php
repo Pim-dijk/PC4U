@@ -14,7 +14,7 @@ if(isset($_GET['id']))
 ?>
 
 <!--Content goes here-->
-<div id="Customer" class="content">
+<div id="Customer" class="content col-lg-12">
 	
 	<!--Customer Data-->
 	<div id="Data" class="row">
@@ -107,6 +107,8 @@ $id = $customer->CustomerID;
 $query = "SELECT * FROM orders WHERE CustomerID = $id";
 $orders = $order->find_by_sql($query);
 
+if(!empty($orders[0]))
+{
 ?>
     <div id="card" class="table-responsive">
         <table class="table table-bordered">
@@ -122,16 +124,26 @@ $orders = $order->find_by_sql($query);
             $SessionOrders = array();
             if(!empty($orders))
             {
+                $i = 0;
                 foreach($orders as $order)
                 {
-                ?>
-                <tr>
-                    <td data-label="Ordernummer"><?=$order->OrderID?></td>
-                    <td data-label="Besteldatum"><?=$order->OrderDate?></td>
-                    <td data-label="Status"><a href="OrderHistory.php?id=<?=$order->OrderID?>"><?=$order->Status?></a></td>
-                    <?php array_push($SessionOrders, serialize($order)); ?>
-                </tr>
-                <?php
+                    //Add the order to the session
+                    array_push($SessionOrders, serialize($order));
+                    //Add to the counter of orders
+                    $i++;
+                    //Limit the amount of orders displayed by default
+                    if($i <= 2)
+                    {
+                        ?>
+                        <tr>
+                            <td data-label="Ordernummer"><?= $order->OrderID ?></td>
+                            <td data-label="Besteldatum"><?= $order->OrderDate ?></td>
+                            <td data-label="Status">
+                                <a href="OrderHistory.php?id=<?= $order->OrderID ?>"><?= $order->Status ?></a>
+                            </td>
+                        </tr>
+                        <?php
+                    }
                 }
                 $_SESSION['orderHistory'] = $SessionOrders;
             }
@@ -139,7 +151,20 @@ $orders = $order->find_by_sql($query);
             </tbody>
         </table>
         <!--/Responsive Table-->
+
     </div>
+
+<?php
+    //If there are more orders then there are displayed by default.
+    //Add a button to load the rest of the orders.
+    if($i > 2){
+        echo "<a href='OrderHistoryOverview.php'>Oudere bestellingen...</a>";
+    }
+}
+else //if no order was found..
+{
+    echo "<h3>Geen bestellingen gevonden.</h3>";
+}?>
     <!--/Orders-->
 
 

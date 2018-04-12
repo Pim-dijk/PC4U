@@ -11,7 +11,7 @@ include("Includes/initialize.php");
            $myemail = ($_POST['email']);
            $mypassword = ($_POST['password']);
 
-           $salted = "8723687hdwuyu2ygeou".$_POST['password']."78t127438crb78oet8";
+           $salted = "8723687hdwuyu2ygeou78t127438crb78oet8" .$_POST['password'];
            $hashed = hash("sha512", $salted);
 
            if(isset($_POST['admin']))

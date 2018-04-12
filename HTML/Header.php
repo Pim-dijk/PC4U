@@ -72,17 +72,16 @@ $menu = array();
 
 
         <!--Nav section-->
-        <nav id="header" class="">
+        <nav id="header" class="row">
             <ul>
                 <div class="dropdown">
                     <a href="#">
-                        <li class="<?php echo ($page == "aanbiedingen" ? "active" : "")?>">Aanbiedingen</li>
+                        <li class="<?php ($page == "aanbiedingen" ? "active" : "")?>">Aanbiedingen</li>
                     </a>
                 </div>
-
                 <div class="dropdown">
                     <li class="dropbtn">Componenten</li>
-                    <div id="myDropdown" class="dropdown-content">
+                    <div id="Dropdown" class="dropdown-content">
                         <?php
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo '<a href="categorieen-page.php?cat=' . $row['Category'] . '"><li>' . $row['Category'] . '</li></a>';
@@ -115,39 +114,40 @@ $menu = array();
                         <li class="<?php echo ($page == "contact" ? "active" : "")?>">Contact</li>
                     </a>
                 </div>
-                <?php
-                if (isset($_COOKIE['login_user'])) {
-                    ?>
-                    <div class="dropdown">
-                        <li class="dropbtn pull-right">Account</li>
-                        <div id="loginDropdown" class="dropdown-content">
-                            <a href="Customer.php?id=<?php echo $_COOKIE['login_user']; ?>""><li>Gegevens</li></a>
-                            <a href="Logout.php"><li>Logout</li></a>
-                        </div>
-                    </div>
-                    <?php
-                }
-                else if(isset($_COOKIE['login_admin'])){
-                    ?>
-                    <div class="dropdown">
-                        <li class="dropbtn pull-right">Admin</li>
-                        <div id="loginDropdown" class="dropdown-content">
-                            <a href="Admin.php""><li>Admin Panel</li></a>
-                            <a href="Logout.php"><li>Logout</li></a>
-                        </div>
-                    </div>
-                    <?php
-                }
-                else {
-                    ?>
-                    <a href="Login.php">
-                        <li class="loginButton pull-right">Login<li>
-                    </a>
-                    <?php
-                }
-                ?>
 
-
+                <div class="pull-right">
+                    <div class="dropdown">
+                    <?php
+                    if (isset($_COOKIE['login_user']))
+                    {
+                        ?>
+                            <li class="dropbtn pull-right">Account</li>
+                            <div id="Dropdown" class="dropdown-content loginDropdown">
+                                <a href="Customer.php?id=<?php echo $_COOKIE['login_user']; ?>""><li>Gegevens</li></a>
+                                <a href="Logout.php"><li>Logout</li></a>
+                            </div>
+                        <?php
+                    }
+                    else if(isset($_COOKIE['login_admin']))
+                    {
+                        ?>
+                            <li class="dropbtn pull-right">Admin</li>
+                            <div id="Dropdown" class="dropdown-content loginDropdown">
+                                <a href="Admin.php""><li>Admin Panel</li></a>
+                                <a href="Logout.php"><li>Logout</li></a>
+                            </div>
+                        <?php
+                    }
+                    else
+                    {
+                        ?>
+                            <a href="Login.php">
+                                <li class="loginButton pull-right">Login<li>
+                            </a>
+                            </div>
+                        <?php
+                    }
+                    ?>
             </ul>
             <!--/nav - header-->
         </nav>

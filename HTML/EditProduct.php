@@ -1,34 +1,28 @@
 <?php
 
-?>
-
-<!--jQuery script for uploading and previewing multiple images-->
-<script>
-
-function preview_image()
-{
-    //Get the number of images the user selected
-    var total_file=document.getElementById("upload_file").files.length;
-    console.log(document.getElementById("upload_file").files.item(0).name);
-    //foreach image create an image and aad a <br>
-    for(var i=0;i<total_file;i++)
-    {
-        $('#image_data').append("<div class='col-sm-4 col-xs-12'>"
-        +"<input type='radio' name='featuredImage' value='"+(document.getElementById("upload_file").files.item(i).name)+"' >"
-        +"<img src='"+URL.createObjectURL(event.target.files[i])+"'>"
-        +"</div>");
-    }
-}
-
-</script>
-
-
-<?php
-
+//Get the product ID
 if(isset($_GET['id']))
 {
     include 'Header.php';
+    ?>
+    <!--jQuery script for uploading and previewing multiple images-->
+    <script>
 
+        function preview_image() {
+            //Get the number of images the user selected
+            var total_file = document.getElementById("upload_file").files.length;
+            console.log(document.getElementById("upload_file").files.item(0).name);
+            //foreach image create an image and aad a <br>
+            for (var i = 0; i < total_file; i++) {
+                $('#image_data').append("<div class='col-sm-4 col-xs-12'>"
+                    + "<input type='radio' name='featuredImage' value='" + (document.getElementById("upload_file").files.item(i).name) + "' >"
+                    + "<img src='" + URL.createObjectURL(event.target.files[i]) + "'>"
+                    + "</div>");
+            }
+        }
+
+    </script>
+<?php
     //Get the ID from the product session (the page that linked to this)
     $ProductID = $_GET['id'];
     //Get the information from the database
@@ -63,7 +57,7 @@ if(isset($_GET['id']))
 
     <!--Content-->
 
-    <div id="Admin" class="content">
+    <div id="Admin" class="content col-lg-12">
         <h1>Admin Panel</h1>
         <hr>
 

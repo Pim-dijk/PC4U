@@ -1,23 +1,28 @@
-<?php include 'Header.php' ?>
+<?php
+include("Header.php");
+?>
+    <div class="content">
 
-<!--Page content goes here!!!-->
-<div id="Login" class="row">
+        <form  action="reset.php" method="POST" class="myForm center-block needs-validation">
+            <div class="form-group required">
+                <label for="email" class="control-label">Email address</label>
+                <input type="email" name="email" class="form-control" id="Email" placeholder="Email" required>
+            </div>
+            <div class="form-group required col-sm-6 col-xs-12">
+                <label for="Password" class="control-label">New Password</label>
+                <input type="password" name="password" class="form-control" id="Password" placeholder="Wachtwoord" required>
+            </div>
+            <div class="form-group required col-sm-6 col-xs-12">
+                <label for="Password" class="control-label">Confirm Password</label>
+                <input type="password" name="confirmpassword" class="form-control" id="Password" placeholder="Wachtwoord" required>
+            </div>
+            <input type="hidden" name="q"
+                   value="<?php
+                   if (isset($_GET["q"])) {
+                       echo $_GET["q"];
+                   }?>" /><input type="submit" name="ResetPasswordForm" value=" Reset Password " />
 
-	<div class="col-xs-12">
-		<h3>Wachtwoord opnieuw instellen</h3>
+        </form>
+    </div>
 
-		<p class="text-center">Vul hier uw email adres in, we sturen dan een link om uw wachtwoord opnieuw in te stellen.</p>
-		<!--Login Form-->
-		<form class="center-block myForm needs-validation">
-			<div class="form-group">
-				<label for="Email">Email address</label>
-				<input type="email" class="form-control" id="Email" placeholder="Email" required>
-			</div>
-
-			<button type="submit" class="btn btn-default">Verstuur</button>
-		</form>
-	</div>
-
-</div>
-
-<?php include 'Footer.php' ?>
+<?php include("Footer.php") ?>

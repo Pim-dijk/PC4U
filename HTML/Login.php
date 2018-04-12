@@ -23,7 +23,7 @@
 				<p>Nog geen account? <a href="Register.php" class="Link">registreer</a></p>
 			</div>
 			<div>
-				<p>Wachtwoord vergeten? klik <a href="ResetPassword.php" class="Link">hier</a></p>
+				<p>Wachtwoord vergeten? klik <a href="forgotpassword.php" class="Link">hier</a></p>
 			</div>
 
             <div class="form-group">

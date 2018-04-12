@@ -19,6 +19,7 @@ if (isset($_SESSION['orderHistory'])) {
             $totalOrders = 0;
             $totalPrice = 0;
             $oldPrice = NULL;
+            static $price = 0;
             $OrderHistory = array();
 
         }
@@ -28,7 +29,7 @@ if (isset($_SESSION['orderHistory'])) {
 ?>
 
     <!--Content goes here-->
-    <div id="OrderHistory" class="content">
+    <div id="OrderHistory" class="content col-lg-12">
 
         <h3>Bestellingen overzicht</h3>
 
@@ -57,8 +58,10 @@ if (isset($_SESSION['orderHistory'])) {
                     } else {
                         $price = $row['Price'];
                     }
+
                     $totalOrders += $row['Amount'];
                     $totalPrice += $price * $row['Amount'];
+
                     ?>
                     <tr>
                         <td data-label="Artikelnummer"><?= $row['ArtNumber'] ?></td>
