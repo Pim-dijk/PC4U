@@ -1,3 +1,7 @@
+#table td {
+    padding-right: 20px;
+}
+
 /* Admin reparaties overzicht */
 #reparatiesOverzichtUitlijningDiv {
     width: 70%;
@@ -84,22 +88,10 @@
 #RMAOverzichtUitlijningDiv form select {
     margin-left: 15px;
 }
-#RMAOverzichtUitlijningDiv form input[type="submit"] {
-    margin-left: 15px;
-}
-#RMAOverzichtRow {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    float: left;
-}
 #RMAOverzichtRowDiv {
-    width: 150px;
+    width: 120px;
     height: 75px;
     float: left;
-}
-#RMAOverzichtRowDiv a {
-    line-height: 20px;
 }
 
 /* Admin RMA */
@@ -109,10 +101,8 @@
     overflow: auto;
     margin: auto;
 }
-#RMAUitlijningDiv p {
-    display: inline-block;
-}
 #RMAUitlijningDiv a {
+    color: black;
     margin: 15px 0px 15px 10px;
     float: right;
 }
@@ -222,6 +212,9 @@
 {
     background-color: #FF9900;
 }
+.line-height-75 {
+    line-height: 75px;
+}
 
 /* Admin reparatie klassen */
 .reparaties-p-left {
@@ -241,14 +234,6 @@
     width: 150px;
 }
 .retourneren-p-right {
-    width: 70%;
-}
-
-/* Admin RMA klassen*/
-.RMA-p-left {
-    width: 150px;
-}
-.RMA-p-right {
     width: 70%;
 }
 

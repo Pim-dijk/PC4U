@@ -24,4 +24,5 @@ require_once(LIB_PATH.DS. "orders.php");
 require_once(LIB_PATH.DS. "orderdetails.php");
 
 require_once(LIB_PATH.DS. "Reparatie.php");
+require_once(LIB_PATH.DS. "RMA.php");
 ?>

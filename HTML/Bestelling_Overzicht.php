@@ -49,7 +49,7 @@
                     <p class="bold">BTW prijs</p>
                     <p><?php echo '€ '.number_format(round($btwPrice, 2), 2); ?></p>
                 </div>
-                <hr style="border-color: black; width: 100%;">
+                <hr>
 
                 <?php
             }

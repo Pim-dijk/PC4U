@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Beschrijving</label>
-                <textarea name="description" cols="30" rows="10" class="form-control"></textarea>
+                <textarea name="description" cols="30" rows="10" class="form-control" required></textarea>
             </div>
 
             <button type="submit" class="btn btn-default">Aanvraag plaatsen</button>
