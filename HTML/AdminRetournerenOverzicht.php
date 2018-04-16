@@ -6,30 +6,53 @@
         <!-- Filter -->
         <form>
             <span class="bold">Filter op status: </span>
-            <select name="retournerenFilter">
-                <option value="inBehandeling">Aangemeld</option>
-                <option value="defect">Ontvangen</option>
-                <option value="voltooid">Voltooid</option>
+            <select name="retournerenFilter" onchange="filter_retour(this.value)">
+                <option value="Alles">Alles</option>
+                <option value="Aangemeld">Aangemeld</option>
+                <option value="Ontvangen">Ontvangen</option>
+                <option value="Voltooid">Voltooid</option>
             </select>
-            <input type="submit" value="Filter" class="btn button-color">
         </form>
-        <hr style="border-color: black; width: 100%;">
+        <hr>
 
-        <!-- Item 1 -->
-        <div id="retournerenOverzichtRow">
-            <div id="retournerenOverzichtRowDiv">
-                <p class="bold">Retournummer</p>
-                <a href="AdminRetourneren.php">3489234</a>
-            </div>
-            <div id="retournerenOverzichtRowDiv">
-                <p class="bold">Klantnaam</p>
-                <p>Jan ter Aardt</p>
-            </div>
-            <div id="retournerenOverzichtRowDiv" style="width: 120px;">
-                <a href="AdminReparaties.php" class="btn button-color" style="margin-top: 20px;"><span class="glyphicon glyphicon-trash"></span> Verwijderen</a>
+        <?php
+            $counter = 0;
+            $sql = "SELECT * FROM retourneren";
+            $retour = $database->query($sql);
+            while ($row = $retour->fetch_assoc()) {
+                $retourNummer = $row['id'];
+
+        ?>
+        <div id="row">
+            <div id="retournerenDiv-<?php echo $counter; ?>">
+                <div id="retournerenOverzichtRowDiv">
+                    <p class="bold">Retournummer</p>
+                    <a href="AdminRetourneren.php?retourNummer=<?php echo $retourNummer; ?>"><?php echo $retourNummer; ?></a>
+                </div>
+                <div id="retournerenOverzichtRowDiv">
+                    <p class="bold">Klantnummer</p>
+                    <p><?php echo $row['CustomerID']; ?></p>
+                </div>
+                <div id="retournerenOverzichtRowDiv">
+                    <p class="bold">Ordernummer</p>
+                    <p><?php echo $row['OrderID']; ?></p>
+                </div>
+                <div id="retournerenOverzichtRowDiv" style="width: 155px;">
+                    <a href="delete_retour.php?retourNummer=<?php echo $retourNummer; ?>" style="line-height: 75px;" style="margin-top: 20px;"><span class="glyphicon glyphicon-trash"></span> Verwijderen</a>
+                </div>
+                <div id="retournerenOverzichtRowDiv">
+                    <p class="bold">Status</p>
+                    <p id="status-<?php echo $counter; ?>"><?php echo $row['Status']; ?></p>
+                </div>
+                <hr>
             </div>
         </div>
-        <hr style="border-color: black; width: 100%;">
+        <?php
+                $counter++;
+            }
+        ?>
+        <input type="hidden" id="numberOfRows" value="<?php echo $counter; ?>">
     </div>
 </div>
+<script src="js/filter_retour.js"></script>
 <?php include 'Footer.php'; ?>
