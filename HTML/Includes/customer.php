@@ -3,7 +3,7 @@
 class Customer extends DatabaseObject {
 
 	protected static $table_name = "customers";
-	protected static $db_fields = array('CustomerID', 'Email', 'Password', 'PhoneNumber', 'Street', 'Zipcode', 'HouseNumber', 'Addition', 'City', 'Country', 'Business', 'Initials', 'Prefix', 'Lastname', 'DOB');
+	protected static $db_fields = array('CustomerID', 'Email', 'Password', 'PhoneNumber', 'Street', 'Zipcode', 'HouseNumber', 'Addition', 'City', 'Country', 'Initials', 'Prefix', 'Lastname', 'DOB');
 	public $id;
 	public $CustomerID = "";
 	public $Email = "";
@@ -50,24 +50,6 @@ class Customer extends DatabaseObject {
 		$result_array = self::find_by_sql( $sql );
 		return !empty( $result_array ) ? array_shift( $result_array ) : false;
 
-	}
-	
-	 public
-	function create() {
-		global $database;
-			$attributes = $this->sanitized_attributes();
-			$sql = "INSERT INTO ".static::$table_name." (";
-			$sql .= join(", ", array_keys($attributes));
-			$sql .= ") VALUES ('";
-			$sql .= join("', '", array_values($attributes));
-			$sql .= "')";
-			if($database->query($sql)){
-				$this->CustomerID = $database->insert_id();
-				return true;
-				
-			}else{
-				return false;
-			}
 	}
 
     public

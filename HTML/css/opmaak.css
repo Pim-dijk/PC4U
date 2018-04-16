@@ -186,12 +186,25 @@ a:hover
 {
 	height: 150px;
 	margin-left: 15px;
-
+	display: block !important;
 }
 
 #image_data a
 {
 	margin-left: 25px;
+}
+
+#catImage_data
+{
+	display: block;
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+
+#catImage_data img
+{
+	height: 150px;
+	display:block !important;
 }
 
 /*dit is voor de Laatstbekeken*/

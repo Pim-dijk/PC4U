@@ -31,12 +31,13 @@ if(isset($_POST['register'])){
 
         $user->create();
 
-        header("Location: home.php");
+        header("Location: index.php");
         exit();
 
     } else{
         $_SESSION["alert-type"] = "success";
         $_SESSION["alert-message"] = "Email already in Database";
+        header("Location: Login.php");
     }
 }
 

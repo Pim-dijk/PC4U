@@ -6,18 +6,33 @@ include 'Header.php';
 ?>
 
     <script>
-        function preview_image()
+        //For adding a product
+        function preview_images(fileUpload)
         {
             //Get the number of images the user selected
-            var total_file=document.getElementById("upload_file").files.length;
-            console.log(document.getElementById("upload_file").files.item(0).name);
+            var total_file=fileUpload.files.length;
             //foreach image create an image and aad a <br>
             for(var i=0;i<total_file;i++)
             {
                 $('#image_data').append("<div class='col-sm-4 col-xs-12'>"
-                    +"<input type='radio' name='featuredImage' value='"+(document.getElementById("upload_file").files.item(i).name)+"' >"
-                    +"<img src='"+URL.createObjectURL(event.target.files[i])+"'>"
-                    +"</div>");
+                    + "<input type='radio' name='featuredImage' value='" + (document.getElementById("upload_file").files.item(i).name) + "' >"
+                    + "<img src='" + URL.createObjectURL(event.target.files[i]) + "'>"
+                    + "</div>");
+            }
+        }
+
+        //For the category
+        function preview_image(fileUpload)
+        {
+            //Get the number of images the user selected
+            var total_file=fileUpload.files.length;
+            //foreach image create an image and aad a <br>
+            for(var i=0;i<total_file;i++)
+            {
+                $('#catImage_data').append(
+                    "<div class='col-sm-4 col-xs-12'>"
+                    + "<img src='" + URL.createObjectURL(event.target.files[i]) + "'>"
+                    + "</div>");
             }
         }
     </script>
@@ -147,8 +162,8 @@ include 'Header.php';
                 </div>
                 <div class="form-group row">
                     <label class="col-lg-12 col-sm-12" for="ImageInput">Afbeelding(en) toevoegen</label>
-                    <input type="file" class="fileUpload col-lg-12 col-sm-12" id="upload_file" name="upload_file[]" onchange="preview_image()" multiple>
-                    <p class="help-block col-lg-12 col-sm-12">Selecteer hier de afbeeldingen voor bij het product</p>
+                    <input type="file" class="fileUpload col-lg-12 col-sm-12" id="upload_file" name="upload_file[]" onchange="preview_images(this)" multiple>
+                    <p class="help-block col-lg-12 col-sm-12">Selecteer hier de afbeelding voor bij de categorie</p>
                 </div>
 
                 <div id="image_data" class="row">
@@ -177,6 +192,15 @@ include 'Header.php';
                 <div class="form-group col-sm-6 col-xs-12">
                     <label for="Property2">Eigenschap 2</label>
                     <input type="text" class="form-control" id="Property2" name="Property2" placeholder="Eigenschap 2" required>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-12 col-sm-12" for="catImageInput">Afbeelding toevoegen</label>
+                    <input type="file" class="fileUpload col-lg-12 col-sm-12" id="catImageInput" name="upload_file[]" onchange="preview_image(this)">
+                    <p class="help-block col-lg-12 col-sm-12">Selecteer hier de afbeeldingen voor bij het product</p>
+                </div>
+
+                <div id="catImage_data" class="row">
+
                 </div>
 
                 <button type="submit" name="submitCategory" class="btn btn-default">Aanmaken</button>

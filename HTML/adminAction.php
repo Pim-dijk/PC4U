@@ -11,40 +11,45 @@ if(isset($_POST['submitDiscount']))
     $query = "SELECT * FROM products WHERE ArtName = '$ArtName'";
     $products = $product->find_by_sql($query);
     $product = $products[0];
+    $date = date("Y-m-d");
 
+    //Obsolete
     //Check if the product already has a discount
-    $query = "SELECT * FROM discounts WHERE ProductID = $product->ProductID";
-    $discounts = $discount->find_by_sql($query);
+//    $query = "SELECT * FROM discounts WHERE ProductID = $product->ProductID";
+//    $discounts = $discount->find_by_sql($query);
 
     //Set discount object to the first one found in the array of objects
     //The object can be empty
-    if(!empty($discounts)) {
-        $discount = $discounts[0];
-    }
+//    if(!empty($discounts)) {
+//        $discount = $discounts[0];
+//    }
 
     //If the $discount has an id, update that discount with the new values
-    if(!empty($discount->DiscountID))
-    {
-        $discount->id = $discount->DiscountID;
-        $discount->DiscountID = $discount->DiscountID;
-        $discount->NewPrice = $_POST['NewPrice'];
-        $discount->ExpirationDate = $_POST['ExpirationDate'];
-        $discount->update();
-
-        $_SESSION["alert-type"] = "success";
-        $_SESSION["alert-message"] = "Aanbieding succesvol bijgewerkt!";
-    }
-    else
-    {
+//    if(!empty($discount->DiscountID))
+//    {
+//        $discount->id = $discount->DiscountID;
+//        $discount->DiscountID = $discount->DiscountID;
+//        $discount->NewPrice = $_POST['NewPrice'];
+//        $discount->ExpirationDate = $_POST['ExpirationDate'];
+//        $discount->update();
+//
+//        $_SESSION["alert-type"] = "success";
+//        $_SESSION["alert-message"] = "Aanbieding succesvol bijgewerkt!";
+//    }
+//    else
+//    {
         //Use the newly gotten product ID to create a discount object and store it in the database
         $discount->ProductID = $product->ProductID;
         $discount->NewPrice = $_POST['NewPrice'];
+        $discount->FromDate = $date;
         $discount->ExpirationDate = $_POST['ExpirationDate'];
-        $discount->create();
 
-        $_SESSION["alert-type"] = "success";
-        $_SESSION["alert-message"] = "Aanbieding succesvol aangemaakt!";
-    }
+        if($discount->create()){
+            $_SESSION["alert-type"] = "success";
+            $_SESSION["alert-message"] = "Aanbieding succesvol aangemaakt!";
+        }
+
+//    }
 }
 
 //Create a new category
@@ -55,11 +60,21 @@ if(isset($_POST['submitCategory'])){
     $property2 = $_POST['Property2'];
     $object = array( "fields" => [array("key" => "$property1", "value" => ""), array("key" => "$property2", "value" => "")]);
     $json = json_encode($object);
-//    var_dump($json);
-//    exit;
     $category->Properties = $json;
+
+    if(($_FILES["upload_file"]["name"][0]) != "")
+    {
+        for($i=0; $i < count($_FILES["upload_file"]["name"]); $i++)
+        {
+            $uploadfile=$_FILES["upload_file"]["tmp_name"][$i];
+            $folder="images/Categories/";
+            move_uploaded_file($_FILES["upload_file"]["tmp_name"][$i], "$folder".$_FILES["upload_file"]["name"][$i]);
+
+            $category->Path = "$folder".$_FILES["upload_file"]["name"][$i];
+        }
+    }
+
     if($category->create()){
-        echo $category->id;
         $_SESSION['alert-type'] = "success";
         $_SESSION['alert-message'] = "Categorie succesvol aangemaakt!";
     }

@@ -1,12 +1,13 @@
 <?php
 class Discount extends DatabaseObject {
     protected static $table_name = "discounts";
-    protected static $db_fields =array('DiscountId', 'ProductID', 'NewPrice', 'ExpirationDate');
+    protected static $db_fields =array('DiscountId', 'ProductID', 'NewPrice', 'FromDate', 'ExpirationDate');
 
     public $id;
     public $DiscountID;
     public $ProductID;
     public $NewPrice;
+    public $FromDate;
     public $ExpirationDate;
     function __construct() {
         parent::__construct("DiscountID");
