@@ -383,9 +383,10 @@ li.active
 
 #header
 {
-    width:auto;
+    width:100%;
     float:left;
-    margin-left:15px;
+    padding-left:15px;
+	padding-right:15px;
     height:auto;
     font-family:header;
     font-size:18px;

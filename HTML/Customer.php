@@ -174,9 +174,9 @@ else //if no order was found..
 		<hr>
 		
 		<div>
-			<h3><a href="#">Reparatie</a></h3>
-			<h3><a href="#">Retouren</a></h3>
-			<h3><a href="#">RMA</a></h3>
+			<h3><a href="Reparatie.php">Reparatie</a></h3>
+			<h3><a href="retourneren-pagina.php">Retouren</a></h3>
+			<h3><a href="RMA.php">RMA</a></h3>
 		</div>
 	</div>
 	

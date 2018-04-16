@@ -58,7 +58,7 @@ include("Includes/initialize.php");
            }
            else {
 
-               $_SESSION["alert-type"] = "error";
+               $_SESSION["alert-type"] = "warning";
                $_SESSION['alert-message'] = "Username and password do not match with our database!";
                header("Location: Login.php");
                exit();

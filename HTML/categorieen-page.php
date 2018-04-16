@@ -58,8 +58,8 @@
       </div>
       <div id="productomschrijving" class="col-md-4">
             <h3 class="categorie"><?php echo $product->Brand ?></h3>
-            <?php echo '<h2><a href="/pc4u/html/producten-pagina.php?id='.$product->ProductID.'" class="link">'.$product->ArtName.'</a></h2>'; ?>
-            <p><?php echo $product->Description ?>...<?php echo '<a href="/pc4u/html/producten-pagina.php?id='.$product->ProductID.'" class="orangeunderline">Meer</a></p>'; ?>
+            <?php echo '<h2><a href="producten-pagina.php?id='.$product->ProductID.'" class="link">'.$product->ArtName.'</a></h2>'; ?>
+            <p><?php echo $product->Description ?>...<?php echo '<a href="producten-pagina.php?id='.$product->ProductID.'" class="orangeunderline">Meer</a></p>'; ?>
       </div>
       <form method="POST" action="shoppingcart.php">
         <div id="prijsvoorraad" class="col-md-2">

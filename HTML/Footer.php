@@ -1,11 +1,11 @@
 <div id="FooterContainer" class="row">
 
     <div id="Adress" class="col-xs-3">
-        <p>Straatnaam hier</p>
-        <p>Postcode hier</p>
-        <p>Plaats hier</p>
-        <p>Telefoonnummer hier</p>
-        <p>Emailadres hier</p>
+        <p>Energieweg 18</p>
+        <p>6915AZ</p>
+        <p>Arnhem</p>
+        <p>(+31) 612389164</p>
+        <p>info@pc4u.com</p>
     </div>
 
     <div id="subMenu" class="col-xs-3">
@@ -25,10 +25,10 @@
             <a href="#">
                 <li>Systemen</li>
             </a>
-            <a href="#">
+            <a href="Services.php">
                 <li>Service</li>
             </a>
-            <a href="#">
+            <a href="Contact.php">
                 <li>Contact</li>
             </a>
         </ul>

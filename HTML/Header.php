@@ -73,7 +73,7 @@ $menu = array();
 
         <!--Nav section-->
         <nav id="header" class="row">
-            <ul>
+            <ul class="col-lg-11 col-sm-10 col-xs-9">
                 <div class="dropdown">
                     <a href="#">
                         <li class="<?php ($page == "aanbiedingen" ? "active" : "")?>">Aanbiedingen</li>
@@ -105,17 +105,13 @@ $menu = array();
                     </a>
                 </div>
                 <div class="dropdown">
-                    <a href="#">
-                        <li class="<?php echo ($page == "service" ? "active" : "")?>">Service</li>
-                    </a>
-                </div>
-                <div class="dropdown">
                     <a href="Contact.php">
                         <li class="<?php echo ($page == "contact" ? "active" : "")?>">Contact</li>
                     </a>
                 </div>
-
-                <div class="pull-right">
+            </ul>
+            <ul class="col-lg-1 col-sm-2 col-xs-2">
+                <div class="headerLogin">
                     <div class="dropdown">
                     <?php
                     if (isset($_COOKIE['login_user']))
