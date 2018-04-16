@@ -36,6 +36,10 @@
 	height:63px;
 	width:275px;
 }
+.verbergbeschrijvingoverzicht {
+	overflow: hidden;
+	height:63px;
+}
 
 
 /*Overzicht.css*/
@@ -124,7 +128,6 @@
 /*Retourneren.css*/
 .orangeunderline {
 	color:#FF6600;
-	text-decoration:underline;	
 }
 .voegtoebutton {
 	width:150px;
