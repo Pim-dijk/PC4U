@@ -1,5 +1,8 @@
 <?php include 'Header.php';?>
 
+
+
+
 <?php
     // Methode om ID te krijgen. 
     if(isset($_GET['id'])) {
@@ -8,12 +11,16 @@
     $query = "SELECT * FROM products WHERE ProductID = {$id}";
     $result = $product->find_by_sql($query); 
     }
+   $resultdiscount = $discount->find_all();
+$sqldiscounts="SELECT * FROM discounts";
 
 ?>
 
 <body>
 <?php foreach ($result as $product) { 
- $query = "SELECT * FROM images WHERE ProductID = {$product->ProductID}"; 
+ $query = "SELECT * FROM images WHERE ProductID = {$product->ProductID}";
+ $querydiscount = "SELECT NewPrice FROM discounts WHERE ProductID = {$product->ProductID}";
+  $newprice = $discount->find_by_sql($querydiscount); 
   $resultimage = $image->find_by_sql($query);
   ?>
 
@@ -45,7 +52,20 @@
           
       <form method="POST" action="shoppingcart.php">
         <div id="prijzen">
-          <h2>€ <?php echo $product->Price?></h2>
+      <?php
+      //Aanbieding tonen als die er is
+        if (isset($newprice[0]->NewPrice)) { ?>
+          <p class="orangeunderline">€ <strike><?php echo $product->Price; ?></strike></p>
+
+        <?php if ($product->Price >= $newprice[0]->NewPrice) { ?>
+          <h2>€ <?php echo $newprice[0]->NewPrice; ?></h2> <?php
+          }
+        } else { ?>
+          <h2>€ <?php echo $product->Price; ?> </h2> <?php
+        }
+      ?>
+
+
             <?php if ($product->Availability == 1) {
               echo '<p>Beschikbaar</p>';
               } else {

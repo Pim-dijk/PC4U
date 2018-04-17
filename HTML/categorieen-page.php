@@ -137,13 +137,13 @@
 
 <?php
 if (isset($newprice[0]->NewPrice)) { ?>
-  <p class="orangeunderline"><strike><?php echo $product->Price; ?></strike></p>
+  <p class="orangeunderline">€ <strike><?php echo $product->Price; ?></strike></p>
 
 <?php if ($product->Price >= $newprice[0]->NewPrice) { ?>
-  <h2> <?php echo $newprice[0]->NewPrice; ?></h2> <?php
+  <h2>€ <?php echo $newprice[0]->NewPrice; ?></h2> <?php
   }
 } else { ?>
-  <h2> <?php echo $product->Price; ?> </h2> <?php
+  <h2>€ <?php echo $product->Price; ?> </h2> <?php
 }
   ?>
 

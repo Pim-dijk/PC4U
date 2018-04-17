@@ -44,9 +44,15 @@
             <input class="form-control" type="text" name="ordernummer">
           </div>
         <div class="col-md-12">
-        <p>Anders</p>
-        <textarea id="CAPoutput" class="form-control" rows="4">
-        </textarea>
+          <p>Reden van retour:</p>
+          <select id="drp_dwn" name="redenretour" size="3">
+          <option name="defect">Defect</option>
+          <option name="verkeerd">Verkeerde levering</option>
+          <option name="telaat">Te laat</option>
+          </select>
+          <p>Anders</p>
+          <textarea name="redenretour" id="textArea" class="form-control" rows="4">
+          </textarea>
         <br>
         <input class="voegtoebutton" type="button" value="Verzenden">
       </div>
@@ -56,5 +62,10 @@
   </div>
         
     </div>
+  <script>
+  $("#drp_dwn").change(function () {
+        $("#textArea").val(this.value);
+ }).change();
+  </script>
 
   <?php include 'Footer.php';?>
