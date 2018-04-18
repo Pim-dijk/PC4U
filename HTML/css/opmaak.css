@@ -238,6 +238,16 @@ a:hover
 	height: 150px;
 }
 
+/*Systems page*/
+#Systems ul li {
+    font-size: 16px;
+}
+
+#Systems img {
+    height: 300px;
+    overflow: hidden;
+}
+
 /*Home dropdown menu*/
 /* Dropdown Button */
 .dropbtn {
@@ -250,6 +260,10 @@ a:hover
 .dropdown {
 	position: relative;
 	display: inline-block;
+}
+
+.dropdown > li{
+    display:none;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -279,6 +293,10 @@ a:hover
 
 .loginDropdown{
     min-width:0 !important;
+}
+
+.headerLogin > li{
+	display:none !important;
 }
 
 /* Formatting search box */

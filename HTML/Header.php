@@ -100,7 +100,7 @@ $menu = array();
                     </a>
                 </div>
                 <div class="dropdown">
-                    <a href="#">
+                    <a href="Systems.php">
                         <li class="<?php echo ($page == "systemen" ? "active" : "")?>">Systemen</li>
                     </a>
                 </div>
@@ -110,6 +110,7 @@ $menu = array();
                     </a>
                 </div>
             </ul>
+
             <ul class="col-lg-1 col-sm-2 col-xs-2">
                 <div class="headerLogin">
                     <div class="dropdown">

@@ -13,7 +13,7 @@
             <a href="#">
                 <li>Aanbiedingen</li>
             </a>
-            <a href="#">
+            <a href="categorieen-page.php">
                 <li>Componenten</li>
             </a>
             <a href="#">
@@ -22,7 +22,7 @@
             <a href="#">
                 <li>Randapparatuur</li>
             </a>
-            <a href="#">
+            <a href="Systems.php">
                 <li>Systemen</li>
             </a>
             <a href="Services.php">
