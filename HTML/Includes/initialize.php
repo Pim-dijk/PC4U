@@ -22,4 +22,7 @@ require_once(LIB_PATH.DS. "discount.php");
 require_once(LIB_PATH.DS. "admin.php");
 require_once(LIB_PATH.DS. "orders.php");
 require_once(LIB_PATH.DS. "orderdetails.php");
+require_once(LIB_PATH.DS. "Reparatie.php");
+require_once(LIB_PATH.DS. "RMA.php");
+require_once(LIB_PATH.DS. "retour.php");
 ?>

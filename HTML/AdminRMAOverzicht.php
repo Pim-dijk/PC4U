@@ -1,35 +1,60 @@
 <?php include 'Header.php'; ?>
 <div id="content">
-    <h1 class="text-center h1-margin">Admin beheer RMA overzicht</h1>
+    <h1 class="text-center">Admin beheer RMA overzicht</h1>
 
     <div id="RMAOverzichtUitlijningDiv">
         <!-- Filter -->
         <form>
             <span class="bold">Filter op status: </span>
-            <select name="rmaFilter">
-                <option value="inBehandeling">In behandeling</option>
-                <option value="ontvangen">Ontvangen</option>
-                <option value="voltooid">Voltooid</option>
+            <select name="rmaFilter" onchange="filter_rma(this.value)">
+                <option value="Alles">Alles</option>
+                <option value="In behandeling">In behandeling</option>
+                <option value="Ontvangen">Ontvangen</option>
+                <option value="Voltooid">Voltooid</option>
             </select>
-            <input type="submit" value="Filter" class="btn button-color">
         </form>
-        <hr style="border-color: black; width: 100%;">
+        <hr>
 
+        <?php 
+            $numbering = 0;
+            $counter = 0;
+            $sql = "SELECT * FROM rma";
+            $rma = $database->query($sql);
+
+            while ($row = $rma->fetch_assoc()) {
+        ?>
         <!-- Item 1 -->
-        <div id="RMAOverzichtRow">
-            <div id="RMAOverzichtRowDiv">
-                <p class="bold">Retournummer</p>
-                <a href="AdminRMA.php">3489234</a>
-            </div>
-            <div id="RMAOverzichtRowDiv">
-                <p class="bold">Klantnummer</p>
-                <p>3842305</p>
-            </div>
-            <div id="RMAOverzichtRowDiv" style="width: 120px;">
-                <a href="#" class="btn button-color" style="margin-top: 20px;"><span class="glyphicon glyphicon-trash"></span> Verwijderen</a>
+        <div id="row">
+            <div id="RMAoverzicht-<?php echo $numbering; ?>">
+                <div id="RMAOverzichtRowDiv">
+                    <p class="bold">Retournummer</p>
+                    <a href="AdminRMA.php?RmaID=<?php echo $row['id']; ?>"><?php echo $row['id']; ?></a>
+                </div>
+                <div id="RMAOverzichtRowDiv">
+                    <p class="bold">Ordernummer</p>
+                    <p><?php echo $row['OrderID']; ?></p>
+                </div>
+                <div id="RMAOverzichtRowDiv">
+                    <p class="bold">Klantnummer</p>
+                    <p><?php echo $row['CustomerID']; ?></p>
+                </div>
+                <div id="RMAOverzichtRowDiv" style="width: 170px;">
+                    <a href="delete_rma.php?RmaID=<?php echo $row['id']; ?>" class="line-height-75"><span class="glyphicon glyphicon-trash"></span> Verwijderen</a>
+                </div>
+                <div id="RMAOverzichtRowDiv">
+                    <p class="bold">Status</p>
+                    <p id="status-<?php echo $numbering; ?>"><?php echo $row['Status']; ?></p>
+                </div>
+                <hr>
             </div>
         </div>
-        <hr style="border-color: black; width: 100%;">
+        <?php
+            $numbering++;
+            $counter++;
+            }
+        ?>
+        <input type="hidden" id="totalRows" value="<?php echo $counter; ?>">
     </div>
 </div>
+<script src="js/filter_rma.js"></script>
 <?php include 'Footer.php'; ?>

@@ -1,31 +1,26 @@
-<!--Include Header-->
-<?php include 'Header.php'; ?>
+<?php include "Header.php"; ?>
+<div class="content col-lg-12">
+<?php if (!isset($_COOKIE['login_user'])) header("Location: index.php");?>
+    <div id="content">
+        <h1>Reparatie aanvraag</h1>
+        <div class="row">
+            <form action="reparatie_aanvraag_plaatsen.php" method="POST" class="center-block myForm needs-validation">
+                <div class="form-group col-sm-4">
+                    <label for="artNumber">Artikelnummer</label>
+                    <input type="number" name="artNumber" class="form-control">
+                </div>
+                <div class="form-group col-sm-8">
+                    <label for="productName">Productnaam</label>
+                    <input type="text" name="productName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="description">Beschrijving</label>
+                    <textarea name="description" cols="30" rows="10" class="form-control" required></textarea>
+                </div>
 
-<!--Page content goes here!!!-->
-<div id="Register" class="content">
-
-	<div class="row">
-		<h3>Reparatie Formulier</h3>
-
-		<!--Login Form-->
-		<form class="myForm center-block needs-validation">
-			<div class="form-group required">
-				<label for="product" class="control-label">Product</label>
-				<input type="product" class="form-control" id="Email" placeholder="Product" required>
-			</div>
-			<div class="form-group ">
-				<label for="Artikelnummer" class="control-label">Artikelnummer</label>
-				<input type="Artikelnummer" class="form-control" id="artikelnummer" placeholder="Artikelnummer">
-			</div>
-			<div class="form-group required">
-				<label for="Oorzaak" class="control-label">Oorzaak</label>
-				<textarea type="text" class="form-control textAreaInput" id="Oorzaak" placeholder="Oorzaak" required></textarea>
-			</div>
-			<button type="submit" class="btn btn-default">Verzend</button>
-		</form>
-	</div>
-
+                <button type="submit" class="btn btn-default">Aanvraag plaatsen</button>
+            </form>
+        </div>
+    </div>
 </div>
-
-<!--Include Footer-->
-<?php include 'Footer.php'; ?>
+<?php include "Footer.php"; ?>

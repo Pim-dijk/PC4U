@@ -1,5 +1,8 @@
 <?php include 'Header.php';?>
 
+
+
+
 <?php
     // Methode om ID te krijgen. 
     if(isset($_GET['id'])) {
@@ -8,18 +11,22 @@
     $query = "SELECT * FROM products WHERE ProductID = {$id}";
     $result = $product->find_by_sql($query); 
     }
+   $resultdiscount = $discount->find_all();
+$sqldiscounts="SELECT * FROM discounts";
 
 ?>
 
 <body>
 <?php foreach ($result as $product) { 
- $query = "SELECT * FROM images WHERE ProductID = {$product->ProductID}"; 
+ $query = "SELECT * FROM images WHERE ProductID = {$product->ProductID}";
+ $querydiscount = "SELECT NewPrice FROM discounts WHERE ProductID = {$product->ProductID}";
+  $newprice = $discount->find_by_sql($querydiscount); 
   $resultimage = $image->find_by_sql($query);
   ?>
 
 <div id="container" class="productenpagina">
   <div class="col-md-6">
-	  <h1><?php echo $product->ArtName; ?></h1>
+	  <h1 class="productenpagina"><?php echo $product->ArtName; ?></h1>
       <div class="sliderafbeeldingen">
 
         <div class="slider-for">
@@ -36,8 +43,8 @@
       </div>
 
     <div class="productbeschrijving">
-      <h2>Productbeschrijving</h2>
-        <p><?php echo $product->Description; ?></p>
+      <h2 class="productenpagina">Productbeschrijving</h2>
+        <p style="padding-left:20px;"><?php echo $product->Description; ?></p>
     </div>
   </div>
 
@@ -45,7 +52,20 @@
           
       <form method="POST" action="shoppingcart.php">
         <div id="prijzen">
-          <h2>€ <?php echo $product->Price?></h2>
+      <?php
+      //Aanbieding tonen als die er is
+        if (isset($newprice[0]->NewPrice)) { ?>
+          <p class="orangeunderline">€ <strike><?php echo $product->Price; ?></strike></p>
+
+        <?php if ($product->Price >= $newprice[0]->NewPrice) { ?>
+          <h2>€ <?php echo $newprice[0]->NewPrice; ?></h2> <?php
+          }
+        } else { ?>
+          <h2>€ <?php echo $product->Price; ?> </h2> <?php
+        }
+      ?>
+
+
             <?php if ($product->Availability == 1) {
               echo '<p>Beschikbaar</p>';
               } else {
@@ -54,19 +74,9 @@
          <p>Voor 24:00 besteld, morgen in huis!</p>
           <input type="hidden" name="productID" value="<?php echo $product->ProductID ?>">
             <select name="amount">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
+              <?php for ($x = 1; $x <= 10; $x++) { 
+             echo '<option value="1">'.$x.'</option>';
+               } ?>
             </select>
               <input name="submit" class="voegtoebutton" type="submit" value="In winkelwagen">
           </form> 
@@ -78,8 +88,6 @@
 </body>
 
 <?php require_once 'Footer.php';?>
-
-<script type="text/javascript" src="slick-1.8.0/slick/slick.min.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function(){

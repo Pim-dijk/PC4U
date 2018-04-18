@@ -5,48 +5,53 @@
 	height: 1000px;
 }
 /*Text align center gewijzigd*/
-/*.overzichtpagina h2,h3 {*/
-	/*text-align: left;*/
-	/*padding-top:10px !important;*/
-	/*padding:0px;*/
-	/*margin-top: 15px !important;*/
-/*}*/
-/*.productenpagina h1 {*/
-	/*text-align: left !important;*/
-/*}*/
-/*.productenpagina h2 {*/
-	/*text-align: left !important;*/
-	/*padding:0px;*/
-/*}*/
 
-/*.productenpagina h3 {*/
-	/*text-align: left;*/
-	/*padding-top: 20px !important;*/
-	/*padding:0px;*/
-/*}*/
-/*.categoriepagina h2,h3 {*/
-	/*text-align:left !important;*/
-	/*padding:0px;*/
-	/*padding-top:10px !important;*/
-/*}*/
+.overzichtpagina h2 {
+	text-align: left;
+	padding-top:10px !important;
+	padding:0px;
+	margin-top: 15px !important;
+
+}.productenpagina h1 { 
+	text-align: left !important;
+}
+
+.productenpagina h2 {
+	text-align: left !important;
+	padding-left:20px;
+}
+#prijzen h2 {padding:0px;}
+.productenpagina h3 {
+	text-align: left;
+	padding-top: 20px !important;
+	padding:0px;
+}
+.categoriepagina h2, .categoriepagina h3 {
+	text-align:left !important;
+	padding:0px;
+	padding-top:10px !important;
+}
+.verbergbeschrijving {
+	overflow: hidden;
+	height:63px;
+	width:275px;
+}
+.verbergbeschrijvingoverzicht {
+	overflow: hidden;
+	height:44px;
+}
 
 
 /*Overzicht.css*/
 @media screen and (min-width:100px) and (max-width: 550px) {
-	#merk, #prijsoverzicht, #processor, #scherm {
-		display: none;
-	}
-	.filter {
-		display:none;
-		margin-top:0px;
-		margin-left:12%;
-	}
+
 	#laptops {
+		margin-top:70%;
 		margin-bottom: 15px;
+		margin-left:20px;
+		margin-right: 20px;
 	}
-	.removemobile {
-		display:none !important;
-	}
+
 }
 @media screen and (min-width:551px) {
 	.filterpopup {
@@ -74,6 +79,8 @@
 .categorie {
 	font-size:14px;
 	font-weight: bold;
+	text-align: left;
+	padding-left:0px;
 }
 #productomschrijving {
 	margin-top:15px;
@@ -113,7 +120,6 @@
 /*Retourneren.css*/
 .orangeunderline {
 	color:#FF6600;
-	text-decoration:underline;	
 }
 .voegtoebutton {
 	width:150px;
@@ -124,13 +130,22 @@
 	border-radius: 5px;
 	margin-top:20px;
 	margin-bottom:20px;
+	font-size: 18px;
 }
 .floatleft {
 	float:left;
 }
 #leftsidebar {
-	height:500px;
+	height:140vh;
 }
+.marginrightleft {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+#prijsvoorraad {
+	margin-top:25px;
+}
+
 
 
 

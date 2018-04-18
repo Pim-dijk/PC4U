@@ -2,18 +2,17 @@
 
 $returnProduct;
 
-if(isset($_GET['id'])){
+if(isset($_GET['id'])) {
     if (isset($_SESSION['returnOrder'])) {
         $products = $_SESSION['returnOrder'];
         foreach ($products as $product) {
             $product = unserialize($product);
-            if($product['ProductID'] == $_GET['id']){
+            if ($product['ProductID'] == $_GET['id']) {
                 $returnProduct = $product;
             }
         }
     }
 }
-
 ?>
 
     <div id="Contact" class="row">
@@ -24,7 +23,7 @@ if(isset($_GET['id'])){
             <p class="text-center">Heb je meteen onze hulp nodig? Neem dan contact op via het telefoonnummer onderaan deze pagina.</p>
 
             <!--Contact Form-->
-            <form class="center-block myForm needs-validation" method="POST" action="createReturn.php" >
+            <form class="center-block myForm needs-validation" method="POST" action="retourneren_aanvraag.php" >
 
                 <div class="form-group required col-lg-4 col-sm-6 col-xs-12">
                     <label for="OrderID" class="control-label">Order nummer</label>
@@ -84,4 +83,5 @@ if(isset($_GET['id'])){
         <!--/Contact-->
     </div>
 
-<?php include 'Footer.php';?>
+<?php
+    include 'Footer.php';?>

@@ -1,7 +1,7 @@
 <?php include 'Header.php'; ?>
 <div id="content">
-    <h1 class="text-centerx h1-margin">Overzicht</h1>
-    <h3>Overzicht artikelen</h3>
+    <h1 class="text-center">Overzicht</h1>
+    <h3 style="text-align: left;">Overzicht artikelen</h3>
 
     <?php 
         if (isset($_COOKIE['Order'])) {
@@ -49,7 +49,7 @@
                     <p class="bold">BTW prijs</p>
                     <p><?php echo '€ '.number_format(round($btwPrice, 2), 2); ?></p>
                 </div>
-                <hr>
+                <hr style="border-color: black; width: 100%;">
 
                 <?php
             }

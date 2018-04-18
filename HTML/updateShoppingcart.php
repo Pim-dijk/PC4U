@@ -1,5 +1,5 @@
 <?php  
-    include "Header.php";
+    include "Includes/initialize.php";
 
     if (isset($_POST['totalProducts'])) {
         $totalProducts = $_POST['totalProducts'];
@@ -21,6 +21,6 @@
         setcookie($cookieName, serialize($cookieArray), time() + (86400 * 30), "/"); // 86400 = 1 day
     }
 
-    header("Location: Overzicht.php");
+    header("Location: bestelling_overzicht.php");
 
     include "Footer.php";

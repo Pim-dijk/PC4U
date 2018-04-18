@@ -1,3 +1,7 @@
+#table td {
+    padding-right: 20px;
+}
+
 /* Admin reparaties overzicht */
 #reparatiesOverzichtUitlijningDiv {
     width: 70%;
@@ -11,17 +15,6 @@
 #reparatiesOverzichtUitlijningDiv form input[type="submit"] {
     margin-left: 15px;
 }
-#reparatiesOverzichtRow {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    float: left;
-}
-#reparatiesOverzichtRowDiv {
-    width: 150px;
-    height: 75px;
-    float: left;
-}
 #reparatiesOverzichtRowDiv a {
     line-height: 20px;
 }
@@ -33,10 +26,11 @@
     overflow: auto;
     margin: auto;
 }
-#reparatiesUitlijningDiv p {
-    display: inline-block;
+#reparatiesUitlijningDiv td {
+    padding-right: 20px;
 }
 #reparatiesUitlijningDiv a {
+    color: black;
     margin: 15px 0px 15px 10px;
     float: right;
 }
@@ -54,14 +48,8 @@
 #retournerenOverzichtUitlijningDiv form input[type="submit"] {
     margin-left: 15px;
 }
-#retournerenOverzichtRow {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    float: left;
-}
 #retournerenOverzichtRowDiv {
-    width: 150px;
+    width: 130px;
     height: 75px;
     float: left;
 }
@@ -80,6 +68,7 @@
     display: inline-block;
 }
 #retournerenUitlijningDiv a {
+    color: black;
     margin: 15px 0px 15px 10px;
     float: right;
 }
@@ -94,22 +83,10 @@
 #RMAOverzichtUitlijningDiv form select {
     margin-left: 15px;
 }
-#RMAOverzichtUitlijningDiv form input[type="submit"] {
-    margin-left: 15px;
-}
-#RMAOverzichtRow {
-    width: 100%;
-    height: auto;
-    overflow: auto;
-    float: left;
-}
 #RMAOverzichtRowDiv {
-    width: 150px;
+    width: 120px;
     height: 75px;
     float: left;
-}
-#RMAOverzichtRowDiv a {
-    line-height: 20px;
 }
 
 /* Admin RMA */
@@ -119,10 +96,8 @@
     overflow: auto;
     margin: auto;
 }
-#RMAUitlijningDiv p {
-    display: inline-block;
-}
 #RMAUitlijningDiv a {
+    color: black;
     margin: 15px 0px 15px 10px;
     float: right;
 }
@@ -130,12 +105,14 @@
 /* Winkelwagen */
 #winkelwagenDivContainer {
     width: 310px;
-    height: 125px;
+    height: auto;
+    overflow: auto;
     float: left;
 }
 #winkelwagenDiv {
     width: 150px;
-    height: 125px;
+    height: auto;
+    overflow: auto;
     float: left;
 }
 #winkelwagenDiv img {
@@ -230,6 +207,9 @@
 {
     background-color: #FF9900;
 }
+.line-height-75 {
+    line-height: 75px;
+}
 
 /* Admin reparatie klassen */
 .reparaties-p-left {
@@ -238,20 +218,17 @@
 .reparaties-p-right {
     width: 70%;
 }
+.reparatieDiv {
+    width: 150px;
+    height: 75px;
+    float: left;
+}
 
 /* Admin retourneren klassen */
 .retourneren-p-left {
     width: 150px;
 }
 .retourneren-p-right {
-    width: 70%;
-}
-
-/* Admin RMA klassen*/
-.RMA-p-left {
-    width: 150px;
-}
-.RMA-p-right {
     width: 70%;
 }
 
@@ -274,6 +251,10 @@
 .margin-top-20 {
     margin-top: 20px;
 }
+.winkelwagenHeaders {
+    font-size: 20px;
+    font-weight: bold;
+}
 
 /* Winkelwagen overzicht klassen */
 .winkelwagenOverzicht-p-left {
@@ -284,11 +265,8 @@
 }
 
 /* Betalen klassen */
-.betalen-p-left {
-    width: 30%;
-}
-.betalen-p-right {
-    width: 60%;
+.betalen-td-padding {
+    padding: 5px 10px 5px 0px;
 }
 
 /* Media Admin reparaties overzicht */
