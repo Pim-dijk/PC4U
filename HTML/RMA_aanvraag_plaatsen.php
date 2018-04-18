@@ -19,3 +19,5 @@
         $rma->Status = "In behandeling";
         $rma->create();
     }
+
+    header("Location: index.php");
