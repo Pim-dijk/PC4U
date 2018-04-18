@@ -1,5 +1,5 @@
 <?php  
-    include "header.php";
+    include "Header.php";
 
     if (isset($_POST['totalProducts'])) {
         $totalProducts = $_POST['totalProducts'];

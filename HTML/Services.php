@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'Header.php';
 
 //Check if the user is logged in
 if(isset($_COOKIE['login_user'])){

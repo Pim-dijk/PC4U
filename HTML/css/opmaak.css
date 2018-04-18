@@ -291,7 +291,7 @@ a:hover
     min-width:0 !important;
 }
 
-.headerLogin .dropdown > li{
+.hideLi > li{
 	display:none !important;
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-//Set active link with $page = 'name of the page file' before including header.php
+//Set active link with $page = 'name of the page file' before including Header.php
 
 // To add an alert to the page set the following sessions
 //$_SESSION["alert-type"] = "success, info, warning, danger";
@@ -138,9 +138,11 @@ $menu = array();
                     else
                     {
                         ?>
+                        <div class="hideLi">
                             <a href="Login.php">
                                 <li class="loginButton pull-right">Login<li>
                             </a>
+                        </div>
                             </div>
                         <?php
                     }

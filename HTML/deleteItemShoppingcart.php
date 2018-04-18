@@ -1,5 +1,5 @@
 <?php
-    include "header.php";
+    include "Header.php";
 
     if (isset($_GET['productID']) && isset($_COOKIE['Shoppingcart'])) {
         $productID = $_GET['productID'];
