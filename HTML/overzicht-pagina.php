@@ -3,14 +3,15 @@
 <?php
     $result = $product->find_all();
     $resultdiscount = $discount->find_all();
-$sqldiscounts="SELECT * FROM discounts";
+    $sqldiscounts="SELECT * FROM discounts";
 ?>
 
 <div id="container" class="col-md-12 overzichtpagina">
-  <h1 class="text-center">Alle laptops</h1>
+  <h1 class="text-center">Alle Producten</h1>
 
   <div id="laptops">
  <?php foreach ($result as $product) { 
+  
   $query = "SELECT * FROM images WHERE ProductID = {$product->ProductID}";
   $querydiscount = "SELECT NewPrice FROM discounts WHERE ProductID = {$product->ProductID}";
   $newprice = $discount->find_by_sql($querydiscount); 

@@ -80,7 +80,7 @@ $menu = array();
                     <div id="myDropdown" class="dropdown-content">
                         <?php
                         while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<a href="categorieen-page.php?id=' . $row['Category'] . '"><li>' . $row['Category'] . '</li></a>';
+                            echo '<a href="categorieen-page.php?id=' . $row['CategoryID'] . '"><li>' . $row['Category'] . '</li></a>';
                         }
                         ?>
                     </div>

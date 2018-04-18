@@ -44,22 +44,14 @@
 
 /*Overzicht.css*/
 @media screen and (min-width:100px) and (max-width: 550px) {
-	#merk, #prijsoverzicht, #processor, #scherm {
-		display: none;
-	}
-	.filter {
-		display:none;
-		margin-top:0px;
-		margin-left:12%;
-	}
+
 	#laptops {
+		margin-top:70%;
 		margin-bottom: 15px;
 		margin-left:20px;
 		margin-right: 20px;
 	}
-	.removemobile {
-		display:none !important;
-	}
+
 }
 @media screen and (min-width:551px) {
 	.filterpopup {
@@ -144,11 +136,14 @@
 	float:left;
 }
 #leftsidebar {
-	height:3000px;
+	height:140vh;
 }
 .marginrightleft {
 	margin-right: 20px;
 	margin-left: 20px;
+}
+#prijsvoorraad {
+	margin-top:25px;
 }
 
 

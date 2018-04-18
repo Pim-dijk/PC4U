@@ -1,12 +1,17 @@
 <?php include 'Header.php';?>
 
 <?php
-    
-    $resultdiscount = $discount->find_all();
-
-    
     $sql="SELECT * FROM products";
+
     extract($_POST);
+
+    $categoryid = $_GET['id'];
+    
+    if (isset($_GET['id'])) {
+    $sql="SELECT * FROM products WHERE CategoryID = '$categoryid'";
+    }
+
+    $sqlcategory = "SELECT * FROM categories";
 
     $sqldiscounts="SELECT * FROM discounts";
 
@@ -60,18 +65,20 @@
       }
     $sql = "SELECT * FROM products WHERE Brand = '$brand' AND Property1 = '$processor' AND Property2 = '$screensize' AND Price BETWEEN '$price1' AND '$price2'";
     }
-
+    $resultcategory = $category->find_by_sql($sqlcategory);
     $result = $product->find_by_sql($sql);
+    $categoryname = $category->find_by_id($categoryid);
 ?>
 
 <body>
 <div id="container" class="col-md-12 overzichtpagina">
   <h1 class="text-center"></h1>
-  <?php if(isset($_POST['submit'])) {
-  echo '<h1 class="text-center">'.$brand.'</h1>'; 
+  <?php if(isset($_POST['submit'])) { 
+    echo '<h1 class="text-center">'.$brand.'</h1>';     
    } else {
-    echo '<h1 class="text-center">Laptops</h1>';
+    echo '<h1 class="text-center">'.$categoryname->Category.'</h1>';
   }
+
    ?>
 
     <div id="leftsidebar" class="col-md-3 margintop">
@@ -110,21 +117,21 @@
           </select>
 
         <br>
-              <a class="filterpopup text-center" href="javascript:window.open('/r/MergeAttempt/Includes/filter.php','mypopuptitle','width=600,height=400')">Open filter</a>
               <button class="filter" name="submit" type="submit">Filter</button>
       </form>
       </div>
   
-     
-      
   <div id="laptops">
+
  <?php foreach ($result as $product) { 
+
   $query = "SELECT * FROM images WHERE ProductID = {$product->ProductID}"; 
   $querydiscount = "SELECT NewPrice FROM discounts WHERE ProductID = {$product->ProductID}";
   $newprice = $discount->find_by_sql($querydiscount);
   $resultimage = $image->find_by_sql($query);  ?>
 
-      <div id="laptopafbeelding" class="col-md-3 margintopafbeelding floatleft">
+
+      <div id="laptopafbeelding" class="col-md-3 margintopafbeelding">
         <?php echo '<img src="'.$resultimage[0]->Location.'" width="180" height="150">'; ?>
       </div>
       <div id="productomschrijving" class="col-md-4">
@@ -136,6 +143,7 @@
         <div id="prijsvoorraad" class="col-md-2">
 
 <?php
+//Display discounts or normal price
 if (isset($newprice[0]->NewPrice)) { ?>
   <p class="orangeunderline">€ <strike><?php echo $product->Price; ?></strike></p>
 
@@ -145,10 +153,7 @@ if (isset($newprice[0]->NewPrice)) { ?>
 } else { ?>
   <h2>€ <?php echo $product->Price; ?> </h2> <?php
 }
-  ?>
-
-
-       
+  ?>     
 
             <?php if ($product->Availability == 1) {
               echo '<p>Beschikbaar</p>';
