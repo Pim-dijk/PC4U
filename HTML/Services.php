@@ -27,5 +27,5 @@ if(isset($_COOKIE['login_user'])){
 
 <?php
 // /Page content
-include 'footer.php';
+include 'Footer.php';
 ?>

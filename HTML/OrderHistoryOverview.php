@@ -43,5 +43,5 @@ if (isset($_SESSION['orderHistory']))
 </div>
 <?php
 }
-include 'footer.php';
+include 'Footer.php';
 ?>

@@ -23,4 +23,4 @@
 
     header("Location: Overzicht.php");
 
-    include "footer.php";
+    include "Footer.php";

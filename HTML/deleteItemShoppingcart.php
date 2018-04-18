@@ -20,4 +20,4 @@
 
     header("Location: winkelwagen.php");
 
-    include "footer.php";
+    include "Footer.php";

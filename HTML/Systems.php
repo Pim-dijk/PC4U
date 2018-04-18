@@ -22,5 +22,5 @@ include 'Header.php';
 
 <!--   /Page content-->
 <?php
-include 'footer.php';
+include 'Footer.php';
 ?>
